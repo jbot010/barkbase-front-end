@@ -11,6 +11,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DogList from './pages/DogList/DogList'
+import NewDog from './pages/NewDog/NewDog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -56,6 +57,7 @@ function App() {
           <DogList dogs={dogs} />
         }
         />
+        <Route path="/new" element={<NewDog />} />
         <Route
           path="/profiles"
           element={
