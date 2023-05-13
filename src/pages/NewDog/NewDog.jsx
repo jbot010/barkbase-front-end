@@ -13,10 +13,19 @@ const NewDog = (props) => {
     color: '',
     food: ''
   })
+
+  const handleChange = (evt) => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+		props.handleAddDog(formData)
+  }
   
   return ( 
     <main className={styles.container}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -25,6 +34,7 @@ const NewDog = (props) => {
           id="name-input"
           value={formData.name}
           placeholder="Name"
+          onChange={handleChange}
         />
         <label htmlFor="breed-input">Breed</label>
 				<input
@@ -34,6 +44,7 @@ const NewDog = (props) => {
           id="breed-input"
           value={formData.breed}
           placeholder="Breed"
+          onChange={handleChange}
         />
         <label htmlFor="age-input">Age</label>
         <input
@@ -41,6 +52,7 @@ const NewDog = (props) => {
           name="age"
           id="age-input"
           value={formData.age}
+          onChange={handleChange}
         />
         <label htmlFor="size-input">Size</label>
         <select
@@ -48,9 +60,10 @@ const NewDog = (props) => {
           name="size"
           id="size-input"
           value={formData.size}
+          onChange={handleChange}
         >
           <option value="X-Small">X-Small</option>
-          <option value="SMall">Small</option>
+          <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
           <option value="X-Large">X-Large</option>
@@ -61,6 +74,7 @@ const NewDog = (props) => {
           name="color"
           id="color-input"
           value={formData.color}
+          onChange={handleChange}
         />
         <label htmlFor="food-input">Food</label>
         <input
@@ -68,6 +82,7 @@ const NewDog = (props) => {
           name="food"
           id="food-input"
           value={formData.food}
+          onChange={handleChange}
         />
         <button type="submit">SUBMIT</button>
       </form>

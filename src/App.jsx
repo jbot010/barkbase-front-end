@@ -48,6 +48,12 @@ function App() {
     setUser(authService.getUser())
   }
 
+  const handleAddDog = async (dogFormData) => {
+    const newDog = await dogService.create(dogFormData)
+    setDogs([newDog, ...dogs])
+    navigate('/dogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -57,7 +63,9 @@ function App() {
           <DogList dogs={dogs} />
         }
         />
-        <Route path="/new" element={<NewDog />} />
+        <Route path="/new" 
+          element={<NewDog handleAddDog={handleAddDog}/>} 
+          />
         <Route
           path="/profiles"
           element={

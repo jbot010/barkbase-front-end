@@ -13,4 +13,21 @@ async function index() {
   }
 }
 
-export {index}
+async function create(dogFormData) {
+  try {
+    // BASE_URL IS POST http://localhost:3001/api/blogs
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dogFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export {index, create}
