@@ -1,6 +1,8 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
+
+
 
 // pages
 import Signup from './pages/Signup/Signup'
@@ -8,6 +10,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import DogList from './pages/DogList/DogList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,13 +18,24 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as dogService from './services/dogService'
 
 // styles
 import './App.css'
 
+
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [dogs, setDogs] = useState([])
+
+  useEffect(() => {
+    const fetchDogs = async () => {
+      const dogData = await dogService.index()
+      setDogs(dogData)
+    }
+    fetchDogs()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -38,6 +52,10 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/dogs" element={
+          <DogList dogs={dogs} />
+        }
+        />
         <Route
           path="/profiles"
           element={
