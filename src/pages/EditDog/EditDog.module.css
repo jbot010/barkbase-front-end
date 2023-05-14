@@ -1,9 +1,0 @@
-.container {
-  height: 100%;
-  display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 28px 21px;
-  align-items: center;
-  flex-direction: column;
-}
