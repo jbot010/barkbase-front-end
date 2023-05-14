@@ -60,11 +60,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route path="/dogs" element={
-          <DogList dogs={dogs} />
+          <ProtectedRoute user={user}>
+            <DogList dogs={dogs} />
+          </ProtectedRoute>
         }
         />
-        <Route path="/new" 
-          element={<NewDog handleAddDog={handleAddDog}/>} 
+        <Route path="/new" element={
+          <ProtectedRoute user={user}>
+            <NewDog handleAddDog={handleAddDog}/> 
+          </ProtectedRoute>
+          }
           />
         <Route
           path="/profiles"
