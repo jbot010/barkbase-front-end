@@ -24,11 +24,15 @@ const DogDetails = (props) => {
     <main className={StyleSheet.container}>
       <header>
         <h1> {dog.name}</h1>
+        <>
+          <Link to={`/dogs/${dogId}/edit`} state={dog}></Link>
         
+        </>
+
       </header>
     </main>
     
-    console.log('dogdetails')
+    
 
   );
 }

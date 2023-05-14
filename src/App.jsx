@@ -12,7 +12,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
-
+import EditDog from './pages/EditDog/EditDog'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -54,7 +54,11 @@ function App() {
     navigate('/dogs')
   }
 
-  const handleUpdateDog = async
+  const handleUpdateDog = async (dogFormData) => {
+    const updatedDog = await dogService.update(dogFormData)
+    setDogs(dogs.map(d => dogFormData._id === d._id ? updatedDog : d))
+    navigate('/dogs')
+  }
 
   return (
     <>
@@ -76,7 +80,7 @@ function App() {
         <Route path="/:dogId/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditDog handleUpdateDog={handleUpdateDog} />
+              <EditDog user={user} handleUpdateDog={handleUpdateDog} />
             </ProtectedRoute>
             }
           />
