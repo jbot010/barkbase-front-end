@@ -30,4 +30,20 @@ async function create(dogFormData) {
   }
 }
 
-export {index, create}
+async function update(dogFormData) {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'PUT',
+      headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dogFormData)
+    })
+    return res.json()
+  } catch(error) {
+    console.log(error)
+  }
+}
+
+export {index, create, update}

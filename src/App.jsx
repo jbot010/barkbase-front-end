@@ -12,7 +12,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
-
+import EditDog from './pages/EditDog/EditDog'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -54,17 +54,35 @@ function App() {
     navigate('/dogs')
   }
 
+  const handleUpdateDog = async (dogFormData) => {
+    const updatedDog = await dogService.update(dogFormData)
+    setDogs(dogs.map(d => dogFormData._id === d._id ? updatedDog : d))
+    navigate('/dogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route path="/dogs" element={
-          <DogList dogs={dogs} />
+          <ProtectedRoute user={user}>
+            <DogList dogs={dogs} />
+          </ProtectedRoute>
         }
         />
-        <Route path="/new" 
-          element={<NewDog handleAddDog={handleAddDog}/>} 
+        <Route path="/new" element={
+          <ProtectedRoute user={user}>
+            <NewDog handleAddDog={handleAddDog}/> 
+          </ProtectedRoute>
+          }
+          />
+        <Route path="/dogs/:dogId/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditDog user={user} handleUpdateDog={handleUpdateDog} />
+            </ProtectedRoute>
+            }
           />
         <Route
           path="/profiles"
