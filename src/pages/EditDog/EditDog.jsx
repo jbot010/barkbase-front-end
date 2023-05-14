@@ -7,7 +7,7 @@ import styles from './EditDog.module.css'
 
 const EditDog = (props) => {
   const { state } = useLocation()
-  const [formData, setFormData] = useState(state)
+  const [formData, setFormData] = useState(state ? state : {})
   console.log(state);
 
 
@@ -21,6 +21,7 @@ const EditDog = (props) => {
   }
 
 return (
+
   <main className={styles.container}>
     <form onSubmit={handleSubmit}>
       <h1>Edit Dog Details</h1>

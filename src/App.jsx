@@ -77,7 +77,7 @@ function App() {
           </ProtectedRoute>
           }
           />
-        <Route path="/:dogId/edit"
+        <Route path="/dogs/:dogId/edit"
           element={
             <ProtectedRoute user={user}>
               <EditDog user={user} handleUpdateDog={handleUpdateDog} />
