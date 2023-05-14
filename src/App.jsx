@@ -54,6 +54,8 @@ function App() {
     navigate('/dogs')
   }
 
+  const handleUpdateDog = async
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -70,6 +72,13 @@ function App() {
             <NewDog handleAddDog={handleAddDog}/> 
           </ProtectedRoute>
           }
+          />
+        <Route path="/:dogId/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditDog handleUpdateDog={handleUpdateDog} />
+            </ProtectedRoute>
+            }
           />
         <Route
           path="/profiles"
