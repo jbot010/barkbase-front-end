@@ -18,11 +18,8 @@ const DogDetails = (props) => {
   }, [dogId])
 
   return ( 
-    
-    
     console.log('dogdetails')
-
-  );
+  )
 }
 
 export default DogDetails
