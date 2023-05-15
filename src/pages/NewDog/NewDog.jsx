@@ -9,7 +9,7 @@ const NewDog = (props) => {
     name: '',
     breed: '',
     age: 0,
-    size: '',
+    size: 'X-Small',
     color: '',
     food: ''
   })
