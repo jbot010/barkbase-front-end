@@ -1,9 +1,10 @@
 main > section{
-  max-width: fit-content;
+  max-width: 1fr;
   background-color: rgba(55, 55, 55, 0.233);
 }
-.dog-list {
+.dogList {
   display: flex;
+  min-width: 60%;
   max-width: fit-content;
   flex-direction: column;
 }

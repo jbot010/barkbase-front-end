@@ -1,9 +1,20 @@
-li {
-  list-style: none;
-  padding: 2px;
-  /* background-color: rgba(156, 255, 80, 0.489); */
-  max-width: fit-content;
+.dogCard {
+  display: flex;
+  flex-direction: row;
+  border: 1px dashed green;
+  min-height: 36px;
 }
-li,a:hover {
-  filter: drop-shadow(0px 0px 6px #797979db);
+.dogCardImg {
+  min-width: 15%;
+  align-items: center;
+  
+  border: 1px dashed pink;
+}
+.dogCardContent {
+  flex-grow: 3;
+  border: 1px dashed blue;
+}
+.dogCardButtons {
+  justify-self: end;
+  border: 1px dashed yellow;
 }
