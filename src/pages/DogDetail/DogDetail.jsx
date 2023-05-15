@@ -38,19 +38,28 @@ const DogDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
-      <div className={styles.dogDetailImg}>img</div>
-      <div className={styles.dogDetailContent}>
-        <h1> {dog.name} </h1>
-        <h2> {dog.breed} </h2>
-        <h2> {dog.age} </h2>
-        <h2> {dog.color} </h2>
-        <>
-          <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
-          <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
-        </>
+      <div className={styles.dogDetailContainer}>
+        <div className={styles.dogDetailImg}>img</div>
+        <div className={styles.dogDetailContent}>
+          <h1> {dog.name} </h1>
+          <h2> {dog.breed} </h2>
+          <h2> {dog.age} </h2>
+          <h2> {dog.color} </h2>
+          <>
+            <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
+            <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
+          </>
+        </div>
       </div>
-      <div><NewComment handleAddComment={handleAddComment} />
-        <Comments comments={dog.comments} user={props.user} dogId={dogId} handleDeleteComment={handleDeleteComment} /></div>
+      <div className={styles.commentsContainer}>
+        <NewComment handleAddComment={handleAddComment} />
+        <Comments 
+          comments={dog.comments} 
+          user={props.user} 
+          dogId={dogId} 
+          handleDeleteComment={handleDeleteComment} 
+        />
+        </div>
     </main>
   );
 }

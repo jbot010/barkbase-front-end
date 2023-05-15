@@ -1,7 +1,12 @@
 .container {
   max-width: 90%;
   display: flex;
+  flex-direction: column;
   border: 1px dashed cyan;
+}
+.dogDetailContainer {
+  display: flex;
+  flex-direction: row;
 }
 .dogDetailImg {
   min-width: 120px;
@@ -11,6 +16,24 @@
 }
 .dogDetailContent {
   border: 1px dashed pink;
+}
+.commentsContainer {
+  border: 1px dashed yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.commentsContainer > form {
+  justify-content: flex-start;
+  max-width: 50%;
+  margin: 0;
+}
+.commentsContainer > article {
+  /* justify-content: flex-start; */
+  align-items:normal;
+  margin: 0;
+  min-width: 50%;
 }
 a {
   color: whitesmoke;
