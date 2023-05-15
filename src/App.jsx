@@ -2,8 +2,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
-
-
 // pages
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -13,6 +11,8 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
+import DogDetail from './pages/DogDetail/DogDetail'
+
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -23,7 +23,6 @@ import * as dogService from './services/dogService'
 
 // styles
 import './App.css'
-
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -73,6 +72,18 @@ function App() {
         />
         <Route path="/new" 
           element={<NewDog handleAddDog={handleAddDog}/>} 
+          />
+        <Route path="/dogs/:dogId" element={
+          <ProtectedRoute user={user}>
+            <DogDetail dogs={dogs} />
+          </ProtectedRoute>
+        } />
+        <Route path="/dogs/:dogId/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditDog user={user} handleUpdateDog={handleUpdateDog} />
+            </ProtectedRoute>
+            }
           />
         <Route
           path="/profiles"
