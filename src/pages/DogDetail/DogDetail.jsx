@@ -4,6 +4,8 @@ import { useParams, Link } from 'react-router-dom'
 
 // pages
 // import Loading from "../Loading/Loading"
+import NewComment from '../../components/NewComment/NewComment'
+import Comments from '../../components/Comments/Comments'
 
 //services
 import * as dogService from '../../services/dogService'
@@ -42,7 +44,7 @@ const DogDetails = (props) => {
         </>
       </div>
       <div><NewComment handleAddComment={handleAddComment} />
-        <Comments comments={blog.comments} user={props.user} /></div>
+        <Comments comments={dog.comments} user={props.user} /></div>
     </main>
   );
 }
