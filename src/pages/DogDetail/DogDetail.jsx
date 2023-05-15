@@ -38,7 +38,7 @@ const DogDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
-      <div className={styles.dogDetailImg}>img</div>
+      <div className={styles.dogDetailImg}><img src={dog.photo} alt="" /></div>
       <div className={styles.dogDetailContent}>
         <h1> {dog.name} </h1>
         <h2> {dog.breed} </h2>

@@ -10,7 +10,7 @@ const DogCard = ({ dog }) => {
   return (
     <Link to={`/dogs/${dog._id}`}>
       <div className={styles.dogCard}>
-        <div className={styles.dogCardImg}>img</div>
+        <div className={styles.dogCardImg}><img src={dog.photo} alt="" /></div>
         <div className={styles.dogCardContent}>{dog.name} - {dog.breed}</div>
         <div className={styles.dogCardButtons}><button>button</button></div>
       </div>
