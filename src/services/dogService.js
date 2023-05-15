@@ -71,7 +71,6 @@ async function deleteDog(dogId) {
   }
 }
 
-
 async function createComment(dogId, commentFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${dogId}/comments`, {
@@ -88,7 +87,5 @@ async function createComment(dogId, commentFormData) {
   }
 }
   
-  
 
-
-export {index, create, update, show, createComment}
+export {index, create, update, show, deleteDog, createComment}
