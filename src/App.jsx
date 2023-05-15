@@ -55,7 +55,13 @@ function App() {
 
   const handleUpdateDog = async (dogFormData) => {
     const updatedDog = await dogService.update(dogFormData)
-    setDogs(dogs.map(d => dogFormData._id === d._id ? updatedDog : d))
+    setDogs(dogs.map(dog => {
+      if (dog._id === updatedDog._id) {
+        return updatedDog
+      } else {
+        return dog
+      }
+    }))
     navigate('/dogs')
   }
 

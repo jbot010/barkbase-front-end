@@ -27,7 +27,7 @@ const DogDetails = (props) => {
       <header>
         <h1> {dog.name}</h1>
         <>
-          <Link to={`/dogs/${dogId}/edit`} state={dog}></Link>
+          <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
         </>
 
       </header>

@@ -1,6 +1,6 @@
 import * as tokenService from './tokenService'
 
-const BASE_URL = 'http://localhost:3001/api/dogs'
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/dogs`
 
 async function index() {
   try {
@@ -32,7 +32,7 @@ async function create(dogFormData) {
 
 async function update(dogFormData) {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/${dogFormData._id}`,{
       method: 'PUT',
       headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,

@@ -2,12 +2,14 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
+
 //css
 import styles from './EditDog.module.css'
 
+
 const EditDog = (props) => {
   const { state } = useLocation()
-  const [formData, setFormData] = useState(state ? state : {})
+  const [formData, setFormData] = useState(state)
   console.log(state);
 
 
