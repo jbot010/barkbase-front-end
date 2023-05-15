@@ -17,7 +17,7 @@ nav img {
 
 nav ul {
   margin: 0;
-  width: 100%;
+  width: 98%;
   display: flex;
   list-style: none;
   font-weight: bold;
@@ -28,7 +28,26 @@ nav ul {
 nav li {
   margin-left: 35px;
   text-align: right;
+}
 
+
+@media only screen and (max-width: 414px) {
+  img {
+    max-height: 32px;
+  }
+  nav ul {
+    max-width: 95%;
+    padding: 2px;
+    margin: 0;
+    justify-content: space-evenly;
+  }
+  nav li {
+    margin: 0;
+    font-size: 12px;
+    padding: 4px;
+    text-align: center;
+
+  }
 }
 /* 
 li a {
