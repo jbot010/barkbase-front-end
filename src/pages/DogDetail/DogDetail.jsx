@@ -21,10 +21,7 @@ const DogDetails = (props) => {
   }, [dogId])
 
   return ( 
-    
-    
     console.log('dogdetails')
-
   );
 }
 
