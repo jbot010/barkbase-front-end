@@ -71,4 +71,21 @@ async function deleteDog(dogId) {
   }
 }
 
-export {index, create, update, show, deleteDog}
+async function createComment(dogId, commentFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${dogId}/comments`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`, 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+  
+
+export {index, create, update, show, deleteDog, createComment}

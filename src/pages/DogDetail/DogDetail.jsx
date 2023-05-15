@@ -4,6 +4,8 @@ import { useParams, Link } from 'react-router-dom'
 
 // pages
 // import Loading from "../Loading/Loading"
+import NewComment from '../../components/NewComment/NewComment'
+import Comments from '../../components/Comments/Comments'
 
 //services
 import * as dogService from '../../services/dogService'
@@ -24,6 +26,11 @@ const DogDetails = (props) => {
     fetchDog()
   }, [dogId])
 
+  const handleAddComment = async (commentFormData) => {
+    const newComment = await dogService.createComment(dogId, commentFormData)
+    setDog({...dog, comments:[...dog.comments, newComment]})
+  }
+
   return ( 
     <main className={styles.container}>
       <div className={styles.dogDetailImg}>img</div>
@@ -37,7 +44,8 @@ const DogDetails = (props) => {
           <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
         </>
       </div>
-      <div></div>
+      <div><NewComment handleAddComment={handleAddComment} />
+        <Comments comments={dog.comments} user={props.user} /></div>
     </main>
   );
 }
