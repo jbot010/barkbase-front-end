@@ -12,6 +12,7 @@ import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
 import DogDetail from './pages/DogDetail/DogDetail'
+import EditComment from './pages/EditComment/EditComment'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -91,13 +92,18 @@ function App() {
             <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
           </ProtectedRoute>
         } />
-        <Route path="/dogs/:dogId/edit"
-          element={
-            <ProtectedRoute user={user}>
-              <EditDog user={user} handleUpdateDog={handleUpdateDog} />
-            </ProtectedRoute>
-            }
-          />
+        <Route path="/dogs/:dogId/edit" element={
+          <ProtectedRoute user={user}>
+            <EditDog user={user} handleUpdateDog={handleUpdateDog} />
+          </ProtectedRoute>
+          }
+        />
+        <Route path="/dogs/:dogId/comments/:commentId" element={
+          <ProtectedRoute user={user}>
+            <EditComment />
+          </ProtectedRoute>
+          } 
+        />
         <Route
           path="/profiles"
           element={
