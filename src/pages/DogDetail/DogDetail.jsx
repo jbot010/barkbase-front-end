@@ -24,6 +24,11 @@ const DogDetails = (props) => {
     fetchDog()
   }, [dogId])
 
+  const handleAddComment = async (commentFormData) => {
+    const newComment = await dogService.createComment(dogId, commentFormData)
+    setDog({...dog, comments:[...dog.comments, newComment]})
+  }
+
   return ( 
     <main className={styles.container}>
       <div className={styles.dogDetailImg}>img</div>
@@ -36,7 +41,8 @@ const DogDetails = (props) => {
           <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
         </>
       </div>
-      <div></div>
+      <div><NewComment handleAddComment={handleAddComment} />
+        <Comments comments={blog.comments} user={props.user} /></div>
     </main>
   );
 }
