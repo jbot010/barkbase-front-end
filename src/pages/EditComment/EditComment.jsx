@@ -3,7 +3,7 @@ import { useLocation, useParams, useNavigate } from "react-router-dom"
 import styles from './EditComment.module.css'
 
 // Services
-import * as dogService from '../../services/blogService'
+import * as dogService from '../../services/dogService'
 
 const EditComment = () => {
   const navigate = useNavigate()
