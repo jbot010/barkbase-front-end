@@ -11,7 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
-import DogDetail from './pages/DogDetail/DogDetail'
+import DogDetails from './pages/DogDetail/DogDetail'
 import EditComment from './pages/EditComment/EditComment'
 
 // components
@@ -24,7 +24,7 @@ import * as dogService from './services/dogService'
 
 // styles
 import './App.css'
-import DogDetails from './pages/DogDetail/DogDetail'
+// import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())

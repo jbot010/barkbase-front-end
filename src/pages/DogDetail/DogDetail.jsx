@@ -38,7 +38,6 @@ const DogDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
-<<<<<<< HEAD
       <div className={styles.dogDetailImg}><img src={dog.photo} alt="" /></div>
       <div className={styles.dogDetailContent}>
         <h1> {dog.name} </h1>
@@ -49,20 +48,6 @@ const DogDetails = (props) => {
           <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
           <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
         </>
-=======
-      <div className={styles.dogDetailContainer}>
-        <div className={styles.dogDetailImg}>img</div>
-        <div className={styles.dogDetailContent}>
-          <h1> {dog.name} </h1>
-          <h2> {dog.breed} </h2>
-          <h2> {dog.age} </h2>
-          <h2> {dog.color} </h2>
-          <>
-            <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
-            <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
-          </>
-        </div>
->>>>>>> 7db9337ef296d13f66e351bcc462ad92e7a0c6b7
       </div>
       <div className={styles.commentsContainer}>
         <NewComment handleAddComment={handleAddComment} />

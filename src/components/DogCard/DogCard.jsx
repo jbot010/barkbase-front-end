@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // css
 import styles from './DogCard.module.css'
-import { login } from "../../services/authService";
+// import { login } from "../../services/authService";
 
 const DogCard = ({ dog }) => {
   console.log(dog);
