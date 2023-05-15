@@ -9,7 +9,11 @@ const DogCard = ({ dog }) => {
   console.log(dog);
   return (
     <Link to={`/dogs/${dog._id}`}>
-      <li>{dog.name} : {dog.breed} : Age {dog.age} : Size {dog.size} : {dog.color}</li>
+      <div className={styles.dogCard}>
+        <div className={styles.dogCardImg}>img</div>
+        <div className={styles.dogCardContent}>{dog.name} - {dog.breed}</div>
+        <div className={styles.dogCardButtons}><button>button</button></div>
+      </div>
     </Link>
   )
 }
