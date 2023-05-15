@@ -1,0 +1,15 @@
+main > section{
+  max-width: fit-content;
+  background-color: rgba(55, 55, 55, 0.233);
+}
+.dog-list {
+  display: flex;
+  max-width: fit-content;
+  flex-direction: column;
+}
+
+a {
+  color: whitesmoke;
+  font-weight: 600;
+  text-decoration: none;
+}

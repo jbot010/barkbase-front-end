@@ -10,6 +10,8 @@ import * as dogService from '../../services/dogService'
 
 import styles from './DogDetail.module.css'
 
+
+
 const DogDetails = (props) => {
   const { dogId } = useParams()
   const [dog, setDog] = useState({})
@@ -24,13 +26,13 @@ const DogDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
-      <header>
-        <h1> {dog.name}</h1>
+        <h1> {dog.name} </h1>
+        <h2> {dog.breed} </h2>
+        <h2> {dog.age} </h2>
+        <h2> {dog.color} </h2>
         <>
           <Link to={`/dogs/${dogId}/edit`} state={dog}></Link>
         </>
-
-      </header>
     </main>
   );
 }
