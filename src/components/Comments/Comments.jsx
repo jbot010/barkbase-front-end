@@ -12,6 +12,7 @@ const Comments = (props) => {
           comment={comment}
           user={props.user}
           dogId={props.dogId}
+          handleDeleteComment={props.handleDeleteComment}
         />
       ))}
     </>

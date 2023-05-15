@@ -102,6 +102,19 @@ const updateComment = async (dogId, commentId, commentFormData) => {
     console.log(error)
   }
 }
-  
 
-export {index, create, update, show, deleteDog, createComment, updateComment}
+const deleteComment = async (dogId, commentId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${dogId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export {index, create, update, show, deleteDog, createComment, updateComment, deleteComment}
