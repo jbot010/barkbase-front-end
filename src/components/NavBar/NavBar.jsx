@@ -5,7 +5,7 @@ import styles from './NavBar.module.css'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className={styles.nav}>
-      <img src="public/dog_icon.png" alt="" />
+      <NavLink to="/dogs"><img src="public/dog_icon.png" alt="" /></NavLink>
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
