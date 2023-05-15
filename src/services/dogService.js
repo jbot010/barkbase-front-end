@@ -86,6 +86,22 @@ async function createComment(dogId, commentFormData) {
     console.log(err)
   }
 }
+
+const updateComment = async (dogId, commentId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${dogId}/comments/${commentId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
   
 
-export {index, create, update, show, deleteDog, createComment}
+export {index, create, update, show, deleteDog, createComment, updateComment}

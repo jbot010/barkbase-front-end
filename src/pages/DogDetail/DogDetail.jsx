@@ -45,7 +45,7 @@ const DogDetails = (props) => {
         </>
       </div>
       <div><NewComment handleAddComment={handleAddComment} />
-        <Comments comments={dog.comments} user={props.user} /></div>
+        <Comments comments={dog.comments} user={props.user} dogId={dogId} /></div>
     </main>
   );
 }
