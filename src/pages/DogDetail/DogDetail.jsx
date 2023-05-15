@@ -31,7 +31,7 @@ const DogDetails = (props) => {
         <h2> {dog.age} </h2>
         <h2> {dog.color} </h2>
         <>
-          <Link to={`/dogs/${dogId}/edit`} state={dog}></Link>
+          <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
         </>
     </main>
   );
