@@ -16,7 +16,7 @@ const DogCard = ({ dog }) => {
 
 export default DogCard
 
-<li>{dog.name} : {dog.breed} : Age {dog.age} : Size {dog.size} : {dog.color}</li>
+{/* <li>{dog.name} : {dog.breed} : Age {dog.age} : Size {dog.size} : {dog.color}</li> */}
 
 // <Link to={`/blogs/${blog._id}`} state={blog}>
 // <article className={styles.container}>
