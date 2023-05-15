@@ -1,3 +1,17 @@
+.container {
+  max-width: 90%;
+  display: flex;
+  border: 1px dashed cyan;
+}
+.dogDetailImg {
+  min-width: 120px;
+  min-height: 120px;
+  max-height: 120px;
+  border: 1px dashed lime;
+}
+.dogDetailContent {
+  border: 1px dashed pink;
+}
 a {
   color: whitesmoke;
   font-weight: 600;
