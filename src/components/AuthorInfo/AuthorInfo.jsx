@@ -1,5 +1,5 @@
 // components
-import DateCard from '../DateCard/DateCard'
+import DateCard from '../DateCard/DateCard.jsx'
 
 // css
 import styles from './AuthorInfo.module.css'
