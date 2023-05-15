@@ -32,6 +32,7 @@ const DogDetails = (props) => {
         <h2> {dog.color} </h2>
         <>
           <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
+          <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
         </>
     </main>
   );

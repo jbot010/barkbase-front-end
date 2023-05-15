@@ -23,6 +23,7 @@ import * as dogService from './services/dogService'
 
 // styles
 import './App.css'
+import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -65,6 +66,12 @@ function App() {
     navigate('/dogs')
   }
 
+  const handleDeleteDog = async (dogId) => {
+    const deletedDog = await dogService.deleteDog(dogId)
+    setDogs(dogs.filter(d => d._id !== deletedDog._id))
+    navigate('/dogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -81,7 +88,7 @@ function App() {
           />
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
-            <DogDetail dogs={dogs} />
+            <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
           </ProtectedRoute>
         } />
         <Route path="/dogs/:dogId/edit"
