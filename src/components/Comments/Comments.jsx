@@ -11,6 +11,7 @@ const Comments = (props) => {
           key={comment._id}
           comment={comment}
           user={props.user}
+          dogId={props.dogId}
         />
       ))}
     </>
