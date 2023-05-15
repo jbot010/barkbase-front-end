@@ -46,4 +46,15 @@ async function update(dogFormData) {
   }
 }
 
-export {index, create, update}
+async function show(dogId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${dogId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export {index, create, update, show}
