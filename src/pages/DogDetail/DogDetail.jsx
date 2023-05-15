@@ -8,6 +8,8 @@ import Loading from "../Loading/Loading"
 //services
 import * as dogService from '../../services/dogService'
 
+import styles from './DogDetail.module.css'
+
 const DogDetails = (props) => {
   const { dogId } = useParams()
   const [dog, setDog] = useState(null)
@@ -21,7 +23,16 @@ const DogDetails = (props) => {
   }, [dogId])
 
   return ( 
-    console.log('dogdetails')
+    <main className={styles.container}>
+      <header>
+        <h1> {dog.name}</h1>
+        <>
+          <Link to={`/dogs/${dogId}/edit`} state={dog}></Link>
+
+        </>
+
+      </header>
+    </main>
   );
 }
 
