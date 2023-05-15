@@ -4,7 +4,7 @@
 //import DogCard
 import DogCard from '../../components/DogCard/DogCard'
 
-const DogList = (props) => {
+const DogList = ( props ) => {
   return (
     <main className='dog-list'>
       <h1>Dog List</h1>
