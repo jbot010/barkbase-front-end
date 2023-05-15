@@ -26,6 +26,8 @@ const DogDetails = (props) => {
 
   return ( 
     <main className={styles.container}>
+      <div className={styles.dogDetailImg}>img</div>
+      <div className={styles.dogDetailContent}>
         <h1> {dog.name} </h1>
         <h2> {dog.breed} </h2>
         <h2> {dog.age} </h2>
@@ -33,6 +35,8 @@ const DogDetails = (props) => {
         <>
           <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link>
         </>
+      </div>
+      <div></div>
     </main>
   );
 }
