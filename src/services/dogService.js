@@ -57,6 +57,21 @@ async function show(dogId) {
   }
 }
 
+async function deleteDog(dogId) {
+  try {
+    const res= await fetch(`${BASE_URL}/${dogId}`, {
+      method:'Delete',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 async function createComment(dogId, commentFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${dogId}/comments`, {

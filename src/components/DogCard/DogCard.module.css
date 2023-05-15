@@ -2,19 +2,23 @@
   display: flex;
   flex-direction: row;
   border: 1px dashed green;
-  min-height: 36px;
+  min-height: 24px;
 }
 .dogCardImg {
-  min-width: 15%;
   align-items: center;
-  
+  min-height: 24px;
+  min-width: 30px;
+  max-width: 60px;
   border: 1px dashed pink;
+  padding: 1em;
 }
 .dogCardContent {
   flex-grow: 3;
   border: 1px dashed blue;
+  padding: 1em
 }
 .dogCardButtons {
+  padding: 1em;
   justify-self: end;
   border: 1px dashed yellow;
 }
