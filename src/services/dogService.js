@@ -15,7 +15,6 @@ async function index() {
 
 async function create(dogFormData) {
   try {
-    // BASE_URL IS POST http://localhost:3001/api/blogs
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 
