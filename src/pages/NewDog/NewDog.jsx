@@ -80,7 +80,7 @@ const NewDog = (props) => {
           <option value="X-Large">X-Large</option>
         </select>
         <label htmlFor="color-input">Color</label>
-        <input
+        <TextField
           required
           name="color"
           id="color-input"
@@ -88,7 +88,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="food-input">Food</label>
-        <input
+        <TextField
           required
           name="food"
           id="food-input"

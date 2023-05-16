@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 // css
 import styles from './DogCard.module.css'
+import { Switch } from "@mui/material";
 // import { login } from "../../services/authService";
 
 const DogCard = ({ dog }) => {
@@ -25,6 +26,7 @@ const DogCard = ({ dog }) => {
           <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'public/Default-360x360.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
         <Button variant="contained" size="small" href={`/dogs/${dog._id}`}>button</Button>
+        <Switch />
       </Box>
   )
 }

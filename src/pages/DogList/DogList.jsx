@@ -11,7 +11,8 @@ import styles from './DogList.module.css'
 
 const DogList = ( props ) => {
   return (
-    <Box className={styles.dogList}>
+    <Box 
+    className={styles.dogList}>
       <h1>Dog List</h1>
       {console.log(props.dogs)}
       {/* {!props.dogs.length && <h2>Dog List Empty</h2>} */}
