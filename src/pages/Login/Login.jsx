@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/dogs')
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -66,7 +66,7 @@ const LoginPage = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
-        <div>
+        <div className={styles.buttonContainerLogin}>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Log In
