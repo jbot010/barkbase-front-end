@@ -8,13 +8,18 @@ import styles from './DogCard.module.css'
 const DogCard = ({ dog }) => {
   console.log(dog);
   return (
-    <Link to={`/dogs/${dog._id}`}>
       <div className={styles.dogCard}>
-        <div className={styles.dogCardImg}><img src={dog.photo} alt="" /></div>
-        <div className={styles.dogCardContent}>{dog.name} - {dog.breed}</div>
-        <div className={styles.dogCardButtons}><button>button</button></div>
+        <Link to={`/dogs/${dog._id}`}>
+          <div className={styles.dogCardImg}><img src={dog.photo} alt="" /></div>
+          <div className={styles.dogCardContent}>{dog.name} - {dog.breed}</div>
+        </Link>
+        <div 
+          className={styles.dogCardButtons}>
+          <button>button</button>
+          <button>button</button>
+        </div>
       </div>
-    </Link>
+    
   )
 }
 

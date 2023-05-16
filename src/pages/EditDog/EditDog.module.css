@@ -7,3 +7,13 @@
   align-items: center;
   flex-direction: column;
 }
+.container h1 {
+  color: gray;
+  padding: 0;
+  margin: 0;
+}
+
+form > label{
+  padding-top: 2px;
+
+}

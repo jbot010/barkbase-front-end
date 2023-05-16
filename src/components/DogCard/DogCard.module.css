@@ -1,23 +1,48 @@
 .dogCard {
   display: flex;
   flex-direction: row;
-  border: 1px dashed green;
+  align-items: center;
+  align-content: center;
+  border: 2px solid whitesmoke;
+  background-color: whitesmoke;
   min-height: 24px;
+  max-height: 64px;
+  border-radius: 6px;
+  margin: 6px;
+}
+.dogCard a {
+  display: flex;
+  flex-grow: 3;
+  flex-direction: row;
+  align-items: center;
 }
 .dogCardImg > img{
   align-items: center;
-  min-height: 24px;
-  min-width: 30px;
+  vertical-align: middle;
+  flex-grow: 3;
+  min-height: 48px;
+  min-width: 48px;
   max-width: 60px;
-  border: 1px dashed pink;
+  border: 3px solid rgba(128, 128, 128, 0.3);
+  border-radius: 12px;
 }
 .dogCardContent {
   flex-grow: 3;
   border: 1px dashed blue;
-  padding: 1em
+  padding: 1em;
+  color: rgb(68, 68, 68);
 }
 .dogCardButtons {
   padding: 1em;
   justify-self: end;
   border: 1px dashed yellow;
+  max-width: 120px;
+  max-height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: auto;
+}
+.dogCardButtons button {
+  border-radius: 6px;
+  padding: 2px;
 }
