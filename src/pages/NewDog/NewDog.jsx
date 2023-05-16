@@ -1,6 +1,11 @@
 // npm modules
 import { useState } from 'react'
 
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
+
 //css
 import styles from './NewDog.module.css'
 
@@ -24,10 +29,16 @@ const NewDog = (props) => {
   }
   
   return ( 
-    <main className={styles.container}>
+    <Box
+        display="flex" 
+        justifyContent="center" 
+        alignItems="center"
+        sx={{ width: "50%" }}
+      >
+    <Paper elevation={4} sx={{ width: "100%", p: "1rem" }}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
-        <input
+        <TextField
           required
           type="text"
           name="name"
@@ -37,7 +48,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="breed-input">Breed</label>
-				<input
+				<TextField
           required
           type="text"
           name="breed"
@@ -47,7 +58,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="age-input">Age</label>
-        <input
+        <TextField
           required
           name="age"
           id="age-input"
@@ -84,9 +95,10 @@ const NewDog = (props) => {
           value={formData.food}
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <Button type="submit" variant="contained" fullWidth>SUBMIT</Button>
       </form>
-    </main>
+    </Paper>
+    </Box>
   );
 }
 
