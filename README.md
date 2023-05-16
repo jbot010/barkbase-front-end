@@ -15,6 +15,13 @@ Join us now!
 
 Project planning [here](https://trello.com/b/EoS9WQLo/barkbase "Trello Board")
 
+## Team
+* [Andrew Rentschler](https://github.com/AndrewRentschler)
+* [Joe Caruso](https://github.com/carusoj7)
+* [Julian Franco](https://github.com/jbot010)
+* [Zach Truitt](https://github.com/ttiurt)
+
+
 ## Credits 🐶
 * [Material UI](https://mui.com/)
 * [Decoupled MERN Stack with JWT Auth Template - Front End](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end)
