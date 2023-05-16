@@ -1,4 +1,4 @@
-![BarkBase]( "stocklist-screenshot")
+![BarkBase]( "barkbase-screenshot")
 
 # BarkBase
 Disrupting the dog daycare experience! 
@@ -17,6 +17,8 @@ Project planning [here](https://trello.com/b/EoS9WQLo/barkbase "Trello Board")
 
 ## Credits 🐶
 * [Material UI](https://mui.com/)
+* [Decoupled MERN Stack with JWT Auth Template - Front End](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end)
+* [Decoupled MERN Stack with JWT Auth Template - Back End](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end)
 
 ### Images 🖼️:
 * [Logo & Favicon](https://icons8.com/icon/set/clothing/cotton)
@@ -35,7 +37,9 @@ Project planning [here](https://trello.com/b/EoS9WQLo/barkbase "Trello Board")
 * HTML
 * CSS
 * Fly.io
+* Netlify
 * Git
+* GitHub
 * Chrome DevTools
 
 ## Next Steps 🔮
