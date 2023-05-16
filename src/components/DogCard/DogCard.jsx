@@ -4,6 +4,8 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import AddCommentIcon from '@mui/icons-material/AddComment';
 // css
 import styles from './DogCard.module.css'
 import { Switch } from "@mui/material";
@@ -25,23 +27,10 @@ const DogCard = ({ dog }) => {
         >
           <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'public/Default-360x360.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
-        <Button variant="contained" size="small" href={`/dogs/${dog._id}`}>button</Button>
+        <Button variant="contained" size="small" href={`/dogs/${dog._id}`}>Details</Button>
+        <Button><AddCommentIcon /></Button>
         <Switch />
       </Box>
   )
 }
 export default DogCard
-{/* <li>{dog.name} : {dog.breed} : Age {dog.age} : Size {dog.size} : {dog.color}</li> */}
-
-// <Link to={`/blogs/${blog._id}`} state={blog}>
-// <article className={styles.container}>
-//   <header>
-//     <span>
-//       <h1>{ blog.title }</h1>
-//       <Icon category={blog.category} />
-//     </span>
-//     <AuthorInfo content={blog} />
-//   </header>
-//   <p>{ blog.text }</p>
-// </article>
-// </Link>

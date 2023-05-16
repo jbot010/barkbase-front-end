@@ -29,39 +29,36 @@ const NewDog = (props) => {
   }
   
   return ( 
-    <Box
-        display="flex" 
-        justifyContent="center" 
-        alignItems="center"
-        sx={{ width: "50%" }}
-      >
-    <Paper elevation={4} sx={{ width: "100%", p: "1rem" }}>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name-input">Name</label>
+    <section className={styles.newDogContainer}>
+      <form onSubmit={handleSubmit} className={styles.newDogForm}>
+        {/* <label htmlFor="name-input">Name</label> */}
         <TextField
           required
           type="text"
           name="name"
+          label="Dog Name"
           id="name-input"
           value={formData.name}
           placeholder="Name"
           onChange={handleChange}
         />
-        <label htmlFor="breed-input">Breed</label>
-				<TextField
+        {/* <label htmlFor="breed-input">Breed</label> */}
+        <TextField
           required
           type="text"
           name="breed"
           id="breed-input"
+          label="Breed"
           value={formData.breed}
           placeholder="Breed"
           onChange={handleChange}
         />
-        <label htmlFor="age-input">Age</label>
+        {/* <label htmlFor="age-input">Age</label> */}
         <TextField
           required
           name="age"
           id="age-input"
+          label="Age"
           value={formData.age}
           onChange={handleChange}
         />
@@ -96,9 +93,8 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <Button type="submit" variant="contained" fullWidth>SUBMIT</Button>
-      </form>
-    </Paper>
-    </Box>
+        </form>
+    </section>
   );
 }
 
