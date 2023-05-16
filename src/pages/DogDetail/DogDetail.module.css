@@ -2,11 +2,11 @@
   max-width: 90%;
   display: flex;
   flex-direction: column;
-  border: 1px dashed cyan;
 }
 .dogDetailContainer {
   display: flex;
   flex-direction: row;
+  margin: 6px;
 }
 .dogDetailContainer h1,h2,h3 {
   padding: 0;
@@ -16,20 +16,24 @@
   min-width: 120px;
   min-height: 120px;
   max-height: 120px;
-  border: 1px dashed lime;
   padding: 2px;
-  border-radius: 6px;
+  border-radius: 12px;
   z-index: 1;
 }
 .dogDetailContent {
   border: 1px dashed pink;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 12px;
   flex-grow: 3;
   padding: 12px;
 }
 .commentsContainer {
-  border: 1px dashed yellow;
+  /* border: 1px dashed yellow; */
+  background-color: whitesmoke;
+  border-radius: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -44,8 +48,18 @@
   margin: 0;
   min-width: 50%;
 }
+.commentsList {
+  display: flex;
+  flex-direction: column;
+}
 a {
-  color: whitesmoke;
+  color: black;
   font-weight: 600;
   text-decoration: none;
+}
+button {
+  border-radius: 6px;
+  padding: 3px;
+  font-weight: 800;
+  box-shadow: 2px 2px 2px gray;
 }

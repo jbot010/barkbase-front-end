@@ -1,0 +1,4 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+}
