@@ -15,6 +15,7 @@ const NewDog = (props) => {
     breed: '',
     age: 0,
     size: 'X-Small',
+    sex: 'Male',
     color: '',
     food: ''
   })
@@ -75,6 +76,17 @@ const NewDog = (props) => {
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
           <option value="X-Large">X-Large</option>
+        </select>
+        <label htmlFor="sex-input">Sex</label>
+        <select
+          required
+          name="sex"
+          id="sex-input"
+          value={formData.sex}
+          onChange={handleChange}
+        >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
         <label htmlFor="color-input">Color</label>
         <TextField
