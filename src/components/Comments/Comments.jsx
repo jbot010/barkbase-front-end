@@ -16,7 +16,7 @@ const Comments = (props) => {
         //   dogId={props.dogId}
         //   handleDeleteComment={props.handleDeleteComment}
         // />
-        <Card key={comment._id} mainText={'Test 1234'} />
+        <Card key={comment._id} dogId={props.dogId} handleDeleteComment={props.handleDeleteComment} mainText={comment} comment={comment} />
       ))}
     </div>
   )
