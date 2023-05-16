@@ -23,7 +23,7 @@ const NewReportCard = (props) => {
     walk: false,
     swimming: false,
     agility: false,
-    treat: '',
+    treat: false,
     meal: 'None',
   })
 
@@ -81,13 +81,11 @@ const NewReportCard = (props) => {
         onChange={handleChange}
         name="agility"
       />
-      <TextField
-          type="text"
-          name="treat"
-          label="Treat"
-          id="treat-input"
-          value={formData.treat}
-          onChange={handleChange}
+      <label htmlFor="treat-input">Treat</label>
+      <Switch 
+        checked={formData.treat}
+        onChange={handleChange}
+        name="treat"
       />
       <label htmlFor="meal-input">Meal</label>
       <select
