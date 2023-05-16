@@ -37,9 +37,18 @@ input[type="file"] {
   align-items: center;
   margin-bottom: 8px;
 }
-
+.buttonContainerLogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: last baseline;
+  align-content: center;
+  vertical-align: baseline;
+}
 .button {
   margin-left: 16px;
+  align-self: center;
+  min-width: 120px;
 }
 
 .form > label:last-of-type {

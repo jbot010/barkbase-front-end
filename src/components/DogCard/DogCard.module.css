@@ -1,6 +1,9 @@
 img {
   max-width: 64px;
+  border-radius: 12px;
 }
 .dogCardContent {
-  color: black
+  color: black;
+  font-weight: 800;
+  padding-left: 12px;
 }

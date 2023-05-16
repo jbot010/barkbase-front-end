@@ -7,6 +7,9 @@ import { useParams, Link } from 'react-router-dom'
 import NewComment from '../../components/NewComment/NewComment'
 import Comments from '../../components/Comments/Comments'
 
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+
 //services
 import * as dogService from '../../services/dogService'
 
@@ -39,7 +42,7 @@ const DogDetails = (props) => {
   return ( 
     <main className={styles.container}>
       <header className={styles.dogDetailContainer}>
-        <div className={styles.dogDetailImg}><img src={dog.photo} alt="" /></div>
+        <div className={styles.dogDetailImg}><img src={dog.photo? dog.photo:'/Default-360x360.png'} alt="" /></div>
         <div className={styles.dogDetailContent}>
           <h1> {dog.name} </h1>
           <h3> Breed: {dog.breed} </h3>
@@ -47,8 +50,8 @@ const DogDetails = (props) => {
           <h3> Color: {dog.color} </h3>
           <>
           <button>
-            <Link to={`/dogs/${dogId}/edit`} state={dog}>Edit Dog</Link></button>
-            <button onClick={() => props.handleDeleteDog(dogId)}>Delete</button>
+            <Link to={`/dogs/${dogId}/edit`} state={dog}><EditIcon /></Link></button>
+            <button onClick={() => props.handleDeleteDog(dogId)}><DeleteForeverIcon/></button>
           </>
         </div>
       </header>
