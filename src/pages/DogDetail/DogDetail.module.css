@@ -8,9 +8,12 @@
   flex-direction: row;
   margin: 6px;
 }
-.dogDetailContainer h1,h2,h3 {
+.dogDetailContainer h1,h2,h3,h4,h5,p {
   padding: 0;
+  padding-left: 6px;
+  padding-top: 3px;
   margin: 0;
+  color: black;
 }
 .dogDetailImg > img{
   min-width: 120px;
@@ -21,32 +24,42 @@
   z-index: 9;
 }
 .dogDetailContent {
-  border: 1px dashed pink;
+  /* border: 1px dashed pink; */
   background-color: whitesmoke;
   color: black;
   border-radius: 12px;
   flex-grow: 3;
   padding: 12px;
 }
+.reportsAndComments {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 6px;
+  gap: 6px;
+}
+.reportsContainer {
+  width: 50%;
+}
 .commentsContainer {
   /* border: 1px dashed yellow; */
   background-color: whitesmoke;
   border-radius: 12px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 50%;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 .commentsContainer > form {
   justify-content: flex-start;
-  max-width: 50%;
   margin: 0;
 }
 .commentsContainer > article {
   /* justify-content: flex-start; */
-  align-items:normal;
+  color: black;
   margin: 0;
-  min-width: 50%;
+  width: 100%;
 }
 .commentsList {
   display: flex;

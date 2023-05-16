@@ -1,14 +1,12 @@
 // components
-import AuthorInfo from '../AuthorInfo/AuthorInfo'
-
 import { Link } from 'react-router-dom'
-
+import AuthorInfo from '../AuthorInfo/AuthorInfo'
 import styles from './CommentCard.module.css'
 
 const CommentCard = ({ comment, dogId, user, handleDeleteComment }) => {
   return ( 
     <article>
-      <header className={styles.header}>
+      <header className={styles.commentHeader}>
           <AuthorInfo content={comment} />
           {comment.author._id === user.profile &&
             <>

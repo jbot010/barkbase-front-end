@@ -1,4 +1,5 @@
 // components
+import Card from '../Card/Card'
 import CommentCard from '../CommentCard/CommentCard'
 import styles from './Comments.module.css'
 
@@ -8,13 +9,14 @@ const Comments = (props) => {
   return (
     <div className={styles.commentList}>
       {props.comments.map((comment) => (
-        <CommentCard
-          key={comment._id}
-          comment={comment}
-          user={props.user}
-          dogId={props.dogId}
-          handleDeleteComment={props.handleDeleteComment}
-        />
+        // <CommentCard
+        //   key={comment._id}
+        //   comment={comment}
+        //   user={props.user}
+        //   dogId={props.dogId}
+        //   handleDeleteComment={props.handleDeleteComment}
+        // />
+        <Card key={comment._id} mainText={'Test 1234'} />
       ))}
     </div>
   )
