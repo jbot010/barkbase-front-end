@@ -53,6 +53,7 @@ const DogDetails = (props) => {
         </div>
       </header>
       <div className={styles.commentsContainer}>
+        
         <NewComment handleAddComment={handleAddComment} />
         <Comments 
           comments={dog.comments} 

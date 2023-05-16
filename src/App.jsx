@@ -29,6 +29,7 @@ import * as dogService from './services/dogService'
 
 // styles
 import './App.css'
+import NewReportCard from './components/NewReportCard/NewReportCard'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
@@ -78,6 +79,12 @@ function App() {
     navigate('/dogs')
   }
 
+  const handleAddReport = async (dogFormData) => {
+    const newDog = await dogService.create(dogFormData)
+    setDogs([newDog, ...dogs])
+    navigate('/dogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -95,6 +102,7 @@ function App() {
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
             <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
+            <NewReportCard user={user} handleAddReport={handleAddReport} />
           </ProtectedRoute>
         } />
         <Route path="/dogs/:dogId/edit" element={
