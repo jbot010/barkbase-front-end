@@ -1,0 +1,14 @@
+textarea {
+  resize: vertical;
+  border-radius: 6px;
+  padding: 3px;
+  font-weight: 800;
+  box-shadow: 2px 2px 2px gray;
+}
+
+form > button {
+  border-radius: 6px;
+  padding: 3px;
+  font-weight: 800;
+  box-shadow: 2px 2px 2px gray;
+}

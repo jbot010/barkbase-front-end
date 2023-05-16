@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
 //css
-import styles from './EditDog.module.css'
+import styles from './DogEdit.module.css'
 
 const EditDog = (props) => {
   const { state } = useLocation()
@@ -22,9 +22,9 @@ const EditDog = (props) => {
 
 return (
 
-  <main className={styles.container}>
+  <main className={styles.editContainer}>
     <form onSubmit={handleSubmit}>
-      <h1>Edit Dog Details</h1>
+      <h1 id="DogEdit">Edit Dog Details</h1>
         <label htmlFor="name-input">Name</label>
         <input
           required

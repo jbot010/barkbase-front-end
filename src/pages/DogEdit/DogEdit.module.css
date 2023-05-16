@@ -1,4 +1,4 @@
-.container {
+.editContainer {
   height: 100%;
   display: flex;
   overflow-x: hidden;
@@ -6,4 +6,8 @@
   padding: 28px 21px;
   align-items: center;
   flex-direction: column;
+}
+#DogEdit {
+  color: gray;
+  padding: 0;
 }
