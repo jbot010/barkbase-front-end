@@ -18,13 +18,13 @@ import styles from './NewReportCard.module.css'
 
 const NewReportCard = (props) => {
   const [formData, setFormData] = useState({
-    duration: 0,
+    duration: .5,
     boarding: false,
     walk: false,
     swimming: false,
     agility: false,
-    treat: false,
-    meal: false,
+    treat: '',
+    meal: 'None',
   })
 
   const handleChange = (evt) => {
@@ -45,12 +45,17 @@ const NewReportCard = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextField
-          type="text"
-          name="treat"
-          label="Treat"
-          id="treat-input"
-          value={formData.treat}
-          onChange={handleChange}
+        type="number"
+        name="duration"
+        label="Duration"
+        id="duration-input"
+        value={formData.duration}
+        onChange={handleChange}
+        inputProps={{
+          min: 0.5,
+          max: 21,
+          step: 0.5,
+        }}
       />
       <label htmlFor="boarding-input">Boarding</label>
       <Switch 
@@ -76,19 +81,26 @@ const NewReportCard = (props) => {
         onChange={handleChange}
         name="agility"
       />
-      <label htmlFor="treat-input">Treat</label>
+      <TextField
+          type="text"
+          name="treat"
+          label="Treat"
+          id="treat-input"
+          value={formData.treat}
+          onChange={handleChange}
+      />
+      <label htmlFor="meal-input">Meal</label>
       <select
           required
-          name="size"
-          id="size-input"
-          value={formData.size}
+          name="meal"
+          id="meal-input"
+          value={formData.meal}
           onChange={handleChange}
         >
-          <option value="X-Small">X-Small</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-          <option value="X-Large">X-Large</option>
+          <option value="None">None</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
         </select>
       <Button type="submit"> Submit </Button>
     </form>
