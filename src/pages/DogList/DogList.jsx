@@ -11,7 +11,7 @@ import styles from './DogList.module.css'
 
 const DogList = ( props ) => {
   return (
-    <Box 
+    <div 
     className={styles.dogList}>
       <h1>Dog List</h1>
       {console.log(props.dogs)}
@@ -23,7 +23,7 @@ const DogList = ( props ) => {
           ))}
         </ul>
       </section>
-    </Box>
+    </div>
   )
 }
 

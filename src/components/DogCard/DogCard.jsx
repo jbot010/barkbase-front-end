@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AddCommentIcon from '@mui/icons-material/AddComment';
+import ButtonA from "../ButtonA/ButtonA";
 // css
 import styles from './DogCard.module.css'
 import { Switch } from "@mui/material";
@@ -21,14 +22,17 @@ const DogCard = ({ dog }) => {
         justifyContent="spread-evenly" 
         alignItems="center"
         flexDirection="row"
-        minWidth="480px"
+        borderRadius="12px"
+        minWidth="70%"
         padding="24px"
+        marginTop="12px"
         sx={{ width: "50%" }}
         >
-          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'public/Default-360x360.png'} alt="" /></Box>
+          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/Default-360x360.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
-        <Button variant="contained" size="small" href={`/dogs/${dog._id}`}>Details</Button>
-        <Button><AddCommentIcon /></Button>
+        <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
+        <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}><AddCommentIcon /></Button>
+        <ButtonA content={"BTN"} path={`/dogs/${dog._id}`} />
         <Switch />
       </Box>
   )

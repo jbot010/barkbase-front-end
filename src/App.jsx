@@ -102,7 +102,7 @@ function App() {
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
             <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
-            <NewReportCard user={user} handleAddReport={handleAddReport} />
+            {/* <NewReportCard user={user} handleAddReport={handleAddReport} /> */}
           </ProtectedRoute>
         } />
         <Route path="/dogs/:dogId/edit" element={

@@ -6,16 +6,13 @@ import { useParams, Link } from 'react-router-dom'
 // import Loading from "../Loading/Loading"
 import NewComment from '../../components/NewComment/NewComment'
 import Comments from '../../components/Comments/Comments'
-
+import NewReportCard from '../../components/NewReportCard/NewReportCard'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 
 //services
 import * as dogService from '../../services/dogService'
-
 import styles from './DogDetail.module.css'
-
-
 
 const DogDetails = (props) => {
   const { dogId } = useParams()
@@ -55,16 +52,21 @@ const DogDetails = (props) => {
           </>
         </div>
       </header>
-      <div className={styles.commentsContainer}>
-        
-        <NewComment handleAddComment={handleAddComment} />
-        <Comments 
-          comments={dog.comments} 
-          user={props.user} 
-          dogId={dogId} 
-          handleDeleteComment={handleDeleteComment} 
-        />
+      <div className={styles.reportsAndComments}>
+        <div className={styles.reportsContainer}>
+          <NewReportCard user={props.user} handleAddReport={props.handleAddReport} />
         </div>
+        <div className={styles.commentsContainer}>
+          <NewComment handleAddComment={handleAddComment} />
+          <Comments 
+            comments={dog.comments} 
+            user={props.user} 
+            dogId={dogId} 
+            handleDeleteComment={handleDeleteComment} 
+          />
+        </div>
+        
+      </div>
     </main>
   );
 }
