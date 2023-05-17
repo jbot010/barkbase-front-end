@@ -1,12 +1,16 @@
 article {
   color: black;
 }
-
 .cardComponent {
-  border: 1px dashed rgb(0, 255, 76) ;
+  border: 1px solid rgb(185, 185, 185) ;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  box-shadow: 2px 2px 2px gray;
+  margin: 6px;
+  border-radius: 6px;
+  padding: 3px;
+  min-height: 60px;
 }
 .cardHeader {
   display: flex;
@@ -27,6 +31,8 @@ article {
   justify-self: flex-end;
 }
 .cardContent {
+  padding-left: 6px;
+  padding-bottom: 3px;
   /* width: 100%;
   flex-grow: 3; */
 }

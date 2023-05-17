@@ -1,6 +1,8 @@
 // components
 import { Link } from 'react-router-dom'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
 import styles from './CommentCard.module.css'
 
 const CommentCard = ({ comment, dogId, user, handleDeleteComment }) => {
@@ -11,9 +13,9 @@ const CommentCard = ({ comment, dogId, user, handleDeleteComment }) => {
           {comment.author._id === user.profile &&
             <div className={styles.cardButtonContainer}>
               <Link to={`/dogs/${dogId}/comments/${comment._id}`} state={comment}>
-                <button>EDIT</button>
+                <button><EditIcon /></button>
               </Link>
-              <button onClick={()=> handleDeleteComment(dogId, comment._id)}>DELETE</button>
+              <button onClick={()=> handleDeleteComment(dogId, comment._id)}><DeleteForeverIcon/></button>
             </div>
           }
       </header>

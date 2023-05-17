@@ -44,6 +44,7 @@
 .commentsContainer {
   /* border: 1px dashed yellow; */
   background-color: whitesmoke;
+  border: 1px solid rgb(185, 185, 185) ;
   border-radius: 12px;
   display: flex;
   width: 50%;
@@ -54,6 +55,9 @@
 .commentsContainer > form {
   justify-content: flex-start;
   margin: 0;
+  max-width: 80%;
+  box-shadow: 2px 2px 2px gray;
+  border: 1px solid rgb(185, 185, 185) ;
 }
 .commentsContainer > article {
   /* justify-content: flex-start; */
@@ -75,4 +79,5 @@ button {
   padding: 3px;
   font-weight: 800;
   box-shadow: 2px 2px 2px gray;
+  font-size: small;
 }

@@ -1,6 +1,11 @@
-.authorCard {
+.container {
+  display: flex;
+  flex-direction: row;
   color: black;
   width: 100%;
   text-align: left;
   align-items: first baseline;
+}
+.container > {
+  padding-left: 3px;
 }
