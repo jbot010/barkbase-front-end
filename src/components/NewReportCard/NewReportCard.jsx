@@ -24,8 +24,8 @@ const NewReportCard = (props) => {
     swimming: false,
     agility: false,
     treat: false,
-    feedingTime: 1200,
-    meal: 'None',
+    feedingTime: '12:00',
+    mealCount: 0,
   })
 
   const handleChange = (evt) => {
@@ -89,28 +89,35 @@ const NewReportCard = (props) => {
         onChange={handleChange}
         name="treat"
       />
+      <label htmlFor="meal-input">Meals</label>
+        <select
+            required
+            type="number"
+            name="mealCount"
+            id="meal-input"
+            value={formData.mealCount}
+            onChange={handleChange}
+          >
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
       <label htmlFor="feeding-time-input"></label>
         <TextField
-          type="number"
+          type="time"
           name="feedingTime"
           label="feedingTime"
           id="feeding-time-input"
           value={formData.feedingTime}
           onChange={handleChange}
+          inputProps={{
+            step: 300, 
+          }}
         />
-      <label htmlFor="meal-input">Meal</label>
-      <select
-          required
-          name="meal"
-          id="meal-input"
-          value={formData.meal}
-          onChange={handleChange}
-        >
-          <option value="None">None</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
-        </select>
       <Button type="submit"> Submit </Button>
     </form>
   )
