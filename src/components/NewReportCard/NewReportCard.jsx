@@ -1,5 +1,7 @@
 // npm imports
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 //MUI
 import Box from '@mui/material/Box'
@@ -17,8 +19,13 @@ import { Switch } from "@mui/material";
 import styles from './NewReportCard.module.css'
 
 const NewReportCard = (props) => {
-  const [formData, setFormData] = useState({
 
+  const {dogId} = useParams()
+  
+  const navigate = useNavigate()
+
+  const [formData, setFormData] = useState({
+    dogId: {dogId},
     duration: .5,
     boarding: false,
     walk: false,
@@ -82,10 +89,12 @@ const NewReportCard = (props) => {
   }
   
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
-    props.handleAddReport(formData)
-  }
+    await props.handleAddReport(props.dogId, formData);
+    navigate(`/dogs/${props.dogId}`);
+  };
+  
 
   return (
     <form onSubmit={handleSubmit}>
