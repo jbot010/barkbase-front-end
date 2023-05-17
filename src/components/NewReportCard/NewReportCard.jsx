@@ -15,10 +15,10 @@ import { Switch } from "@mui/material";
 
 //css
 import styles from './NewReportCard.module.css'
-<NewReportCard />
+
 const NewReportCard = (props) => {
   const [formData, setFormData] = useState({
-    dog: {props.dog},
+
     duration: .5,
     boarding: false,
     walk: false,
