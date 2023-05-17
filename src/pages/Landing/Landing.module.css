@@ -1,4 +1,8 @@
-.container {  display: grid;
+
+
+.container { 
+  margin-top: 75px;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
@@ -7,61 +11,174 @@
   grid-template-areas:
     "HERO HERO HERO HERO"
     "HERO HERO HERO HERO"
-    ". ABOUT ABOUT ."
-    ". ABOUT ABOUT ."
+    "ABOUT ABOUT ABOUT ABOUT"
+    "ABOUT ABOUT ABOUT ABOUT"
     "P1 P2 P3 P4"
     "D1 D2 D3 D4";
 }
 
 .HERO { 
   grid-area: HERO; 
-  justify-self: center;
-  align-self: center;
+  overflow: hidden;
+}
+
+.HERO > img {
+  place-self: stretch stretch;
+  min-width: 100%;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 3px solid black;
 }
 
 .ABOUT { 
   grid-area: ABOUT; 
   text-align: center;
   align-items: center;
-  margin-bottom: 10vw;
+  font-size: 2vw;
+  margin-top: -10vw;
+  margin-bottom: 5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.ABOUT > h1{
+  font-size: 5vw;
 }
 
 .P1 { 
   grid-area: P1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  margin-bottom: 10vw;
+  font-size: 1.75vw;
+}
+
+.P1 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .P2 { 
   grid-area: P2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.P2 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .P3 { 
   grid-area: P3; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.P3 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .P4 { 
   grid-area: P4; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.P4 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .D1 { 
   grid-area: D1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.D1 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .D2 { 
   grid-area: D2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.D2 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .D3 { 
   grid-area: D3; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.D3 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
 
 .D4 { 
   grid-area: D4; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: center;
+  text-align: center;
+  font-size: 1.75vw;
+}
+
+.D4 > h2{
+  align-self: center;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .2vw solid black;
 }
