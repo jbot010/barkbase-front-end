@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import ButtonA from '../ButtonA/ButtonA';
 import styles from './Card.module.css'
+import { Button } from '@mui/material';
+
 
 const Card = ( props ) => {
   return (
@@ -9,12 +10,12 @@ const Card = ( props ) => {
         <h1 className={styles.cardHeaderText}>{props.mainText}</h1>
         <h2>{props.subText}</h2>
         <div className={styles.cardButtonContainer}>
-          <ButtonA path={''} content={'YUS'}/>
-          <ButtonA path={''} content={'NAH'}/>
+          <Button variant='contained' href={`/dogs/${props.dogId}/comments/${props.key}`}>Edit</Button>
+          <Button variant='contained'>Edit</Button>
         </div>
       </header>
       <div className={styles.cardContent}>
-        {props.cardContent}
+        {props.mainText}
       </div>
     </article>
   );

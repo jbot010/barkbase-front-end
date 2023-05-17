@@ -13,6 +13,7 @@ import EditIcon from '@mui/icons-material/Edit';
 //services
 import * as dogService from '../../services/dogService'
 import styles from './DogDetail.module.css'
+import Card from '../../components/Card/Card'
 
 const DogDetails = (props) => {
   const { dogId } = useParams()
