@@ -1,10 +1,8 @@
-
-
 .container { 
-  margin-top: 75px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .5fr .5fr .5fr .75fr 1fr 1fr;
   grid-auto-columns: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
@@ -28,7 +26,7 @@
   padding-bottom: 0;
   overflow: hidden;
   border-radius: 0;
-  border-bottom: 3px solid black;
+  border-bottom: 5px solid rgb(35, 35, 35);
 }
 
 .ABOUT { 
@@ -36,14 +34,16 @@
   text-align: center;
   align-items: center;
   font-size: 2vw;
-  margin-top: -10vw;
-  margin-bottom: 5vw;
   padding-left: 10vw;
   padding-right: 10vw;
 }
 
 .ABOUT > h1{
   font-size: 5vw;
+}
+
+.ABOUT > p {
+  padding: 0;
 }
 
 .P1 { 
@@ -55,6 +55,7 @@
   text-align: center;
   margin-bottom: 10vw;
   font-size: 1.75vw;
+  padding: 0 2vw 0 2vw;
 }
 
 .P1 > h2{
@@ -62,6 +63,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.P1 > p{
+  padding: 5px 0 0 0;
+}
+
+.P1 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .P2 { 
@@ -72,6 +89,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 0 1vw 0 1vw;
 }
 
 .P2 > h2{
@@ -79,6 +97,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.P2 > p{
+  padding: 5px 0 0 0;
+}
+
+.P2 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .P3 { 
@@ -89,6 +123,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 0 1vw 0 1vw;
 }
 
 .P3 > h2{
@@ -96,6 +131,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.P3 > p{
+  padding: 5px 0 0 0;
+}
+
+.P3 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .P4 { 
@@ -106,6 +157,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 0 1vw 0 1vw;
 }
 
 .P4 > h2{
@@ -113,6 +165,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.P4 > p{
+  padding: 5px 0 0 0;
+}
+
+.P4 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .D1 { 
@@ -123,6 +191,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 1vw;
 }
 
 .D1 > h2{
@@ -130,6 +199,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.D1 > p{
+  padding: 5px 0 0 0;
+}
+
+.D1 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .D2 { 
@@ -140,6 +225,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 1vw;
 }
 
 .D2 > h2{
@@ -147,6 +233,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.D2 > p{
+  padding: 5px 0 0 0;
+}
+
+.D2 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .D3 { 
@@ -157,6 +259,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 1vw;
 }
 
 .D3 > h2{
@@ -164,6 +267,22 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.D3 > p{
+  padding: 5px 0 0 0;
+}
+
+.D3 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
 
 .D4 { 
@@ -174,6 +293,7 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
+  padding: 1vw;
 }
 
 .D4 > h2{
@@ -181,4 +301,20 @@
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
+  padding: 0;
+}
+
+.D4 > p{
+  padding: 5px 0 0 0;
+}
+
+.D4 > img {
+  max-width: 100%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2.5px solid black;
 }
