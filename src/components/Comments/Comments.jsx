@@ -9,14 +9,13 @@ const Comments = (props) => {
   return (
     <div className={styles.commentList}>
       {props.comments.map((comment) => (
-        // <CommentCard
-        //   key={comment._id}
-        //   comment={comment}
-        //   user={props.user}
-        //   dogId={props.dogId}
-        //   handleDeleteComment={props.handleDeleteComment}
-        // />
-        <Card key={comment._id} mainText={'Test 1234'} />
+        <CommentCard
+          key={comment._id}
+          comment={comment}
+          user={props.user}
+          dogId={props.dogId}
+          handleDeleteComment={props.handleDeleteComment}
+        />
       ))}
     </div>
   )
