@@ -1,10 +1,12 @@
 import ReportCard from "../ReportCard/ReportCard"
 import styles from './Reports.module.css'
+import { Link } from "react-router-dom"
 
 const Reports = ( props ) => {
   return ( 
     <div className={styles.reportList}>
-      <button>NEW REPORT (temp)</button>
+      <Link to={`/dogs/${props.dogId}/reports/newReport`}>
+      <button>NEW REPORT (temp)</button></Link>
       <ReportCard />
       <ReportCard />
       <ReportCard />

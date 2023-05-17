@@ -69,7 +69,7 @@ const DogDetails = (props) => {
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports />
+          <Reports dogId={dogId}/>
           <NewReportCard user={props.user} handleAddReport={handleAddReport} />
         </div>
         <div className={styles.commentsContainer}>
