@@ -30,6 +30,7 @@ import * as dogService from './services/dogService'
 // styles
 import './App.css'
 import NewReportCard from './components/NewReportCard/NewReportCard'
+import AdminHome from './pages/AdminHome/AdminHome'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
@@ -84,6 +85,7 @@ function App() {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
+        {/* DOGS DOGS DOGS DOGS */}
         <Route path="/" element={
           <Landing user={user} />
         } />
@@ -112,6 +114,15 @@ function App() {
             <EditComment />
           </ProtectedRoute>
         } />
+        {/* ADMIN AND USERS */}
+        <Route 
+          path=""
+          element={
+            <ProtectedRoute user={user}>
+              <AdminHome />
+            </ProtectedRoute>
+          }
+          />
         <Route
           path="/profiles"
           element={
