@@ -30,7 +30,7 @@ import * as dogService from './services/dogService'
 // styles
 import './App.css'
 import NewReportCard from './components/NewReportCard/NewReportCard'
-import AdminHome from './pages/AdminHome/AdminHome'
+// import AdminHome from './pages/AdminHome/AdminHome'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
@@ -115,14 +115,14 @@ function App() {
           </ProtectedRoute>
         } />
         {/* ADMIN AND USERS */}
-        <Route 
-          path=""
+        {/* <Route 
+          path="GONNANEEDTOADDAPATHHERELATERoops"
           element={
             <ProtectedRoute user={user}>
               <AdminHome />
             </ProtectedRoute>
           }
-          />
+          /> */}
         <Route
           path="/profiles"
           element={

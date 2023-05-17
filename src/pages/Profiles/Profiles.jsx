@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react'
 // services
 import * as profileService from '../../services/profileService'
 
+// components
+import ProfileCard from '../../components/ProfileCard/ProfileCard'
+
 // css
 import styles from './Profiles.module.css'
 
@@ -26,7 +29,7 @@ const Profiles = () => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
+        <ProfileCard key={profile._id} profile={profile} />
       ))}
     </main>
   )

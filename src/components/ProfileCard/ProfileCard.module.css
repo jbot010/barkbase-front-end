@@ -1,0 +1,13 @@
+.profCardImg {
+  max-width: 64px;
+  border-radius: 12px;
+}
+.profileCardContent {
+  color: black;
+  font-weight: 800;
+  padding-left: 12px;
+}
+.profileCard {
+  border: 1px solid rgb(185, 185, 185) ;
+  box-shadow: 2px 2px 2px gray;
+}
