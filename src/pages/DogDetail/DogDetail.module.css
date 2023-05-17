@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: row;
   margin: 6px;
+  
 }
 .dogDetailContainer h1,h2,h3,h4,h5,p {
   padding: 0;
@@ -20,12 +21,15 @@
   min-width: 120px;
   min-height: 120px;
   max-height: 120px;
-  padding: 2px;
+  /* padding: 2px; */
+  margin-right: 3px;
   border-radius: 12px;
   z-index: 9;
+  border: 1px solid rgb(185, 185, 185) ;
 }
 .dogDetailContent {
   /* border: 1px dashed pink; */
+  border: 1px solid rgb(185, 185, 185) ;
   background-color: whitesmoke;
   color: black;
   border-radius: 12px;
@@ -41,6 +45,14 @@
 }
 .reportsContainer {
   width: 50%;
+  background-color: whitesmoke;
+  border: 1px solid rgb(185, 185, 185) ;
+  border-radius: 12px;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .commentsContainer {
   /* border: 1px dashed yellow; */

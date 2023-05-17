@@ -2,9 +2,10 @@ form {
   max-width: 80%;
 }
 textarea {
-  resize: vertical;
+  resize: none;
   border-radius: 6px;
   padding: 6px;
+  min-height: 90px;
   font-weight: 800;
   /* box-shadow: 2px 2px 2px gray; */
 }

@@ -9,10 +9,12 @@ import Comments from '../../components/Comments/Comments'
 import NewReportCard from '../../components/NewReportCard/NewReportCard'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import Reports from '../../components/Reports/Reports'
 
 //services
 import * as dogService from '../../services/dogService'
 import styles from './DogDetail.module.css'
+
 
 
 const DogDetails = (props) => {
@@ -29,7 +31,7 @@ const DogDetails = (props) => {
 
   const handleAddComment = async (commentFormData) => {
     const newComment = await dogService.createComment(dogId, commentFormData)
-    setDog({...dog, comments:[...dog.comments, newComment]})
+    setDog({...dog, comments:[newComment, ...dog.comments]})
   }
 
   const handleDeleteComment = async (dogId, commentId) => {
@@ -55,6 +57,7 @@ const DogDetails = (props) => {
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
+          <Reports />
           <NewReportCard user={props.user} handleAddReport={props.handleAddReport} />
         </div>
         <div className={styles.commentsContainer}>
