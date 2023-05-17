@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: .5fr .5fr .5fr .75fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 0px 0px;
+  gap: 30px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "HERO HERO HERO HERO"
@@ -53,20 +53,26 @@
   align-items: center;
   justify-self: center;
   text-align: center;
-  margin-bottom: 10vw;
   font-size: 1.75vw;
-  padding: 0 2vw 0 2vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .P1 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .P1 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -77,8 +83,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .P2 { 
@@ -89,18 +95,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 0 1vw 0 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .P2 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .P2 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -111,8 +124,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .P3 { 
@@ -123,18 +136,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 0 1vw 0 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .P3 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .P3 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -145,8 +165,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .P4 { 
@@ -157,18 +177,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 0 1vw 0 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .P4 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .P4 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -179,8 +206,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .D1 { 
@@ -191,18 +218,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .D1 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .D1 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -213,8 +247,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .D2 { 
@@ -225,18 +259,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .D2 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .D2 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -247,8 +288,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .D3 { 
@@ -259,18 +300,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .D3 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .D3 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -281,8 +329,8 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
 
 .D4 { 
@@ -293,18 +341,25 @@
   justify-self: center;
   text-align: center;
   font-size: 1.75vw;
-  padding: 1vw;
+  background: #ffffff;
+  box-shadow: 7px 7px #2775B9;
+  border: .25vw solid black;
 }
 
 .D4 > h2{
-  align-self: center;
+  align-self: start;
   font-size: 2.5vw;
   font-weight: 600;
   border-bottom: .2vw solid black;
   padding: 0;
+  background: white;
+  margin-left: 1vw;
 }
 
 .D4 > p{
+  align-self: start;
+  text-align: left;
+  margin-left: 1vw;
   padding: 5px 0 0 0;
 }
 
@@ -315,6 +370,6 @@
   object-fit: cover;
   padding-bottom: 0;
   overflow: hidden;
-  border-radius: 8px;
-  border: 2.5px solid black;
+  border-radius: 0;
+  border-bottom: .25vw solid black;
 }
