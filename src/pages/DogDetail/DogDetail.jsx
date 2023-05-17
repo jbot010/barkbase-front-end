@@ -13,7 +13,7 @@ import EditIcon from '@mui/icons-material/Edit';
 //services
 import * as dogService from '../../services/dogService'
 import styles from './DogDetail.module.css'
-import Card from '../../components/Card/Card'
+
 
 const DogDetails = (props) => {
   const { dogId } = useParams()
@@ -46,11 +46,11 @@ const DogDetails = (props) => {
           <h3> Breed: {dog.breed} </h3>
           <h3> Age: {dog.age} </h3>
           <h3> Color: {dog.color} </h3>
-          <>
+          <div className={styles.buttonContainer}>
           <button>
             <Link to={`/dogs/${dogId}/edit`} state={dog}><EditIcon /></Link></button>
             <button onClick={() => props.handleDeleteDog(dogId)}><DeleteForeverIcon/></button>
-          </>
+          </div>
         </div>
       </header>
       <div className={styles.reportsAndComments}>
@@ -58,7 +58,7 @@ const DogDetails = (props) => {
           <NewReportCard user={props.user} handleAddReport={props.handleAddReport} />
         </div>
         <div className={styles.commentsContainer}>
-          <NewComment handleAddComment={handleAddComment} />
+          <NewComment className={styles.newComment} handleAddComment={handleAddComment} />
           <Comments 
             comments={dog.comments} 
             user={props.user} 

@@ -1,5 +1,4 @@
 // components
-import Card from '../Card/Card'
 import CommentCard from '../CommentCard/CommentCard'
 import styles from './Comments.module.css'
 
