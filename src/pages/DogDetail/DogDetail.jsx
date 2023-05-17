@@ -10,6 +10,8 @@ import NewReportCard from '../../components/NewReportCard/NewReportCard'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import Reports from '../../components/Reports/Reports'
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
 
 //services
 import * as dogService from '../../services/dogService'
@@ -34,7 +36,6 @@ const DogDetails = (props) => {
     const newComment = await dogService.createComment(dogId, commentFormData)
     setDog({...dog, comments:[newComment, ...dog.comments]})
   }
-
   const handleDeleteComment = async (dogId, commentId) => {
     await dogService.deleteComment(dogId, commentId)
     setDog({ ...dog, comments: dog.comments.filter((c) => c._id !== commentId) })
@@ -47,7 +48,13 @@ const DogDetails = (props) => {
   return ( 
     <main className={styles.container}>
       <header className={styles.dogDetailContainer}>
-        <div className={styles.dogDetailImg}><img src={dog.photo? dog.photo:'/Default-360x360.png'} alt="" /></div>
+        <div className={styles.dogDetailImg}>
+          <img src={dog.photo? dog.photo:'/dog_icon_gray.png'} alt="Default Dog Photo" />
+          <div className={styles.DogPhotoButtonContainer}>
+          <button><AddAPhotoIcon /></button>
+          <button><NoPhotographyIcon /></button>
+        </div>
+        </div>
         <div className={styles.dogDetailContent}>
           <h1> {dog.name} </h1>
           <h3> Breed: {dog.breed} </h3>

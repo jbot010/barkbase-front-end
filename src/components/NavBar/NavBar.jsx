@@ -1,6 +1,8 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const NavBar = ({ user, handleLogout }) => {
   return (
@@ -9,11 +11,11 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
-          <li><NavLink to="/dogs">Dog List</NavLink></li>
-          <li><NavLink to="/new">New Dog</NavLink></li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
-          <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
-          <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
+          <li><NavLink to="/dogs" className={styles.navItem}>Dog List</NavLink></li>
+          <li><NavLink to="/new" className={styles.navItem}>New Dog</NavLink></li>
+          <li><NavLink to="/profiles" className={styles.navItem}>Profiles</NavLink></li>
+          <li><NavLink to="/auth/change-password" className={styles.navItem}><AccountCircleIcon /></NavLink></li>
+          <li><NavLink to="" onClick={handleLogout} className={styles.navItem}>< LogoutIcon /></NavLink></li>
         </ul>
       :
         <ul>

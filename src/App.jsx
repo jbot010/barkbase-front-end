@@ -84,16 +84,18 @@ function App() {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={
+          <Landing user={user} />
+        } />
         <Route path="/dogs" element={
           <ProtectedRoute user={user}>
             <DogList dogs={dogs} />
           </ProtectedRoute>
-        }
-        />
+        } />
         <Route path="/new" 
-          element={<NewDog handleAddDog={handleAddDog}/>} 
-          />
+          element={
+          <NewDog handleAddDog={handleAddDog}/>
+        } />
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
             <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
@@ -104,22 +106,19 @@ function App() {
           <ProtectedRoute user={user}>
             <EditDog user={user} handleUpdateDog={handleUpdateDog} />
           </ProtectedRoute>
-          }
-        />
+        } />
         <Route path="/dogs/:dogId/comments/:commentId" element={
           <ProtectedRoute user={user}>
             <EditComment />
           </ProtectedRoute>
-          } 
-        />
+        } />
         <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
               <Profiles />
             </ProtectedRoute>
-          }
-        />
+        } />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

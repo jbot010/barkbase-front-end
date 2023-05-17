@@ -7,3 +7,7 @@ img {
   font-weight: 800;
   padding-left: 12px;
 }
+.dogCard {
+  border: 1px solid rgb(185, 185, 185) ;
+  box-shadow: 2px 2px 2px gray;
+}
