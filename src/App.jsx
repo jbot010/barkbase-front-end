@@ -2,10 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
 
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Paper from '@mui/material/Paper'
-import TextField from '@mui/material/TextField'
+
 
 // pages
 import Signup from './pages/Signup/Signup'
@@ -31,7 +28,7 @@ import * as reportService from './services/reportService'
 // styles
 import './App.css'
 import NewReportCard from './components/NewReportCard/NewReportCard'
-import AdminHome from './pages/AdminHome/AdminHome'
+// import AdminHome from './pages/AdminHome/AdminHome'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
@@ -138,14 +135,14 @@ function App() {
           </ProtectedRoute>
         } />
         {/* ADMIN AND USERS */}
-        <Route 
-          path=""
+        {/* <Route 
+          path="GONNANEEDTOADDAPATHHERELATERoops"
           element={
             <ProtectedRoute user={user}>
               <AdminHome />
             </ProtectedRoute>
           }
-          />
+          /> */}
         <Route
           path="/profiles"
           element={
