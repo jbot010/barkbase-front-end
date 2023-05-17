@@ -36,6 +36,7 @@ const NewReportCard = (props) => {
       setFormData({ ...formData, [name]: value })
     }
   }
+  
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

@@ -13,6 +13,7 @@ import Reports from '../../components/Reports/Reports'
 
 //services
 import * as dogService from '../../services/dogService'
+import * as reportService from '../../services/reportService'
 import styles from './DogDetail.module.css'
 
 
@@ -38,6 +39,10 @@ const DogDetails = (props) => {
     await dogService.deleteComment(dogId, commentId)
     setDog({ ...dog, comments: dog.comments.filter((c) => c._id !== commentId) })
   }
+  const handleAddReport = async (dogId, reportFormData) => {
+    const newReport = await reportService.create(dogId, reportFormData)
+    setDog({...dog, newReport})
+  }
 
   return ( 
     <main className={styles.container}>
@@ -57,8 +62,7 @@ const DogDetails = (props) => {
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports />
-          <NewReportCard user={props.user} handleAddReport={props.handleAddReport} />
+          <NewReportCard user={props.user} handleAddReport={handleAddReport} />
         </div>
         <div className={styles.commentsContainer}>
           <NewComment className={styles.newComment} handleAddComment={handleAddComment} />
