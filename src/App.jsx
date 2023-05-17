@@ -79,11 +79,6 @@ function App() {
     navigate('/dogs')
   }
 
-  const handleAddReport = async (dogFormData) => {
-    const newDog = await dogService.create(dogFormData)
-    setDogs([newDog, ...dogs])
-    navigate('/dogs')
-  }
 
   return (
     <>
