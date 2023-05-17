@@ -24,18 +24,53 @@ const NewReportCard = (props) => {
     swimming: false,
     agility: false,
     treat: false,
-    feedingTime: '12:00',
     mealCount: 0,
+    feedingTimes: ['12:00'],
+    specialInstructions:''
   })
 
   const handleChange = (evt) => {
     const { name, value } = evt.target
 
-    if (name === 'boarding' || name === 'walk' || name === 'swimming' || name === 'agility' || name === 'treat' || name === 'meal') {
+    if (name === 'boarding' || name === 'walk' || name === 'swimming' || name === 'agility' || name === 'treat' ||  name === 'feedingTimes' || name === 'specialInstructions') {
       setFormData({ ...formData, [name]: evt.target.checked })
+    
+    } else if (name === 'mealCount') {
+      const count = parseInt(value, 10)
+      const feedingTimes = Array.from({ length: count }, () => '12:00')
+      setFormData({ ...formData, mealCount: count, feedingTimes })
+    
+    } else if (name.startsWith('feedingTime')) {
+      const index = parseInt(name.slice(-1), 10)
+      const updatedTimes = [...formData.feedingTimes]
+      updatedTimes[index] = value
+      setFormData({ ...formData, feedingTimes: updatedTimes })
+    
     } else {
-      setFormData({ ...formData, [name]: value })
+    setFormData({ ...formData, [name]: value})
     }
+  }
+  const renderFeedingTimeInputs = () => {
+    const { mealCount, feedingTimes } = formData;
+    const inputs = [];
+
+    for (let i = 0; i < mealCount; i++) {
+      const inputName = `feedingTime${i}`;
+      inputs.push(
+        <TextField
+          key={inputName}
+          type="time"
+          name={inputName}
+          label={`Feeding Time ${i + 1}`}
+          value={feedingTimes[i]}
+          onChange={handleChange}
+          inputProps={{
+            step: 300,
+          }}
+        />
+      )
+    }
+    return inputs
   }
   
 
@@ -106,18 +141,15 @@ const NewReportCard = (props) => {
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
-      <label htmlFor="feeding-time-input"></label>
-        <TextField
-          type="time"
-          name="feedingTime"
-          label="feedingTime"
-          id="feeding-time-input"
-          value={formData.feedingTime}
-          onChange={handleChange}
-          inputProps={{
-            step: 300, 
-          }}
-        />
+          {renderFeedingTimeInputs()}
+      <TextField
+        type="text"
+        name="specialInstructions"
+        label="Special Instructions"
+        id="special-instructions-input"
+        value={formData.specialInstructions}
+        onChange={handleChange}
+      />
       <Button type="submit"> Submit </Button>
     </form>
   )
