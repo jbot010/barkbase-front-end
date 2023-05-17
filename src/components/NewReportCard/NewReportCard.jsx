@@ -24,6 +24,7 @@ const NewReportCard = (props) => {
     swimming: false,
     agility: false,
     treat: false,
+    feedingTime: 1200,
     meal: 'None',
   })
 
@@ -88,6 +89,15 @@ const NewReportCard = (props) => {
         onChange={handleChange}
         name="treat"
       />
+      <label htmlFor="feeding-time-input"></label>
+        <TextField
+          type="number"
+          name="feedingTime"
+          label="feedingTime"
+          id="feeding-time-input"
+          value={formData.feedingTime}
+          onChange={handleChange}
+        />
       <label htmlFor="meal-input">Meal</label>
       <select
           required
