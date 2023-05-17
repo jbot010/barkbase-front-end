@@ -30,26 +30,33 @@ const NewReportCard = (props) => {
   })
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target
-
-    if (name === 'boarding' || name === 'walk' || name === 'swimming' || name === 'agility' || name === 'treat' ||  name === 'feedingTimes' || name === 'specialInstructions') {
-      setFormData({ ...formData, [name]: evt.target.checked })
-    
+    const { name, value } = evt.target;
+  
+    if (
+      name === 'boarding' ||
+      name === 'walk' ||
+      name === 'swimming' ||
+      name === 'agility' ||
+      name === 'treat' ||
+      name === 'feedingTimes'
+    ) {
+      setFormData({ ...formData, [name]: evt.target.checked });
     } else if (name === 'mealCount') {
-      const count = parseInt(value, 10)
-      const feedingTimes = Array.from({ length: count }, () => '12:00')
-      setFormData({ ...formData, mealCount: count, feedingTimes })
-    
+      const count = parseInt(value, 10);
+      const feedingTimes = Array.from({ length: count }, () => '12:00');
+      setFormData({ ...formData, mealCount: count, feedingTimes });
     } else if (name.startsWith('feedingTime')) {
-      const index = parseInt(name.slice(-1), 10)
-      const updatedTimes = [...formData.feedingTimes]
-      updatedTimes[index] = value
-      setFormData({ ...formData, feedingTimes: updatedTimes })
-    
+      const index = parseInt(name.slice(-1), 10);
+      const updatedTimes = [...formData.feedingTimes];
+      updatedTimes[index] = value;
+      setFormData({ ...formData, feedingTimes: updatedTimes });
+    } else if (name === 'specialInstructions') {
+      setFormData({ ...formData, specialInstructions: value });
     } else {
-    setFormData({ ...formData, [name]: value})
+      setFormData({ ...formData, [name]: value });
     }
-  }
+  };
+  
   const renderFeedingTimeInputs = () => {
     const { mealCount, feedingTimes } = formData;
     const inputs = [];
