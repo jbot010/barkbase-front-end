@@ -4,7 +4,7 @@ import styles from './Landing.module.css'
 const Landing = () => {
   return (
     <main className={styles.container}>
-      <div className={styles.HERO}>LOGO AND NAME</div>
+      <div className={styles.HERO}><img src="/dog_icon.png" alt="DogIcon" /></div>
       <div className={styles.ABOUT}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure quod ad natus fugit quibusdam consequuntur quas libero id error recusandae minus voluptates earum esse velit praesentium temporibus magnam, harum hic.</div>
       <div className={styles.P1}>IMG + P1</div>
       <div className={styles.P2}>IMG + P2</div>
