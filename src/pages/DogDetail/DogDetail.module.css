@@ -14,8 +14,20 @@
   padding-left: 6px;
   padding-top: 3px;
   margin: 0;
-  font-weight: 400;
+  font-weight: 600;
   color: black;
+}
+.dogDetailContainer h1 {
+  font-weight: 800;
+}
+.dogDetailImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid rgb(185, 185, 185);
+  padding: 3px;
+  border-radius: 12px;
+  margin-right: 3px;
 }
 .dogDetailImg > img{
   min-width: 120px;
@@ -25,7 +37,7 @@
   margin-right: 3px;
   border-radius: 12px;
   z-index: 9;
-  border: 1px solid rgb(185, 185, 185) ;
+  /* border: 1px solid rgb(185, 185, 185) ; */
 }
 .dogDetailContent {
   /* border: 1px dashed pink; */
@@ -42,6 +54,7 @@
   width: 100%;
   padding: 6px;
   gap: 6px;
+  font-weight: 600;
 }
 .reportsContainer {
   width: 50%;

@@ -19,11 +19,11 @@ const DogCard = ({ dog }) => {
         flexDirection="row"
         borderRadius="12px"
         minWidth="70%"
-        padding="24px"
-        marginTop="12px"
+        padding="6px"
+        marginTop="6px"
         sx={{ width: "50%" }}
         >
-          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/Default-360x360.png'} alt="" /></Box>
+          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/dog_icon_gray.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}><AddCommentIcon /></Button>
