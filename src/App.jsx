@@ -1,6 +1,6 @@
 // npm modules
 import { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -26,6 +26,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
+import * as reportService from './services/reportService'
 
 // styles
 import './App.css'
@@ -36,6 +37,7 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
+  const { dogId } = useParams()
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -79,6 +81,20 @@ function App() {
     navigate('/dogs')
   }
 
+  const handleAddReport = async (dogId, reportFormData) => {
+    const newReport = await reportService.create(dogId, reportFormData)
+    setDogs((prevDogs) => {
+    const updatedDog = prevDogs.map((dog) => {
+      if (dog._id === dogId) {
+        return { ...dog, reports: [newReport, ...dog.reports] }
+      } else {
+        return dog
+      }
+    })
+    setDogs(updatedDog)
+    })
+  }
+
 
   return (
     <>
@@ -107,6 +123,13 @@ function App() {
             <EditDog user={user} handleUpdateDog={handleUpdateDog} />
           </ProtectedRoute>
         } />
+        <Route path="/dogs/:dogId/reports/newReport" 
+          element={
+            <ProtectedRoute user={user}>
+              <NewReportCard dogId={dogId} handleAddReport={handleAddReport}/>
+          </ProtectedRoute>
+          }
+        />
         <Route path="/dogs/:dogId/comments/:commentId" element={
           <ProtectedRoute user={user}>
             <EditComment />
