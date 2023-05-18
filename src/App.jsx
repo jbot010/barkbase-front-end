@@ -74,7 +74,7 @@ function App() {
         return dog
       }
     }))
-    navigate('/dogs')
+    navigate(`/dogs/${dogFormData._id}`)
   }
 
   const handleDeleteDog = async (dogId) => {
