@@ -2,6 +2,13 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
+import LogoutIcon from '@mui/icons-material/Logout';
+
 // services
 import * as authService from '../../services/authService'
 
@@ -48,24 +55,25 @@ const LoginPage = ({ handleAuthEvt }) => {
       <h1>Log In</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          sx={{width: .75}}
+          required
+          type="text"
+          label="EMAIL"
+          value={email}
+          name="email"
+          onChange={handleChange}
+        />
+        <br />
+        <TextField
+          sx={{width: .75}}
+          required
+          type="password"
+          label="PASSWORD"
+          value={password}
+          name="password"
+          onChange={handleChange}
+        />
         <div className={styles.buttonContainerLogin}>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
