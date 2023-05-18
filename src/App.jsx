@@ -15,6 +15,7 @@ import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
 import DogDetails from './pages/DogDetail/DogDetail'
 import EditComment from './pages/EditComment/EditComment'
+import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
 // components
 import NavBar from './components/NavBar/NavBar'

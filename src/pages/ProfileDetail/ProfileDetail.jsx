@@ -17,7 +17,7 @@ import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
 import * as dogService from '../../services/dogService'
 import * as reportService from '../../services/reportService'
 import * as profileService from '../../services/profileService'
-import styles from './DogDetail.module.css'
+import styles from './ProfileDetail.module.css'
 
 
 
