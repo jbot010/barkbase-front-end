@@ -12,16 +12,18 @@ import EditIcon from '@mui/icons-material/Edit';
 import Reports from '../../components/Reports/Reports'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
+import DogList from '../DogList/DogList';
 
 //services
 import * as dogService from '../../services/dogService'
 import * as reportService from '../../services/reportService'
 import * as profileService from '../../services/profileService'
 import styles from './ProfileDetail.module.css'
+import DogCard from '../../components/DogCard/DogCard';
 
 
 
-const ProfileDetails = (props) => {
+const ProfileDetails = ( props ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})
 
@@ -45,9 +47,9 @@ const ProfileDetails = (props) => {
         </div>
         <div className={styles.profileDetailContent}>
           <h1> {profile.name} </h1>
+          <h2> {profile.isAdmin ? "Admin" : "Dog Owner"}</h2>
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
-          {/* <h3> Dogs: {profile.dogs} </h3> */}
           <div className={styles.buttonContainer}>
           <button>
             <Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
@@ -65,6 +67,8 @@ const ProfileDetails = (props) => {
           <Reports profile={profile} />
         </div>
       </div> */}
+
+      {/* <DogList dog={dog}/> */}
     </main>
   );
 }
