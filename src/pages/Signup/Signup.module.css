@@ -13,6 +13,8 @@ input[type="file"] {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 0;
+  padding-top: 80px;
 }
 
 .message {
@@ -21,6 +23,7 @@ input[type="file"] {
   color: #dd1b16;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 2vw;
 }
 
 .form {
@@ -28,6 +31,7 @@ input[type="file"] {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .label {
@@ -38,8 +42,17 @@ input[type="file"] {
   margin-bottom: 8px;
 }
 
+.buttonContainerSignup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: last baseline;
+  align-content: center;
+  vertical-align: baseline;
+}
+
 .button {
-  margin-left: 16px;
+  width: 80px
 }
 
 .form > label:last-of-type {

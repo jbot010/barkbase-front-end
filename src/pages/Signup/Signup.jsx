@@ -83,11 +83,11 @@ const Signup = ({ handleAuthEvt }) => {
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
-          Name
+          Name:
           <input type="text" value={name} name="name" onChange={handleChange} />
         </label>
         <label className={styles.label}>
-          Email
+          Email:
           <input
             type="text"
             value={email}
@@ -96,7 +96,7 @@ const Signup = ({ handleAuthEvt }) => {
           />
         </label>
         <label className={styles.label}>
-          Password
+          Password:
           <input
             type="password"
             value={password}
@@ -105,7 +105,7 @@ const Signup = ({ handleAuthEvt }) => {
           />
         </label>
         <label className={styles.label}>
-          Confirm Password
+          Confirm Password:
           <input
             type="password"
             value={passwordConf}
@@ -114,7 +114,7 @@ const Signup = ({ handleAuthEvt }) => {
           />
         </label>
         <label className={styles.label}>
-          Upload Photo
+          Upload Photo:
           <input 
             type="file" 
             name="photo" 
@@ -122,7 +122,7 @@ const Signup = ({ handleAuthEvt }) => {
             ref={imgInputRef}
           />
         </label>
-        <div>
+        <div className={styles.buttonContainerSignup}>
           <Link to="/">Cancel</Link>
           <button
             className={styles.button}
