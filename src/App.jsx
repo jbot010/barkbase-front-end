@@ -188,7 +188,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails />
+              <ProfileDetails dogs={dogs}/>
             </ProtectedRoute>
           }
           />

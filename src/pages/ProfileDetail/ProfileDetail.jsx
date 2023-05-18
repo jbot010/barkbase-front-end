@@ -39,7 +39,7 @@ const ProfileDetails = ( props ) => {
     <main className={styles.container}>
       <header className={styles.profileDetailContainer}>
         <div className={styles.profileDetailImg}>
-          <img src={profile.photo? profile.photo:'/dog_icon.png'} alt="Default profile Photo" />
+          <img src={profile.photo? profile.photo:'/BWdog_icon.png'} alt="Default profile Photo" />
           <div className={styles.profilePhotoButtonContainer}>
           <button><AddAPhotoIcon /></button>
           <button><NoPhotographyIcon /></button>
@@ -57,6 +57,15 @@ const ProfileDetails = ( props ) => {
           </div>
         </div>
       </header>
+      <div className={styles.profileBody}>
+        {console.log(profile.dogs, "PROFILE DOGS")}
+        {/* <DogCard dogs={profile.dogs} /> */}
+        <DogList dogs={profile.dogs}/>
+      </div>
+
+
+
+
       {/* <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
           <Reports dog={dog} />
