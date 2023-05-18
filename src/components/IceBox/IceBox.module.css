@@ -1,0 +1,32 @@
+.iceBoxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(185, 185, 185) ;
+  max-width: 320px;
+  max-height: 320px;
+  box-shadow: 2px 2px 2px gray;
+  margin: 6px;
+  margin-top: 48px;
+  border-radius: 6px;
+  padding: 12px;
+  min-height: 60px;
+}
+.iceBoxHeader {
+  text-align: center;
+}
+.iceBoxContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 6px;
+  border-radius: 6px;
+  padding: 3px;
+  min-height: 60%;
+}
+.iceBoxButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 6px;
+}
