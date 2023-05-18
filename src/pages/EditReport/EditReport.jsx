@@ -23,14 +23,16 @@ const EditReport = () => {
   }
 
   const handleChange = ({ target }) => {
-    setFormData ({ ...formData, [target.name]: target.value })
-
+    if (target.name.startsWith("feedingTime")) {
+      const index = parseInt(target.name.replace("feedingTime", ""), 10)
+      const newFeedingTimes = [...formData.feedingTimes]
+      newFeedingTimes[index] = target.value
+      setFormData({ ...formData, feedingTimes: newFeedingTimes })
+    } else {
+      setFormData({ ...formData, [target.name]: target.value })
+    }
   }
-
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
+  
   const renderFeedingTimeInputs = () => {
     const { mealCount, feedingTimes } = formData;
     const inputs = [];
@@ -43,7 +45,7 @@ const EditReport = () => {
           type="time"
           name={inputName}
           label={`Feeding Time ${i + 1}`}
-          value={feedingTimes[i]}
+          value={feedingTimes[i] || ""}
           onChange={handleChange}
           inputProps={{
             step: 300,
