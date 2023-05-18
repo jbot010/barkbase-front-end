@@ -18,10 +18,8 @@ const DogCard = ({ dog }) => {
         alignItems="center"
         flexDirection="row"
         borderRadius="12px"
-        minWidth="70%"
         padding="6px"
         marginTop="6px"
-        sx={{ width: "50%" }}
         >
           <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/BWdog_icon.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
