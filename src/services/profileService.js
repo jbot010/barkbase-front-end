@@ -43,4 +43,20 @@ async function show(profileId) {
   }
 }
 
-export { getAllProfiles, addPhoto, show }
+async function update(profileId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`,{
+      method: 'PUT',
+      headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(profileId)
+    })
+    return res.json()
+  } catch(error) {
+    console.log(error)
+  }
+}
+
+export { getAllProfiles, addPhoto, show, update }

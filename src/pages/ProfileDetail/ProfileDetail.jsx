@@ -45,9 +45,9 @@ const ProfileDetails = (props) => {
         </div>
         <div className={styles.profileDetailContent}>
           <h1> {profile.name} </h1>
-          <h3> Breed: {profile.breed} </h3>
-          <h3> Age: {profile.age} </h3>
-          <h3> Color: {profile.color} </h3>
+          <h3> Email: {profile.email} </h3>
+          <h3> Phone: {profile.phoneNumber} </h3>
+          <h3> Dogs: {profile.dogs} </h3>
           <div className={styles.buttonContainer}>
           <button>
             <Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
@@ -55,11 +55,16 @@ const ProfileDetails = (props) => {
           </div>
         </div>
       </header>
-      <div className={styles.reportsAndComments}>
+      {/* <div className={styles.reportsAndComments}>
+        <div className={styles.reportsContainer}>
+          <Reports dog={dog} />
+        </div>
+        </div> */}
+      {/* <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
           <Reports profile={profile} />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

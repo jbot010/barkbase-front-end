@@ -137,14 +137,6 @@ function App() {
           </ProtectedRoute>
         } />
         {/* ADMIN AND USERS */}
-        {/* <Route 
-          path="GONNANEEDTOADDAPATHHERELATERoops"
-          element={
-            <ProtectedRoute user={user}>
-              <AdminHome />
-            </ProtectedRoute>
-          }
-          /> */}
         <Route
           path="/profiles"
           element={
@@ -152,6 +144,14 @@ function App() {
               <Profiles />
             </ProtectedRoute>
         } />
+        <Route 
+          path="/profiles/:profileId"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetails />
+            </ProtectedRoute>
+          }
+          />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
