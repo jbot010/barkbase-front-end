@@ -24,7 +24,7 @@ const DogCard = ({ dog }) => {
           <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/BWdog_icon.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
-        <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}><AddCommentIcon /></Button>
+        <Button variant="outlined" size="small" href={`/dogs/${dog._id}/reports/newreport`}><AddCommentIcon /></Button>
         <Switch />
       </Box>
   )
