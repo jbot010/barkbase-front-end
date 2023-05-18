@@ -13,6 +13,8 @@ input[type="file"] {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 0;
+  padding-top: 80px;
 }
 
 .message {
@@ -21,13 +23,14 @@ input[type="file"] {
   color: #dd1b16;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 2vw;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .label {
