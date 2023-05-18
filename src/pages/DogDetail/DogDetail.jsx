@@ -40,6 +40,12 @@ const DogDetails = (props) => {
     await dogService.deleteComment(dogId, commentId)
     setDog({ ...dog, comments: dog.comments.filter((c) => c._id !== commentId) })
   }
+
+  const handleDeleteReport = async (dogId, reportId) => {
+    const deletedReport = await reportService.deleteReport(dogId, reportId)
+    console.log(deletedReport);
+    setDog({ ...dog, reports: dog.reports.filter((r) => r._id !== reportId) })
+  }
   
   return ( 
     <main className={styles.container}>
@@ -65,7 +71,7 @@ const DogDetails = (props) => {
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports dog={dog} />
+          <Reports dog={dog} handleDeleteReport={handleDeleteReport} />
         </div>
         <div className={styles.commentsContainer}>
           <NewComment className={styles.newComment} handleAddComment={handleAddComment} />

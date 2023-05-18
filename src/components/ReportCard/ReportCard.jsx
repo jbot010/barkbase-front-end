@@ -5,7 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 
-const ReportCard = ({ report }) => {
+const ReportCard = ({ dogId, report, handleDeleteReport }) => {
   console.log(report);
   //const { formData } = report;
   //console.log(formData, "This should be the form data");
@@ -34,8 +34,9 @@ const ReportCard = ({ report }) => {
       
       <button><EditIcon /></button>
     </Link>
+    <button onClick={()=> handleDeleteReport(dogId, report._id)}> <DeleteForeverIcon /> </button>
     </div>
-  );
-};
+  )
+}
 
-export default ReportCard;
+export default ReportCard

@@ -35,5 +35,18 @@ const updateReport = async ( reportId, reportFormData) => {
   console.log(error)
   }
 }
+const deleteReport = async (dogId, reportId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${reportId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-export {create, updateReport}
+export {create, updateReport, deleteReport}
