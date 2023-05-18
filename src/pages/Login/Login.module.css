@@ -31,15 +31,17 @@ input[type="file"] {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
-.label {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-bottom: 8px;
+.TextField{
+  width: 200px;
 }
+
 .buttonContainerLogin {
   display: flex;
   flex-direction: row;

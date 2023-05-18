@@ -10,7 +10,7 @@ const Landing = () => {
         <p>Welcome to BarkBase, the revolutionary app that is transforming the way dog daycares are managed. Our cutting-edge platform combines innovative technology with a deep understanding of canine care, providing a seamless experience for both pet owners and daycare staff. With BarkBase, scheduling and managing your furry friend's daycare visits has never been easier, allowing you to stay connected and informed every step of the way. From detailed reports on your dog's activities to personalized care preferences, our app ensures that your beloved companion receives the highest level of attention and care, giving you peace of mind throughout the day. Join the BarkBase community today and discover a new level of convenience, transparency, and joy in dog daycare management.</p>
       </div>
       <div className={styles.P1}>
-        <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="Andrew" />
+        <img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684434842/barkbase/05f3f43b-012b-469e-847a-8ec90a95ee35_480_hkawyn.jpg" alt="Andrew" />
         <h2><a href="https://github.com/AndrewRentschler" target="_blank" rel="noopener noreferrer">Andrew</a></h2>
         <p>Front End Manager</p>
         <p>Designer</p>
@@ -35,17 +35,17 @@ const Landing = () => {
         <p>Designer</p>
       </div>
       <div className={styles.STAFF}>
-        <h1>STAFF</h1>
+        <h1>TEAM</h1>
       </div>
       <div className={styles.D1}>
-        <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="Angie" />
+        <img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684434845/barkbase/img_3868_720_t2ofrl.jpg" alt="Angie" />
         <h2>Angie</h2>
         <br />
         <p>Chief Executive Officer</p>
       </div>
       <div className={styles.D2}>
-        <img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684371999/barkbase/img_0736_720_w9vqmx.jpg" alt="Joe's Dog" />
-        <h2>Joe's Dog</h2>
+        <img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684371999/barkbase/img_0736_720_w9vqmx.jpg" alt="Oliver" />
+        <h2>Oliver</h2>
         <br />
         <p>Chief Financial Officer</p>
       </div>

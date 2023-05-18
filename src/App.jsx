@@ -15,6 +15,8 @@ import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
 import DogDetails from './pages/DogDetail/DogDetail'
 import EditComment from './pages/EditComment/EditComment'
+import NewReportCard from './components/NewReportCard/NewReportCard'
+import EditReport from './pages/EditReport/EditReport'
 import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
 // components
@@ -28,7 +30,6 @@ import * as reportService from './services/reportService'
 
 // styles
 import './App.css'
-import NewReportCard from './components/NewReportCard/NewReportCard'
 // import AdminHome from './pages/AdminHome/AdminHome'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
@@ -36,7 +37,7 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
-  const { dogId } = useParams()
+  const { dogId, reportId } = useParams()
   console.log(dogId);
 
   useEffect(() => {
@@ -95,6 +96,30 @@ function App() {
     })
   }
 
+  const handleUpdateReport = async (reportFormData) => {
+    try {
+      const updatedReport = await reportService.updateReport(reportId, reportFormData)
+      setDogs((prevDogs) => {
+        const updatedDogs = prevDogs.map((dog) => {
+          if (dog._id === dogId) {
+            const updatedReports = dog.reports.map((report) => {
+              if (report._id === reportId) {
+                return updatedReport
+              }
+              return report
+            })
+            return { ...dog, reports: updatedReports }
+          }
+          return dog
+        })
+        return updatedDogs
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+
 
   return (
     <>
@@ -129,6 +154,12 @@ function App() {
             <ProtectedRoute user={user}>
               <NewReportCard dogId={dogId} handleAddReport={handleAddReport}/>
           </ProtectedRoute>
+          }
+        />
+        <Route path="/dogs/:dogId/reports/:reportId" element={
+          <ProtectedRoute user={user}>
+            <EditReport user={user} handleUpdateReport={handleUpdateReport} dogId={dogId} reportId={reportId} />
+            </ProtectedRoute>
           }
         />
         <Route path="/dogs/:dogId/comments/:commentId" element={

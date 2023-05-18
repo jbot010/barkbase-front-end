@@ -3,6 +3,7 @@ import styles from './ReportCard.module.css';
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom';
 
 const ReportCard = ({ report }) => {
   console.log(report);
@@ -26,7 +27,13 @@ const ReportCard = ({ report }) => {
       {/* Additional components */}
       {/* <AuthorInfo author={report.author} />
       <DeleteForeverIcon onClick={handleDelete} />
-      <EditIcon onClick={handleEdit} /> */}
+    <EditIcon onClick={handleEdit} /> */}
+    
+    
+    <Link to={`/dogs/${report.dog}/reports/${report._id}`} state={report}>
+      
+      <button><EditIcon /></button>
+    </Link>
     </div>
   );
 };
