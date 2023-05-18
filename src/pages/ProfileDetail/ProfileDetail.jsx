@@ -5,7 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 // pages
 // import Loading from "../Loading/Loading"
 // import NewComment from '../../components/NewComment/NewComment'
-import Comments from '../../components/Comments/Comments'
+// import Comments from '../../components/Comments/Comments'
 // import NewReportCard from '../../components/NewReportCard/NewReportCard'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
@@ -26,6 +26,7 @@ import DogCard from '../../components/DogCard/DogCard';
 const ProfileDetails = ( props ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})
+  
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -34,7 +35,7 @@ const ProfileDetails = ( props ) => {
     }
     fetchProfile()
   }, [profileId])
-
+  
   return ( 
     <main className={styles.container}>
       <header className={styles.profileDetailContainer}>
@@ -58,26 +59,8 @@ const ProfileDetails = ( props ) => {
         </div>
       </header>
       <div className={styles.profileBody}>
-        {console.log(profile.dogs, "PROFILE DOGS")}
-        {/* <DogCard dogs={profile.dogs} /> */}
-        <DogList dogs={profile.dogs}/>
+        {profile.dogs && <DogList dogs={profile.dogs}/>}
       </div>
-
-
-
-
-      {/* <div className={styles.reportsAndComments}>
-        <div className={styles.reportsContainer}>
-          <Reports dog={dog} />
-        </div>
-        </div> */}
-      {/* <div className={styles.reportsAndComments}>
-        <div className={styles.reportsContainer}>
-          <Reports profile={profile} />
-        </div>
-      </div> */}
-
-      {/* <DogList dog={dog}/> */}
     </main>
   );
 }
