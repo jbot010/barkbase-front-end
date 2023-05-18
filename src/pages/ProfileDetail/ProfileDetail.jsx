@@ -5,7 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 // pages
 // import Loading from "../Loading/Loading"
 // import NewComment from '../../components/NewComment/NewComment'
-import Comments from '../../components/Comments/Comments'
+// import Comments from '../../components/Comments/Comments'
 // import NewReportCard from '../../components/NewReportCard/NewReportCard'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
@@ -26,6 +26,7 @@ import DogCard from '../../components/DogCard/DogCard';
 const ProfileDetails = ( props ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})
+  
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -34,12 +35,12 @@ const ProfileDetails = ( props ) => {
     }
     fetchProfile()
   }, [profileId])
-
+  
   return ( 
     <main className={styles.container}>
       <header className={styles.profileDetailContainer}>
         <div className={styles.profileDetailImg}>
-          <img src={profile.photo? profile.photo:'/dog_icon.png'} alt="Default profile Photo" />
+          <img src={profile.photo? profile.photo:'/BWdog_icon.png'} alt="Default profile Photo" />
           <div className={styles.profilePhotoButtonContainer}>
           <button><AddAPhotoIcon /></button>
           <button><NoPhotographyIcon /></button>
@@ -57,18 +58,9 @@ const ProfileDetails = ( props ) => {
           </div>
         </div>
       </header>
-      {/* <div className={styles.reportsAndComments}>
-        <div className={styles.reportsContainer}>
-          <Reports dog={dog} />
-        </div>
-        </div> */}
-      {/* <div className={styles.reportsAndComments}>
-        <div className={styles.reportsContainer}>
-          <Reports profile={profile} />
-        </div>
-      </div> */}
-
-      {/* <DogList dog={dog}/> */}
+      <div className={styles.profileBody}>
+        {profile.dogs && <DogList dogs={profile.dogs}/>}
+      </div>
     </main>
   );
 }
