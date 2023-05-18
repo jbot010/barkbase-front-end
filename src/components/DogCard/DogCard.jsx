@@ -23,7 +23,7 @@ const DogCard = ({ dog }) => {
         marginTop="6px"
         sx={{ width: "50%" }}
         >
-          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/dog_icon_gray.png'} alt="" /></Box>
+          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/BWdog_icon.png'} alt="" /></Box>
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}><AddCommentIcon /></Button>

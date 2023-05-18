@@ -45,7 +45,7 @@ const DogDetails = (props) => {
     <main className={styles.container}>
       <header className={styles.dogDetailContainer}>
         <div className={styles.dogDetailImg}>
-          <img src={dog.photo? dog.photo:'/dog_icon_gray.png'} alt="Default Dog Photo" />
+          <img src={dog.photo? dog.photo:'/dog_icon.png'} alt="Default Dog Photo" />
           <div className={styles.DogPhotoButtonContainer}>
           <button><AddAPhotoIcon /></button>
           <button><NoPhotographyIcon /></button>
