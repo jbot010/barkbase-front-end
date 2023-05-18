@@ -32,4 +32,31 @@ async function addPhoto(photoData) {
   }
 }
 
-export { getAllProfiles, addPhoto }
+async function show(profileId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+async function update(profileId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`,{
+      method: 'PUT',
+      headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(profileId)
+    })
+    return res.json()
+  } catch(error) {
+    console.log(error)
+  }
+}
+
+export { getAllProfiles, addPhoto, show, update }

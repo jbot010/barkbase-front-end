@@ -50,9 +50,13 @@ const ReportCard = (props) => {
     <EditIcon onClick={handleEdit} /> */}
     
     
-    
+    <Link to={`/dogs/${report.dog}/reports/${report._id}`} state={report}>
+      
+      <button><EditIcon /></button>
+    </Link>
+    <button onClick={()=> handleDeleteReport(dogId, report._id)}> <DeleteForeverIcon /> </button>
     </div>
-  );
-};
+  )
+}
 
-export default ReportCard;
+export default ReportCard

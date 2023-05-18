@@ -18,6 +18,7 @@ import EditComment from './pages/EditComment/EditComment'
 import NewReportCard from './components/NewReportCard/NewReportCard'
 import EditReport from './pages/EditReport/EditReport'
 import AdminHome from './pages/AdminHome/AdminHome'
+import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -183,6 +184,14 @@ function App() {
               <Profiles />
             </ProtectedRoute>
         } />
+        <Route 
+          path="/profiles/:profileId"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetails />
+            </ProtectedRoute>
+          }
+          />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
