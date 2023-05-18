@@ -39,7 +39,7 @@ function App() {
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
-  console.log(dogId);
+  // console.log(dogId);
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -188,7 +188,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails dogs={dogs}/>
+              <ProfileDetails />
             </ProtectedRoute>
           }
           />
