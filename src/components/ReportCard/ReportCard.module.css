@@ -1,17 +1,17 @@
-.reportComponent {
+.reportCard {
   border: 1px solid rgb(185, 185, 185) ;
   display: flex;
   flex-direction: column;
-  width: 90%;
   box-shadow: 2px 2px 2px gray;
   margin: 6px;
   border-radius: 6px;
   padding: 3px;
   min-height: 60px;
 }
-.reportHeader {
+.reportCardHeader {
   display: flex;
   flex-direction: row;
+  gap: 16px;
   justify-content: space-between;
 }
 .reportHeader > h1, h2 {
@@ -30,6 +30,8 @@
 .reportCardContent {
   padding-left: 6px;
   padding-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap
   /* width: 100%;
   flex-grow: 3; */
 }
