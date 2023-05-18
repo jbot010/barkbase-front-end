@@ -2,6 +2,14 @@
 import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
+import UploadIcon from '@mui/icons-material/Upload';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 // services
 import * as authService from '../../services/authService'
 
@@ -79,42 +87,51 @@ const Signup = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1>Sign Up</h1>
+      <div className={styles.HERO}><img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684438250/barkbase/signuphero_dl91vj.jpg" alt="SIGNUP HERO" /></div>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+        <TextField
+          sx={{width: .75}}
+          required
+          type="text"
+          label="NAME"
+          value={name} 
+          name="name" 
+          onChange={handleChange} 
+        />
+        <br />
+        <TextField
+          sx={{width: .75}}
+          required
+          type="text"
+          label="EMAIL"
+          value={email}
+          name="email"
+          onChange={handleChange}
+        />
+        <br />
+        <TextField
+          sx={{width: .75}}
+          required
+          type="password"
+          label="PASSWORD"
+          value={password}
+          name="password"
+          onChange={handleChange}
+        />
+        <br />
+        <TextField
+          sx={{width: .75}}
+          required
+          type="password"
+          label="CONFIRM PASSWORD"
+          value={passwordConf}
+          name="passwordConf"
+          onChange={handleChange}
+        />
         <label className={styles.label}>
-          Name:
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email:
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password:
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm Password:
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Upload Photo:
+          <UploadIcon />
+          Photo:
           <input 
             type="file" 
             name="photo" 
