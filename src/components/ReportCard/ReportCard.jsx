@@ -54,7 +54,7 @@ const ReportCard = (props) => {
       
       <button><EditIcon /></button>
     </Link>
-    <button onClick={()=> handleDeleteReport(dogId, report._id)}> <DeleteForeverIcon /> </button>
+    <button onClick={()=> props.handleDeleteReport(props.dogId, report._id)}> <DeleteForeverIcon /> </button>
     </div>
   )
 }
