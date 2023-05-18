@@ -1,4 +1,4 @@
-![BarkBase]( "barkbase-screenshot")
+![BarkBase](https://res.cloudinary.com/di6tvzeal/image/upload/v1684431748/pexels-pixmike-413195_720_ni3sfl.jpg  "barkbase-screenshot")
 
 # BarkBase
 Disrupting the dog daycare experience! 

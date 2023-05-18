@@ -17,6 +17,7 @@ import DogDetails from './pages/DogDetail/DogDetail'
 import EditComment from './pages/EditComment/EditComment'
 import NewReportCard from './components/NewReportCard/NewReportCard'
 import EditReport from './pages/EditReport/EditReport'
+import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -167,14 +168,6 @@ function App() {
           </ProtectedRoute>
         } />
         {/* ADMIN AND USERS */}
-        {/* <Route 
-          path="GONNANEEDTOADDAPATHHERELATERoops"
-          element={
-            <ProtectedRoute user={user}>
-              <AdminHome />
-            </ProtectedRoute>
-          }
-          /> */}
         <Route
           path="/profiles"
           element={
@@ -182,6 +175,14 @@ function App() {
               <Profiles />
             </ProtectedRoute>
         } />
+        <Route 
+          path="/profiles/:profileId"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetails />
+            </ProtectedRoute>
+          }
+          />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
