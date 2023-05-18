@@ -65,7 +65,7 @@ const DogDetails = (props) => {
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports />
+          <Reports dog={dog} />
         </div>
         <div className={styles.commentsContainer}>
           <NewComment className={styles.newComment} handleAddComment={handleAddComment} />

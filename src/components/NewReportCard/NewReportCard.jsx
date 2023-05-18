@@ -25,7 +25,7 @@ const NewReportCard = (props) => {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
-    dogId: {dogId},
+    dogId: dogId,
     duration: .5,
     boarding: false,
     walk: false,
@@ -91,8 +91,8 @@ const NewReportCard = (props) => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    await props.handleAddReport(props.dogId, formData);
-    navigate(`/dogs/${props.dogId}`);
+    await props.handleAddReport(dogId, formData);
+    navigate(`/dogs/${dogId}`);
   };
   
 

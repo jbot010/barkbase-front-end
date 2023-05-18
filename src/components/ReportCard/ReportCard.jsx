@@ -5,25 +5,28 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 
 const ReportCard = ({ report }) => {
-  const { formData } = report;
+  console.log(report);
+  //const { formData } = report;
+  //console.log(formData, "This should be the form data");
+  
 
   return (
     <div className={styles.reportCard}>
       <h2>Report Card</h2>
-      <p>Duration: {formData.duration}</p>
-      <p>Boarding: {formData.boarding ? 'Yes' : 'No'}</p>
-      <p>Walk: {formData.walk ? 'Yes' : 'No'}</p>
-      <p>Swimming: {formData.swimming ? 'Yes' : 'No'}</p>
-      <p>Agility: {formData.agility ? 'Yes' : 'No'}</p>
-      <p>Treat: {formData.treat ? 'Yes' : 'No'}</p>
-      <p>Meal Count: {formData.mealCount}</p>
-      <p>Feeding Times: {formData.feedingTimes.join(', ')}</p>
-      <p>Special Instructions: {formData.specialInstructions}</p>
+      <p>Duration: {report.duration}</p>
+      <p>Boarding: {report.boarding ? 'Yes' : 'No'}</p>
+      <p>Walk: {report.walk ? 'Yes' : 'No'}</p>
+      <p>Swimming: {report.swimming ? 'Yes' : 'No'}</p>
+      <p>Agility: {report.agility ? 'Yes' : 'No'}</p>
+      <p>Treat: {report.treat ? 'Yes' : 'No'}</p>
+      <p>Meal Count: {report.mealCount}</p>
+      <p>Feeding Times: {report.feedingTimes.join(', ')}</p>
+      <p>Special Instructions: {report.specialInstructions}</p>
 
       {/* Additional components */}
-      <AuthorInfo author={report.author} />
+      {/* <AuthorInfo author={report.author} />
       <DeleteForeverIcon onClick={handleDelete} />
-      <EditIcon onClick={handleEdit} />
+      <EditIcon onClick={handleEdit} /> */}
     </div>
   );
 };
