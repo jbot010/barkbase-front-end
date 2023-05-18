@@ -21,13 +21,13 @@ input[type="file"] {
   color: #dd1b16;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 2vw;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
 }
 
 .label {
