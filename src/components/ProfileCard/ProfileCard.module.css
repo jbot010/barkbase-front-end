@@ -1,5 +1,7 @@
 .profCardImg {
-  max-width: 64px;
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
   border-radius: 12px;
 }
 .profileCardContent {
