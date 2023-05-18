@@ -3,15 +3,15 @@ import styles from './Reports.module.css'
 import { Link } from "react-router-dom"
 
 const Reports = ( props ) => {
-  if(!props.reports) return <h4>No Reports</h4>
+  if(!props.dog.reports) return <h4>No Reports</h4>
   return ( 
     <div className={styles.reportList}>
-      {props.reports.map((report) => (
+      {props.dog.reports.map((report) => (
         <ReportCard
           key={report._id}
           report={report}
-          user={props.user}
-          dogId={props.dogId}
+          author={props.dog.author}
+          dog={props.dog}
         />
       ))}
       <button>NEW REPORT (temp)</button>

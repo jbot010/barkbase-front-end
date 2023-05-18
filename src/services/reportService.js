@@ -4,7 +4,7 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/reports`
 
 async function create(dogId, reportFormData) {
   try {
-    const res = await fetch(`${BASE_URL}/${dogId}`, {
+    const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 
         'Authorization': `Bearer ${tokenService.getToken()}`,
