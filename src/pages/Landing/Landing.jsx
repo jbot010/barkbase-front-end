@@ -30,29 +30,36 @@ const Landing = () => {
       </div>
       <div className={styles.P4}>
         <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="holder" />
-        <h2>Zach</h2>
+        <h2><a href="https://github.com/ttiurt">Zach</a></h2>
         <p>Back End Manager</p>
         <p>Designer</p>
+      </div>
+      <div className={styles.STAFF}>
+        <h1>STAFF</h1>
       </div>
       <div className={styles.D1}>
         <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="holder" />
         <h2>Angie</h2>
-        <p>DESCRIPTION</p>
+        <br />
+        <p>Chief Executive Officer</p>
       </div>
       <div className={styles.D2}>
         <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="holder" />
         <h2>Joe's Dog</h2>
-        <p>DESCRIPTION</p>
+        <br />
+        <p>Chief Financial Officer</p>
       </div>
       <div className={styles.D3}>
         <img src="https://res.cloudinary.com/di6tvzeal/image/upload/v1683986759/samples/landscapes/beach-boat.jpg" alt="holder" />
         <h2>Bowie</h2>
-        <p>DESCRIPTION</p>
+        <br />
+        <p>Chief Technical Officer</p>
       </div>
       <div className={styles.D4}>
         <img src="https://res.cloudinary.com/ds57cqdwo/image/upload/v1684361358/barkbase/IMG_0487_ffdkz8.jpg" alt="Finn" />
         <h2>Finn</h2>
-        <p>DESCRIPTION</p>
+        <br />
+        <p>Chief Marketing Officer</p>
       </div>
     </main>
   )

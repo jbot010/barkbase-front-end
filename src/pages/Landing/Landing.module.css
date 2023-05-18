@@ -2,17 +2,19 @@
   margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: .5fr .5fr .5fr .75fr 1fr 1fr;
+  grid-template-rows: .5fr .5fr .5fr .75fr .25fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 30px 0px;
+  gap: 5vw 0;
   grid-auto-flow: row;
   grid-template-areas:
     "HERO HERO HERO HERO"
     "HERO HERO HERO HERO"
     "ABOUT ABOUT ABOUT ABOUT"
     "ABOUT ABOUT ABOUT ABOUT"
+    ". STAFF STAFF ."
     "P1 P2 P3 P4"
     "D1 D2 D3 D4";
+  background: white;
 }
 
 .HERO { 
@@ -39,11 +41,26 @@
 }
 
 .ABOUT > h1{
+  width: 35vw;
+  margin: 0 auto;
+  margin-bottom: 5vw;
   font-size: 5vw;
+  border-bottom: .2vw solid black;
 }
 
 .ABOUT > p {
   padding: 0;
+}
+
+.STAFF {
+  grid-area: STAFF;
+  place-self: center center;
+}
+
+.STAFF > h1{
+  font-size: 5vw;
+  margin-bottom: 0;
+  border-bottom: .2vw solid black;
 }
 
 .P1 { 
@@ -57,6 +74,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.P1:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .P1 > h2{
@@ -70,6 +93,7 @@
 }
 
 .P1 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -98,6 +122,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.P2:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .P2 > h2{
@@ -111,6 +141,7 @@
 }
 
 .P2 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -139,6 +170,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.P3:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .P3 > h2{
@@ -152,6 +189,7 @@
 }
 
 .P3 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -180,6 +218,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.P4:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .P4 > h2{
@@ -193,6 +237,7 @@
 }
 
 .P4 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -221,6 +266,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.D1:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .D1 > h2{
@@ -234,6 +285,7 @@
 }
 
 .D1 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -262,6 +314,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.D2:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .D2 > h2{
@@ -275,6 +333,7 @@
 }
 
 .D2 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -303,6 +362,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.D3:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .D3 > h2{
@@ -316,6 +381,7 @@
 }
 
 .D3 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
@@ -344,6 +410,12 @@
   background: #ffffff;
   box-shadow: 7px 7px #2775B9;
   border: .25vw solid black;
+  transition: 0.3s;
+}
+
+.D4:hover{
+  transition: 0.3s;
+  box-shadow: 7px 7px #184871;
 }
 
 .D4 > h2{
@@ -357,6 +429,7 @@
 }
 
 .D4 > p{
+  font-weight: 600;
   align-self: start;
   text-align: left;
   margin-left: 1vw;
