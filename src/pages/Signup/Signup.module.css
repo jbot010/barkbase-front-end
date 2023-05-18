@@ -17,6 +17,24 @@ input[type="file"] {
   padding-top: 80px;
 }
 
+.HERO { 
+  justify-content: center;
+  width: 100%;
+  height: 20vw;
+  overflow: hidden;
+  border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+.HERO > img {
+  place-self: stretch stretch;
+  min-width: 100%;
+  padding-bottom: 0;
+  overflow: hidden;
+  border-radius: 0;
+  margin-top: -7.5vw;
+}
+
+
 .message {
   margin-top: 0;
   height: 20px;
@@ -32,6 +50,11 @@ input[type="file"] {
   align-items: center;
   margin-bottom: 50px;
   margin-top: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .label {
@@ -52,7 +75,9 @@ input[type="file"] {
 }
 
 .button {
-  width: 80px
+  margin-left: 16px;
+  align-self: center;
+  min-width: 80px;
 }
 
 .form > label:last-of-type {
