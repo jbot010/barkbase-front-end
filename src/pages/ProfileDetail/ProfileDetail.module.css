@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
 }
-.dogDetailContainer {
+.profileDetailContainer {
   display: flex;
   flex-direction: row;
   margin: 6px;
   
 }
-.dogDetailContainer h1,h2,h3,h4,h5,p {
+.profileDetailContainer h1,h2,h3,h4,h5,p {
   padding: 0;
   padding-left: 6px;
   padding-top: 3px;
@@ -17,10 +17,10 @@
   font-weight: 600;
   color: black;
 }
-.dogDetailContainer h1 {
+.profileDetailContainer h1 {
   font-weight: 800;
 }
-.dogDetailImg {
+.profileDetailImg {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -29,7 +29,7 @@
   border-radius: 12px;
   margin-right: 3px;
 }
-.dogDetailImg > img{
+.profileDetailImg > img{
   min-width: 120px;
   min-height: 120px;
   max-height: 120px;
@@ -39,7 +39,7 @@
   z-index: 9;
   /* border: 1px solid rgb(185, 185, 185) ; */
 }
-.dogDetailContent {
+.profileDetailContent {
   /* border: 1px dashed pink; */
   border: 1px solid rgb(185, 185, 185) ;
   background-color: whitesmoke;
