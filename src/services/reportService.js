@@ -18,4 +18,22 @@ async function create(dogId, reportFormData) {
   }
 }
 
-export {create}
+const updateReport = async ( reportId, reportFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${reportId}`,
+    
+    { 
+      method: 'PUT',
+      headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(reportFormData)
+    })
+    return res.json()
+  } catch (error) {
+  console.log(error)
+  }
+}
+
+export {create, updateReport}
