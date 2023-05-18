@@ -47,7 +47,7 @@ const ProfileDetails = (props) => {
           <h1> {profile.name} </h1>
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
-          <h3> Dogs: {profile.dogs} </h3>
+          {/* <h3> Dogs: {profile.dogs} </h3> */}
           <div className={styles.buttonContainer}>
           <button>
             <Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
