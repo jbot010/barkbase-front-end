@@ -1,25 +1,18 @@
-// npm imports
+// NPM
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+
+import styles from './NewReportCard.module.css'
 
 //MUI
 import Button from '@mui/material/Button'
-// import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
-//import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Switch } from "@mui/material";
-
-
-//css
-import styles from './NewReportCard.module.css'
+import { Switch } from "@mui/material"
 
 const NewReportCard = (props) => {
 
   const {dogId} = useParams()
-  
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
@@ -36,7 +29,7 @@ const NewReportCard = (props) => {
   })
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target;
+    const { name, value } = evt.target
   
     if (
       name === 'boarding' ||
@@ -46,29 +39,29 @@ const NewReportCard = (props) => {
       name === 'treat' ||
       name === 'feedingTimes'
     ) {
-      setFormData({ ...formData, [name]: evt.target.checked });
+      setFormData({ ...formData, [name]: evt.target.checked })
     } else if (name === 'mealCount') {
-      const count = parseInt(value, 10);
-      const feedingTimes = Array.from({ length: count }, () => '12:00');
-      setFormData({ ...formData, mealCount: count, feedingTimes });
+      const count = parseInt(value, 10)
+      const feedingTimes = Array.from({ length: count }, () => '12:00')
+      setFormData({ ...formData, mealCount: count, feedingTimes })
     } else if (name.startsWith('feedingTime')) {
-      const index = parseInt(name.slice(-1), 10);
-      const updatedTimes = [...formData.feedingTimes];
+      const index = parseInt(name.slice(-1), 10)
+      const updatedTimes = [...formData.feedingTimes]
       updatedTimes[index] = value;
-      setFormData({ ...formData, feedingTimes: updatedTimes });
+      setFormData({ ...formData, feedingTimes: updatedTimes })
     } else if (name === 'specialInstructions') {
-      setFormData({ ...formData, specialInstructions: value });
+      setFormData({ ...formData, specialInstructions: value })
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData({ ...formData, [name]: value })
     }
-  };
+  }
   
   const renderFeedingTimeInputs = () => {
     const { mealCount, feedingTimes } = formData;
-    const inputs = [];
+    const inputs = []
 
     for (let i = 0; i < mealCount; i++) {
-      const inputName = `feedingTime${i}`;
+      const inputName = `feedingTime${i}`
       inputs.push(
         <TextField
           key={inputName}
@@ -81,18 +74,15 @@ const NewReportCard = (props) => {
             step: 300,
           }}
         />
-      )
-    }
+      )}
     return inputs
   }
-  
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    await props.handleAddReport(dogId, formData);
-    navigate(`/dogs/${dogId}`);
-  };
-  
+    evt.preventDefault()
+    await props.handleAddReport(dogId, formData)
+    navigate(`/dogs/${dogId}`)
+  }
 
   return (
     <main className={styles.reportMain}>

@@ -8,9 +8,9 @@ async function getAllProfiles() {
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
     })
-    return await res.json()
-  } catch (err) {
-    throw new Error(err)
+    return res.json()
+  } catch (error) {
+    throw new Error(error)
   }
 }
 
@@ -27,8 +27,8 @@ async function addPhoto(photoData) {
       body: photoFormData,
     })
     return await res.json()
-  } catch (err) {
-    throw new Error(err)
+  } catch (error) {
+    throw new Error(error)
   }
 }
 
@@ -38,8 +38,8 @@ async function show(profileId) {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    console.log(error)
   }
 }
 

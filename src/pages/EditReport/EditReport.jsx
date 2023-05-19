@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 
-//css
-import styles from './EditReport.module.css'
-
-//MUI
+// MUI
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import { Switch } from "@mui/material"
 
-//services
+// SERVICES
 import * as reportService from '../../services/reportService'
 
 const EditReport = () => {
@@ -38,7 +35,7 @@ const EditReport = () => {
     const inputs = [];
 
     for (let i = 0; i < mealCount; i++) {
-      const inputName = `feedingTime${i}`;
+      const inputName = `feedingTime${i}`
       inputs.push(
         <TextField
           key={inputName}

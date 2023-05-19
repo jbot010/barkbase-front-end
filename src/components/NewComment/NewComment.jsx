@@ -1,7 +1,7 @@
-// npm imports
+// NPM
 import { useState } from "react"
 
-//css
+// CSS
 import styles from './NewComment.module.css'
 
 const NewComment = (props) => {
@@ -19,20 +19,18 @@ const NewComment = (props) => {
 
   return (
     <form className={styles.CommentContainer} onSubmit={handleSubmit}>
-    <textarea
-      required
-      type="text"
-      name="text"
-      id="text-input"
-      value={formData.text}
-      placeholder="Add a Comment"
-      onChange={handleChange}
-    />
-    <button type="submit">Submit</button>
-  </form>
+      <textarea
+        required
+        type="text"
+        name="text"
+        id="text-input"
+        value={formData.text}
+        placeholder="Add a Comment"
+        onChange={handleChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
   )
 }
 
 export default NewComment
-
-  

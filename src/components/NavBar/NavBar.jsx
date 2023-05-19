@@ -1,29 +1,22 @@
-// npm modules
+// NPM
 import { NavLink } from 'react-router-dom'
-import styles from './NavBar.module.css'
+
+// ICONS
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useState, useEffect } from 'react'
 
-// services
-import * as profileService from '../../services/profileService'
+// CSS
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
 
-
   return (
     <nav className={styles.nav}>
-      <NavLink to="/dogs"><img src="/dog_icon.png" alt="DogIcon" /></NavLink>
+      <NavLink to="/dogs"><img src="/dog_icon.png" alt="DogIcon" />
+      </NavLink>
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
-          {console.log(user)}
-          {/* { profile.isAdmin ?
-          <div className={styles.navAdmin}>
-            <li><NavLink to="/dogs" className={styles.navItem}>All Dogs</NavLink></li>
-            <li><NavLink to="/new" className={styles.navItem}>Add Dog</NavLink></li>
-            <li><NavLink to="/profiles" className={styles.navItem}>All Profiles</NavLink></li>
-          </div> : <></>} */}
           <li><NavLink to={`/profiles/${user.profile}`} className={styles.navItem}><AccountCircleIcon /></NavLink></li>
           <li><NavLink to="" onClick={handleLogout} className={styles.navItem}>< LogoutIcon /></NavLink></li>
         </ul>

@@ -1,6 +1,7 @@
-
+// COMPONENTS
 import DogCard from '../../components/DogCard/DogCard'
 
+// CSS
 import styles from './DogList.module.css'
 
 const DogList = (props) => {
@@ -10,7 +11,7 @@ const DogList = (props) => {
         {props.dogs ? (
           <ul className={styles.dogListContainer}>
             {props.dogs.map((dog) => (
-              <DogCard dog={dog} key={dog.id} />
+              <DogCard dog={dog} key={dog._id} />
             ))}
           </ul>
         ) : (
@@ -18,7 +19,7 @@ const DogList = (props) => {
         )}
       </section>
     </div>
-  );
-};
+  )
+}
 
 export default DogList

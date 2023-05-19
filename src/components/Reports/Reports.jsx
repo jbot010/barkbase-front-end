@@ -1,6 +1,12 @@
-import ReportCard from "../ReportCard/ReportCard"
-import styles from './Reports.module.css'
+// NPM MODULES
 import { Link } from "react-router-dom"
+
+// COMPONENTS
+import ReportCard from "../ReportCard/ReportCard"
+
+// CSS
+import styles from './Reports.module.css'
+
 
 const Reports = ( props ) => {
   if(!props.dog.reports) return <h4>No Reports</h4>

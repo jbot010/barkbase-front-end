@@ -51,8 +51,8 @@ async function show(dogId) {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    console.log(error)
   }
 }
 
@@ -81,8 +81,8 @@ async function createComment(dogId, commentFormData) {
       body: JSON.stringify(commentFormData)
     })
     return res.json()
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    console.log(error)
   }
 }
 

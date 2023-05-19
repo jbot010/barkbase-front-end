@@ -1,18 +1,16 @@
-// npm modules
+// NPM
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 
-
+// MUI
 import TextField from '@mui/material/TextField'
 
-
-
-// services
+// SERVICES
 import * as authService from '../../services/authService'
 import * as tokenService from '../../services/tokenService'
 
-// css
+// CSS
 import styles from './Login.module.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
@@ -39,9 +37,9 @@ const LoginPage = ({ handleAuthEvt }) => {
       const user = await tokenService.getUserFromToken()
       handleAuthEvt()
       navigate(`/profiles/${user.profile}`)
-    } catch (err) {
-      console.log(err)
-      setMessage(err.message)
+    } catch (error) {
+      console.log(error)
+      setMessage(error.message)
     }
   }
 
