@@ -7,7 +7,7 @@ const Reports = ( props ) => {
   return ( 
     <div className={styles.reportList}>
       <Link to ={`/dogs/${props.dog._id}/reports/newreport`}>
-      <button>NEW REPORT (temp)</button>
+      <button>NEW REPORT</button>
       </Link>
       {props.dog.reports.map((report) => (
         <ReportCard
