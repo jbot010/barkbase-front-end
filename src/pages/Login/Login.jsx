@@ -11,6 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 // services
 import * as authService from '../../services/authService'
+import * as tokenService from '../../services/tokenService'
 
 // css
 import styles from './Login.module.css'
@@ -36,8 +37,9 @@ const LoginPage = ({ handleAuthEvt }) => {
         throw new Error('No VITE_BACK_END_SERVER_URL in front-end .env')
       }
       await authService.login(formData)
+      const user = await tokenService.getUserFromToken()
       handleAuthEvt()
-      navigate('/dogs')
+      navigate(`/profiles/${user.profile}`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)

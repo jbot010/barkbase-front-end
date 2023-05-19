@@ -20,6 +20,7 @@ import * as reportService from '../../services/reportService'
 import * as profileService from '../../services/profileService'
 import styles from './ProfileDetail.module.css'
 import DogCard from '../../components/DogCard/DogCard';
+import NewDog from '../NewDog/NewDog';
 
 
 
@@ -59,7 +60,8 @@ const ProfileDetails = ( props ) => {
         </div>
       </header>
       <div className={styles.profileBody}>
-        {profile.dogs && <DogList dogs={profile.dogs}/>}
+        {profile.dogs && <DogList className={styles.dogList} dogs={profile.dogs}/>}
+        <NewDog className={styles.profileNewDog}/>
       </div>
     </main>
   );
