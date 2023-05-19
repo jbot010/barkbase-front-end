@@ -3,25 +3,22 @@ import DogCard from '../../components/DogCard/DogCard'
 
 import styles from './DogList.module.css'
 
-const DogList = ( props ) => {
-  console.log(props)
+const DogList = (props) => {
   return (
-    <div 
-    className={styles.dogList}>
+    <div className={styles.dogList}>
       <section>
-        {console.log(props.dogs)}
-      {!props.dogs ?
-        <ul className='dog-list-container'>
-          {props.dogs.map((dog) => (
-            <DogCard dog={dog} key={dog._id} />
-          ))}
-        </ul>
-      :
-      <h1>No Dogs!</h1>
-      }
+        {props.dogs ? (
+          <ul className='dog-list-container'>
+            {props.dogs.map((dog) => (
+              <DogCard dog={dog} key={dog.id} />
+            ))}
+          </ul>
+        ) : (
+          <h1>No Dogs!</h1>
+        )}
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default DogList
