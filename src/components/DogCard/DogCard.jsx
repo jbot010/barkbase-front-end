@@ -1,10 +1,12 @@
-//npm modules
+// MUI
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import AddCommentIcon from '@mui/icons-material/AddComment';
-// css
-import styles from './DogCard.module.css'
 import { Switch } from "@mui/material";
+
+// CSS
+import styles from './DogCard.module.css'
+
 // import { login } from "../../services/authService";
 
 const DogCard = ({ dog }) => {
@@ -27,8 +29,8 @@ const DogCard = ({ dog }) => {
           <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}/reports/newreport`}><AddCommentIcon /></Button>
-        <Switch />
       </Box>
   )
 }
+
 export default DogCard

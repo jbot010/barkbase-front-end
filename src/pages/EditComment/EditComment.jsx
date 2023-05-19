@@ -1,8 +1,11 @@
+// NPM MODULES
 import { useState } from "react"
 import { useLocation, useParams, useNavigate } from "react-router-dom"
+
+// CSS
 import styles from './EditComment.module.css'
 
-// Services
+// SERVICES
 import * as dogService from '../../services/dogService'
 
 const EditComment = () => {
@@ -22,20 +25,20 @@ const EditComment = () => {
   }
 
   return (
-      <form onSubmit={handleSubmit}>
-        <h1>Edit Comment</h1>
-        <label htmlFor="text-input">Text</label>
-        <textarea
-          required
-          type="text"
-          name="text"
-          id="text-input"
-          value={formData.text}
-          placeholder="Text"
-          onChange={handleChange}
-        />
-        <button type="submit">SUBMIT</button>
-      </form>
+    <form onSubmit={handleSubmit}>
+      <h1>Edit Comment</h1>
+      <label htmlFor="text-input">Text</label>
+      <textarea
+        required
+        type="text"
+        name="text"
+        id="text-input"
+        value={formData.text}
+        placeholder="Text"
+        onChange={handleChange}
+      />
+      <button type="submit">SUBMIT</button>
+    </form>
   )
 }
 

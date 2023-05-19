@@ -1,4 +1,4 @@
-
+// COMPONENTS
 import DogList from "../DogList/DogList";
 
 const AllDogs = ({ dogs }) => {

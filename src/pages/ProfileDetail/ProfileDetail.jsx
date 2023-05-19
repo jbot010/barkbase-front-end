@@ -22,8 +22,6 @@ import styles from './ProfileDetail.module.css'
 import NewDog from '../NewDog/NewDog';
 import DogCard from '../../components/DogCard/DogCard';
 
-
-
 const ProfileDetails = ( ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})

@@ -1,7 +1,7 @@
-// npm imports
+// NPM
 import { useState } from "react"
 
-//css
+// CSS
 import styles from './NewComment.module.css'
 
 const NewComment = (props) => {
@@ -34,5 +34,3 @@ const NewComment = (props) => {
 }
 
 export default NewComment
-
-  

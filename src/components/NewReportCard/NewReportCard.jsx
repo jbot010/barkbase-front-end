@@ -1,4 +1,4 @@
-// npm imports
+// NPM
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -7,21 +7,16 @@ import { useParams } from "react-router-dom";
 import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button'
-// import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
-//import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Switch } from "@mui/material";
 
 
-//css
+// CSS
 import styles from './NewReportCard.module.css'
 
 const NewReportCard = (props) => {
 
   const {dogId} = useParams()
-  
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
@@ -83,18 +78,15 @@ const NewReportCard = (props) => {
             step: 300,
           }}
         />
-      )
-    }
+      )}
     return inputs
   }
-  
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     await props.handleAddReport(dogId, formData);
     navigate(`/dogs/${dogId}`);
-  };
-  
+  }
 
   return (
     <main>

@@ -1,16 +1,16 @@
-// npm modules
+// NPM
 import { useState } from 'react'
 
+// MUI
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 
-//css
+// CSS
 import styles from './NewDog.module.css'
 
 const NewDog = (props) => {
