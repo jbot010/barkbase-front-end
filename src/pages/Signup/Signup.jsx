@@ -10,6 +10,7 @@ import UploadIcon from '@mui/icons-material/Upload'
 
 // services
 import * as authService from '../../services/authService'
+import * as tokenService from '../../services/tokenService'
 
 // css
 import styles from './Signup.module.css'
