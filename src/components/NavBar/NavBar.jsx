@@ -9,15 +9,7 @@ import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 
 const NavBar = ({ user, handleLogout }) => {
-  const [profile, setProfile] = useState([])
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      const profileData = await profileService.show(user.profile)
-      setProfile(profileData)
-    }
-    fetchProfile()
-  }, [user.profile])
 
   return (
     <nav className={styles.nav}>
@@ -26,12 +18,12 @@ const NavBar = ({ user, handleLogout }) => {
         <ul>
           <li>Welcome, {user.name}</li>
           {console.log(user)}
-          { profile.isAdmin ?
+          {/* { profile.isAdmin ?
           <div className={styles.navAdmin}>
             <li><NavLink to="/dogs" className={styles.navItem}>All Dogs</NavLink></li>
             <li><NavLink to="/new" className={styles.navItem}>Add Dog</NavLink></li>
             <li><NavLink to="/profiles" className={styles.navItem}>All Profiles</NavLink></li>
-          </div> : <></>}
+          </div> : <></>} */}
           <li><NavLink to={`/profiles/${user.profile}`} className={styles.navItem}><AccountCircleIcon /></NavLink></li>
           <li><NavLink to="" onClick={handleLogout} className={styles.navItem}>< LogoutIcon /></NavLink></li>
         </ul>
