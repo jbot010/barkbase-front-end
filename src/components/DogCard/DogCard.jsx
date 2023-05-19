@@ -4,7 +4,6 @@ import Button from '@mui/material/Button'
 import AddCommentIcon from '@mui/icons-material/AddComment';
 // css
 import styles from './DogCard.module.css'
-import { Switch } from "@mui/material";
 // import { login } from "../../services/authService";
 
 const DogCard = ({ dog }) => {

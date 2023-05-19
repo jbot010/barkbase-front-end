@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 //MUI
-import Box from '@mui/material/Box'
-import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button'
 // import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'

@@ -2,7 +2,6 @@
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
 
 // css
 import styles from './ProfileCard.module.css'
