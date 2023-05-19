@@ -60,7 +60,7 @@ const ProfileDetails = ( props ) => {
       <div className={styles.profileBody}>
 
         {profile.dogs && <DogList className={styles.dogList} dogs={profile.dogs}/>}
-        <NewDog className={styles.profileNewDog}/>
+        <NewDog className={styles.profileNewDog} handleAddDog={props.handleAddDog}/>
       </div>
     </main>
   );

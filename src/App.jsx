@@ -10,6 +10,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import AllDogs from './pages/AllDogs/AllDogs'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
@@ -85,7 +86,6 @@ function App() {
 
   const handleAddReport = async (dogId, reportFormData) => {
     const newReport = await reportService.create(dogId, reportFormData)
-
     setDogs((prevDogs) => {
     const updatedDog = prevDogs && prevDogs.map((dog) => {
       if (dog._id === dogId) {
@@ -131,7 +131,7 @@ function App() {
         } />
         <Route path="/dogs" element={
           <ProtectedRoute user={user}>
-            <DogList dogs={dogs} />
+            <AllDogs dogs={dogs} />
           </ProtectedRoute>
         } />
         <Route path="/new" 
@@ -187,7 +187,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails />
+              <ProfileDetails handleAddDog={handleAddDog}/>
             </ProtectedRoute>
           }
           />
