@@ -25,7 +25,7 @@ const ProfileCard = ({ profile }) => {
         marginTop="6px"
         // sx={{ width: "50%" }}
         >
-          <Box className={styles.profileCardImg}><img src={profile.photo ? profile.photo : "/BWdog_icon.png"} alt="" /></Box>
+          <Box ><img src={profile.photo ? profile.photo : "/BWdog_icon.png"} alt="" className={styles.profileCardImg}/></Box>
           <Box className={styles.profileCardContent} flexGrow="3">{profile.name}</Box>
         <Button variant="contained" size="small" href={`/profiles/${profile._id}`}>DETAILS</Button>
         <button><DeleteForeverIcon /></button>
