@@ -4,6 +4,10 @@
   height: 64px;
   border-radius: 12px;
 }
+.profileBody {
+  display: flex;
+  flex-direction: row;
+}
 .profileCardContent {
   color: black;
   font-weight: 800;
