@@ -9,6 +9,8 @@ nav {
   align-items: center;
   background-color: whitesmoke;
   border-bottom: 3px solid #102233;
+  background-color: white;
+  border-bottom: 2px solid #000000;
 }
 nav img {
   height: 60px;
