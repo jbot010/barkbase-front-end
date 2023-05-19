@@ -28,7 +28,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
 import * as reportService from './services/reportService'
-import * as tokenService from './services/tokenService'
 
 // styles
 import './App.css'
@@ -44,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const fetchDogs = async () => {
-      const dogData = await dogService.index()
+      const dogData = user && await dogService.index()
       setDogs(dogData)
     }
     fetchDogs()
@@ -86,8 +85,9 @@ function App() {
 
   const handleAddReport = async (dogId, reportFormData) => {
     const newReport = await reportService.create(dogId, reportFormData)
+
     setDogs((prevDogs) => {
-    const updatedDog = prevDogs.map((dog) => {
+    const updatedDog = prevDogs && prevDogs.map((dog) => {
       if (dog._id === dogId) {
         return { ...dog, reports: [newReport, ...dog.reports] }
       } else {
@@ -121,8 +121,6 @@ function App() {
     }
   }
   
-
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />

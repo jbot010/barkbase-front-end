@@ -26,35 +26,18 @@ const ReportCard = (props) => {
       </Link>
       </div>
       <div className={styles.reportCardContent}>
-      <p>{dog.owner.name}</p>
-      <p>Duration: {report.duration}</p>
-      <p>Boarding: {report.boarding ? 'Yes' : 'No'}</p>
-      <p>Walk: {report.walk ? 'Yes' : 'No'}</p>
-      <p>Swimming: {report.swimming ? 'Yes' : 'No'}</p>
-      <p>Agility: {report.agility ? 'Yes' : 'No'}</p>
-      <p>Treat: {report.treat ? 'Yes' : 'No'}</p>
-      <p>Meal Count: {report.mealCount}</p>
-      <p>Feeding Times: {report.feedingTimes.join(', ')}</p>
-      <p>Special Instructions: {report.specialInstructions}</p>
-
+        <p>{dog.owner.name}</p>
+        <p>Duration: {report.duration}</p>
+        <p>Boarding: {report.boarding ? 'Yes' : 'No'}</p>
+        <p>Walk: {report.walk ? 'Yes' : 'No'}</p>
+        <p>Swimming: {report.swimming ? 'Yes' : 'No'}</p>
+        <p>Agility: {report.agility ? 'Yes' : 'No'}</p>
+        <p>Treat: {report.treat ? 'Yes' : 'No'}</p>
+        <p>Meal Count: {report.mealCount}</p>
+        <p>Feeding Times: {report.feedingTimes.join(', ')}</p>
+        <p>Special Instructions: {report.specialInstructions}</p>
       </div>
-
-
-
-
-      
-
-      {/* Additional components */}
-      {/* <AuthorInfo author={report.author} />
-      <DeleteForeverIcon onClick={handleDelete} />
-    <EditIcon onClick={handleEdit} /> */}
-    
-    
-    <Link to={`/dogs/${report.dog}/reports/${report._id}`} state={report}>
-      
-      <button><EditIcon /></button>
-    </Link>
-    <button onClick={()=> props.handleDeleteReport(props.dogId, report._id)}> <DeleteForeverIcon /> </button>
+    <button onClick={()=> props.handleDeleteReport(props.dogId, report._id)}><DeleteForeverIcon /></button>
     </div>
   )
 }
