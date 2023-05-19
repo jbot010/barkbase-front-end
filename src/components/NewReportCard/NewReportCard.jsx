@@ -190,4 +190,6 @@ const NewReportCard = (props) => {
   )
 }
 
+
+
 export default NewReportCard
