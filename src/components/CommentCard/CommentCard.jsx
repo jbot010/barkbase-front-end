@@ -26,7 +26,7 @@ const CommentCard = ({ comment, dogId, user, handleDeleteComment }) => {
       <div className={styles.cardContent}>
         {comment.text}
       </div>
-      </article>
+    </article>
   )
 }
 

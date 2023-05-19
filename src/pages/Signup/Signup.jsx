@@ -72,11 +72,10 @@ const Signup = ({ handleAuthEvt }) => {
       handleAuthEvt()
       const newUserToken = tokenService.getToken()
       const newUser = tokenService.getUserFromToken(newUserToken)
-      console.log(newUser)
       navigate(`/profiles/${newUser.profile}`)
-    } catch (err) {
-      console.log(err)
-      setMessage(err.message)
+    } catch (error) {
+      console.log(error)
+      setMessage(error.message)
       setIsSubmitted(false)
     }
   }

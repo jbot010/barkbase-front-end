@@ -18,7 +18,6 @@ import styles from './EditDog.module.css'
 const EditDog = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
-  console.log(state);
 
   const handleChange = (evt) => {
   setFormData({...formData, [evt.target.name]: evt.target.value})

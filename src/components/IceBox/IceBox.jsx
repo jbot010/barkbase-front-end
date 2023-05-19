@@ -1,5 +1,3 @@
-
-
 // CSS
 import styles from './IceBox.module.css'
 // ICONS
@@ -25,7 +23,7 @@ const IceBox = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default IceBox;

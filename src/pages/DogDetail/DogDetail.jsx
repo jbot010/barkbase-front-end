@@ -41,7 +41,6 @@ const DogDetails = (props) => {
 
   const handleDeleteReport = async (dogId, reportId) => {
     const deletedReport = await reportService.deleteReport(dogId, reportId)
-    console.log(deletedReport);
     setDog({ ...dog, reports: dog.reports.filter((r) => r._id !== reportId) })
   }
   

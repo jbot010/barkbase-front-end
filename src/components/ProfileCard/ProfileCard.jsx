@@ -10,7 +10,6 @@ import styles from './ProfileCard.module.css'
 // import { login } from "../../services/authService";
 
 const ProfileCard = ({ profile }) => {
-  console.log(profile);
   return (
     <Box 
       className={styles.profileCard}

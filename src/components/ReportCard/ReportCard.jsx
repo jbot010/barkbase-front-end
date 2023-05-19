@@ -7,16 +7,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 
 const ReportCard = (props) => {
-  console.log(props, "PROPS");
-  // console.log(props.report)
   const report =  props.report
   const dog = props.dog
-  // console.log(report, "REPORT")
-
-  //const { formData } = report;
-  //console.log(formData, "This should be the form data");
-  
-
+ 
   return (
     <div className={styles.reportCard}>
       <div className={styles.reportCardHeader}>

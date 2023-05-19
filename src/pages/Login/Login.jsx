@@ -37,9 +37,9 @@ const LoginPage = ({ handleAuthEvt }) => {
       const user = await tokenService.getUserFromToken()
       handleAuthEvt()
       navigate(`/profiles/${user.profile}`)
-    } catch (err) {
-      console.log(err)
-      setMessage(err.message)
+    } catch (error) {
+      console.log(error)
+      setMessage(error.message)
     }
   }
 
