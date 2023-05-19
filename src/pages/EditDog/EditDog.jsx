@@ -23,7 +23,6 @@ const EditDog = (props) => {
   }
 
 return (
-
   <main className={styles.container}>
     <form onSubmit={handleSubmit}>
       <h1>Edit Dog Details</h1>

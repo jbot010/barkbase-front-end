@@ -16,11 +16,8 @@ import DogList from '../DogList/DogList';
 import KeyIcon from '@mui/icons-material/Key';
 
 //services
-import * as dogService from '../../services/dogService'
-import * as reportService from '../../services/reportService'
 import * as profileService from '../../services/profileService'
 import styles from './ProfileDetail.module.css'
-import DogCard from '../../components/DogCard/DogCard';
 import NewDog from '../NewDog/NewDog';
 
 
@@ -54,8 +51,7 @@ const ProfileDetails = ( props ) => {
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
           <div className={styles.buttonContainer}>
-          <button><Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
-          <button onClick={() => props.handleDeleteprofile(profileId)}><DeleteForeverIcon/></button>
+          <button><Link to={`/profiles/${profileId}/`} state={profile}><EditIcon /></Link></button>
           <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
           </div>
         </div>
