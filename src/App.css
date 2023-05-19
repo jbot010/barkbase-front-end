@@ -47,11 +47,11 @@ form label {
   color: black;
   padding-top: 12px;
 }
-form button {
+/* form button {
   width: 30%;
   margin-top: 12px;
   margin-left: 10%;
-}
+} */
 
 nav > ul {
   margin: 0;
