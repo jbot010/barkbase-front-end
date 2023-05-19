@@ -1,4 +1,4 @@
-img {
+.dogCardImg {
   object-fit: cover;
   width: 64px;
   /* min-width: 64px; */

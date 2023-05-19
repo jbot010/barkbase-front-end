@@ -10,6 +10,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import AllDogs from './pages/AllDogs/AllDogs'
 import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
@@ -28,7 +29,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
 import * as reportService from './services/reportService'
-import * as tokenService from './services/tokenService'
 
 // styles
 import './App.css'
@@ -40,11 +40,11 @@ function App() {
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
-  // console.log(dogId);
+
 
   useEffect(() => {
     const fetchDogs = async () => {
-      const dogData = await dogService.index()
+      const dogData = user && await dogService.index()
       setDogs(dogData)
     }
     fetchDogs()
@@ -63,7 +63,7 @@ function App() {
   const handleAddDog = async (dogFormData) => {
     const newDog = await dogService.create(dogFormData)
     setDogs([newDog, ...dogs])
-    navigate('/dogs')
+    navigate(`/profiles/${user.profile}`)
   }
 
   const handleUpdateDog = async (dogFormData) => {
@@ -81,13 +81,13 @@ function App() {
   const handleDeleteDog = async (dogId) => {
     const deletedDog = await dogService.deleteDog(dogId)
     setDogs(dogs.filter(d => d._id !== deletedDog._id))
-    navigate('/dogs')
+    navigate(`/dogs`)
   }
 
   const handleAddReport = async (dogId, reportFormData) => {
     const newReport = await reportService.create(dogId, reportFormData)
     setDogs((prevDogs) => {
-    const updatedDog = prevDogs.map((dog) => {
+    const updatedDog = prevDogs && prevDogs.map((dog) => {
       if (dog._id === dogId) {
         return { ...dog, reports: [newReport, ...dog.reports] }
       } else {
@@ -121,8 +121,6 @@ function App() {
     }
   }
   
-
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -133,7 +131,7 @@ function App() {
         } />
         <Route path="/dogs" element={
           <ProtectedRoute user={user}>
-            <DogList dogs={dogs} />
+            <AllDogs dogs={dogs} />
           </ProtectedRoute>
         } />
         <Route path="/new" 
@@ -189,7 +187,11 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails />
+
+
+
+              <ProfileDetails handleAddDog={handleAddDog} />
+
             </ProtectedRoute>
           }
           />

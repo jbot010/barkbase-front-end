@@ -3,15 +3,14 @@ import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Paper from '@mui/material/Paper'
+
 import TextField from '@mui/material/TextField'
-import UploadIcon from '@mui/icons-material/Upload';
-import LogoutIcon from '@mui/icons-material/Logout';
+import UploadIcon from '@mui/icons-material/Upload'
+
 
 // services
 import * as authService from '../../services/authService'
+import * as tokenService from '../../services/tokenService'
 
 // css
 import styles from './Signup.module.css'
@@ -71,7 +70,10 @@ const Signup = ({ handleAuthEvt }) => {
       setIsSubmitted(true)
       await authService.signup(formData, photoData.photo)
       handleAuthEvt()
-      navigate('/')
+      const newUserToken = tokenService.getToken()
+      const newUser = tokenService.getUserFromToken(newUserToken)
+      console.log(newUser)
+      navigate(`/profiles/${newUser.profile}`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)
