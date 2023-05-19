@@ -9,6 +9,16 @@
   margin: 6px;
   
 }
+.profileBody {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.profileNewDog {
+  min-width: 480px;
+}
+
 .profileDetailContainer h1,h2,h3,h4,h5,p {
   padding: 0;
   padding-left: 6px;

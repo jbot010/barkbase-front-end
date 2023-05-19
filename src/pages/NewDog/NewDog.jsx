@@ -30,7 +30,6 @@ const NewDog = (props) => {
   }
   
   return ( 
-    <main>
       <section className={styles.newDogContainer}>
         <form onSubmit={handleSubmit} className={styles.newDogForm}>
           {/* <label htmlFor="name-input">Name</label> */}
@@ -108,7 +107,6 @@ const NewDog = (props) => {
           <Button type="submit" variant="contained" fullWidth>SUBMIT</Button>
           </form>
       </section>
-    </main>
   );
 }
 
