@@ -15,7 +15,6 @@ const DogList = ( props ) => {
     <div 
     className={styles.dogList}>
       {console.log(props.dogs, "DOG LIST")}
-      {!props.dogs ?
       <section>
         <ul className='dog-list-container'>
           {props.dogs.map((dog) => (
@@ -23,9 +22,6 @@ const DogList = ( props ) => {
           ))}
         </ul>
       </section>
-      :
-            <h2>You don't have any dogs yet!</h2>
-      }
     </div>
   )
 }

@@ -22,7 +22,7 @@ import NewDog from '../NewDog/NewDog';
 
 
 
-const ProfileDetails = ( {props} ) => {
+const ProfileDetails = ( props ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})
   
