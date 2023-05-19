@@ -1,8 +1,12 @@
-// components
+// COMPONENTS
 import { Link } from 'react-router-dom'
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
+
+// ICONS
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+
+// CSS
 import styles from './CommentCard.module.css'
 
 const CommentCard = ({ comment, dogId, user, handleDeleteComment }) => {

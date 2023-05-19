@@ -1,10 +1,8 @@
-// npm modules
+// NPM
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
 
-
-
-// pages
+// PAGES
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
@@ -21,24 +19,25 @@ import EditReport from './pages/EditReport/EditReport'
 import AdminHome from './pages/AdminHome/AdminHome'
 import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
-// components
+// COMPONENTS
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
-// services
+// SERVICES
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
 import * as reportService from './services/reportService'
 import * as profileService from './services/profileService'
 
-// styles
+// STYLES
 import './App.css'
+
 // import AdminHome from './pages/AdminHome/AdminHome'
 // import DogDetails from './pages/DogDetail/DogDetail'
 
 function App() {
-  const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [user, setUser] = useState(authService.getUser())
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
   const [profile, setProfile] = useState([])
@@ -50,7 +49,6 @@ function App() {
     }
     fetchProfiles()
   }, [])
-
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -204,19 +202,16 @@ function App() {
             <ProtectedRoute user={user}>
               <Profiles />
             </ProtectedRoute>
-        } />
+          } 
+        />
         <Route 
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-
-
-
               <ProfileDetails handleAddDog={handleAddDog} />
-
             </ProtectedRoute>
           }
-          />
+        />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

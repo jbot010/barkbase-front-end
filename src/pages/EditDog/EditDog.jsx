@@ -1,18 +1,17 @@
-//npm modules
+// NPM MODULES
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
-
+// MUI
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 
-//css
+// CSS
 import styles from './EditDog.module.css'
 
 
@@ -20,7 +19,6 @@ const EditDog = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
   console.log(state);
-
 
   const handleChange = (evt) => {
   setFormData({...formData, [evt.target.name]: evt.target.value})
@@ -32,7 +30,6 @@ const EditDog = (props) => {
   }
 
 return (
-
   <main className={styles.editDogContainer}>
     <form onSubmit={handleSubmit} className={styles.editDogForm}>
       <h1>Edit Dog Details</h1>

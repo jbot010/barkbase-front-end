@@ -1,9 +1,12 @@
-// npm modules
+// NPM
 import { NavLink } from 'react-router-dom'
-import styles from './NavBar.module.css'
+
+// ICONS
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useState, useEffect } from 'react'
+
+// CSS
+import styles from './NavBar.module.css'
 
 // services
 import * as profileService from '../../services/profileService'

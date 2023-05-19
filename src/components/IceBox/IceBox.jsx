@@ -18,9 +18,9 @@ const IceBox = () => {
       <div className={styles.iceBoxContent}>
         <p>This is where a future ice box feature will go!</p>
         <div className={styles.iceBoxButtonContainer}>
-          <button><DeleteForeverIcon /></button>
-          <button><DeleteForeverIcon /></button>
-          <button><DeleteForeverIcon /></button>
+          <button><NoPhotographyIcon /></button>
+          <button><AddAPhotoIcon /></button>
+          <button><EditIcon /></button>
           <button><DeleteForeverIcon /></button>
         </div>
       </div>

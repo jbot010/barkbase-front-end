@@ -1,5 +1,7 @@
-// components
+// COMPONENTS
 import CommentCard from '../CommentCard/CommentCard'
+
+// CSS
 import styles from './Comments.module.css'
 
 const Comments = (props) => {

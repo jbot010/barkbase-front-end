@@ -13,12 +13,10 @@ import Reports from '../../components/Reports/Reports'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
 
-//services
+// SERVICES
 import * as dogService from '../../services/dogService'
 import * as reportService from '../../services/reportService'
 import styles from './DogDetail.module.css'
-
-
 
 const DogDetails = (props) => {
   const { dogId } = useParams()

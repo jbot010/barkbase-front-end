@@ -1,4 +1,4 @@
-// services
+// SERVICES
 import * as tokenService from './tokenService'
 import { addPhoto as addProfilePhoto } from './profileService'
 
