@@ -17,14 +17,17 @@ import KeyIcon from '@mui/icons-material/Key';
 
 //services
 import * as profileService from '../../services/profileService'
+import * as dogService from '../../services/dogService'
 import styles from './ProfileDetail.module.css'
 import NewDog from '../NewDog/NewDog';
+import DogCard from '../../components/DogCard/DogCard';
 
 
 
-const ProfileDetails = ( props ) => {
+const ProfileDetails = ( ) => {
   const { profileId } = useParams()
   const [profile, setProfile] = useState({})
+  const [dogs, setDogs] = useState([])
   
 
   useEffect(() => {
@@ -32,9 +35,24 @@ const ProfileDetails = ( props ) => {
       const profileData = await profileService.show( profileId )
       setProfile(profileData)
     }
+    
+    const fetchDogs = async () => {
+      const dogData = await dogService.index()
+      const profileDogs = dogData.filter((dog) => dog.owner._id === profileId)
+      setDogs(profileDogs)
+    }
     fetchProfile()
-  }, [profileId])
+    fetchDogs()
+}, [profileId])
   
+  const handleAddDog = async (newDog) => {
+    const createdDog = await dogService.create(newDog)
+  setDogs((prevDogs) => [...prevDogs, createdDog])
+  setProfile((prevProfile) => ({
+    ...prevProfile, dogs: [...prevProfile.dogs, createdDog]
+  }))
+}
+
   return ( 
     <main className={styles.container}>
       <header className={styles.profileDetailContainer}>
@@ -58,12 +76,15 @@ const ProfileDetails = ( props ) => {
       </header>
       <h2>My Dogs</h2>
       <div className={styles.profileBody}>
-
-        {profile.dogs && <DogList className={styles.dogList} dogs={profile.dogs}/>}
-        <NewDog className={styles.profileNewDog} handleAddDog={props.handleAddDog}/>
+        {dogs.length > 0 ? (
+          <DogList className={styles.dogList} dogs={dogs} />
+        ) : (
+          <p>No dogs found.</p>
+        )}
+        <NewDog className={styles.profileNewDog} handleAddDog={handleAddDog} />
       </div>
     </main>
-  );
+  )
 }
 
 export default ProfileDetails

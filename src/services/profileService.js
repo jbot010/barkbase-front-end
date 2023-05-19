@@ -43,15 +43,15 @@ async function show(profileId) {
   }
 }
 
-async function update(profileId) {
+async function update(profileData) {
   try {
-    const res = await fetch(`${BASE_URL}/${profileId}`,{
+    const res = await fetch(`${BASE_URL}/${profileData.profileId}`,{
       method: 'PUT',
       headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(profileId)
+      body: JSON.stringify(profileData)
     })
     return res.json()
   } catch(error) {

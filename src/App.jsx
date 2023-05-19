@@ -29,6 +29,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
 import * as reportService from './services/reportService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
@@ -40,6 +41,15 @@ function App() {
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
+  const [profile, setProfile] = useState([])
+  
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const profileData = await profileService.getAllProfiles()
+      setProfile(profileData)
+    }
+    fetchProfiles()
+  }, [])
 
 
   useEffect(() => {
@@ -48,7 +58,7 @@ function App() {
       setDogs(dogData)
     }
     fetchDogs()
-  }, [])
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -63,6 +73,18 @@ function App() {
   const handleAddDog = async (dogFormData) => {
     const newDog = await dogService.create(dogFormData)
     setDogs([newDog, ...dogs])
+    
+    // Update profiles state by adding the new dog to the respective profile
+    setProfile((prevProfiles) => {
+      const updatedProfile = prevProfiles.map((profile) => {
+        if (profile._id === user.profile) {
+          return { ...profile, dogs: [newDog, ...profile.dogs] }
+        }
+        return profile
+      })
+      return updatedProfile
+    })
+
     navigate(`/profiles/${user.profile}`)
   }
 
@@ -81,7 +103,7 @@ function App() {
   const handleDeleteDog = async (dogId) => {
     const deletedDog = await dogService.deleteDog(dogId)
     setDogs(dogs.filter(d => d._id !== deletedDog._id))
-    navigate(`/dogs`)
+    navigate(`/profiles/${user.profile}`)
   }
 
   const handleAddReport = async (dogId, reportFormData) => {
