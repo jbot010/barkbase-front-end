@@ -2,11 +2,8 @@
 import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-
-
 import TextField from '@mui/material/TextField'
 import UploadIcon from '@mui/icons-material/Upload'
-
 
 // services
 import * as authService from '../../services/authService'
@@ -41,7 +38,6 @@ const Signup = ({ handleAuthEvt }) => {
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
-    // cloudinary supports files up to 10.4MB each as of May 2023
     if (file.size >= 10485760) {
       errMsg = "Image must be smaller than 10.4MB"
       isFileInvalid = true
