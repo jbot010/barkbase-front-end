@@ -61,7 +61,9 @@ const DogDetails = (props) => {
           <h1> {dog.name} </h1>
           <h3> Breed: {dog.breed} </h3>
           <h3> Age: {dog.age} </h3>
+          <h3> Sex: {dog.sex} </h3>
           <h3> Color: {dog.color} </h3>
+          <h3> Food: {dog.food} </h3>
           <div className={styles.buttonContainer}>
           <button>
             <Link to={`/dogs/${dogId}/edit`} state={dog}><EditIcon /></Link></button>
