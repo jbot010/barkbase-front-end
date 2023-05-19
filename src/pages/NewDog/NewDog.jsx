@@ -13,7 +13,7 @@ import Select from '@mui/material/Select'
 //css
 import styles from './NewDog.module.css'
 
-const NewDog = ({ props }) => {
+const NewDog = ( props ) => {
   const [formData, setFormData] = useState({
     name: '',
     breed: '',
