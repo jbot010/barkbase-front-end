@@ -40,7 +40,7 @@ function App() {
   const navigate = useNavigate()
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
-  // console.log(dogId);
+
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -63,7 +63,7 @@ function App() {
   const handleAddDog = async (dogFormData) => {
     const newDog = await dogService.create(dogFormData)
     setDogs([newDog, ...dogs])
-    navigate('/dogs')
+    navigate(`/profiles/${user.profile}`)
   }
 
   const handleUpdateDog = async (dogFormData) => {
@@ -81,7 +81,7 @@ function App() {
   const handleDeleteDog = async (dogId) => {
     const deletedDog = await dogService.deleteDog(dogId)
     setDogs(dogs.filter(d => d._id !== deletedDog._id))
-    navigate('/dogs')
+    navigate(`/dogs`)
   }
 
   const handleAddReport = async (dogId, reportFormData) => {
@@ -187,7 +187,11 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails handleAddDog={handleAddDog}/>
+
+
+
+              <ProfileDetails handleAddDog={handleAddDog} />
+
             </ProtectedRoute>
           }
           />
