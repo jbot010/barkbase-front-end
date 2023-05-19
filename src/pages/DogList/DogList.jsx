@@ -19,7 +19,7 @@ const DogList = (props) => {
         )}
       </section>
     </div>
-  );
-};
+  )
+}
 
 export default DogList

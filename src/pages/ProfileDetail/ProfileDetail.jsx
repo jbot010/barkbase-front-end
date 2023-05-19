@@ -3,24 +3,17 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 // pages
-// import Loading from "../Loading/Loading"
-// import NewComment from '../../components/NewComment/NewComment'
-// import Comments from '../../components/Comments/Comments'
-// import NewReportCard from '../../components/NewReportCard/NewReportCard'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
-import Reports from '../../components/Reports/Reports'
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
-import DogList from '../DogList/DogList';
-import KeyIcon from '@mui/icons-material/Key';
+import EditIcon from '@mui/icons-material/Edit'
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
+import NoPhotographyIcon from '@mui/icons-material/NoPhotography'
+import DogList from '../DogList/DogList'
+import KeyIcon from '@mui/icons-material/Key'
 
 //services
 import * as profileService from '../../services/profileService'
 import * as dogService from '../../services/dogService'
 import styles from './ProfileDetail.module.css'
-import NewDog from '../NewDog/NewDog';
-import DogCard from '../../components/DogCard/DogCard';
+import NewDog from '../NewDog/NewDog'
 
 const ProfileDetails = ( ) => {
   const { profileId } = useParams()
@@ -41,15 +34,13 @@ const ProfileDetails = ( ) => {
     }
     fetchProfile()
     fetchDogs()
-}, [profileId])
+  }, [profileId])
   
   const handleAddDog = async (newDog) => {
     const createdDog = await dogService.create(newDog)
-  setDogs((prevDogs) => [...prevDogs, createdDog])
-  setProfile((prevProfile) => ({
-    ...prevProfile, dogs: [...prevProfile.dogs, createdDog]
-  }))
-}
+    setDogs((prevDogs) => [...prevDogs, createdDog])
+    setProfile((prevProfile) => ({...prevProfile, dogs: [...prevProfile.dogs, createdDog]}))
+  }
 
   return ( 
     <main className={styles.container}>

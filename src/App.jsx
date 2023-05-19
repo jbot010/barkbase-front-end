@@ -32,9 +32,6 @@ import * as profileService from './services/profileService'
 // STYLES
 import './App.css'
 
-// import AdminHome from './pages/AdminHome/AdminHome'
-// import DogDetails from './pages/DogDetail/DogDetail'
-
 function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
@@ -71,8 +68,6 @@ function App() {
   const handleAddDog = async (dogFormData) => {
     const newDog = await dogService.create(dogFormData)
     setDogs([newDog, ...dogs])
-    
-    // Update profiles state by adding the new dog to the respective profile
     setProfile((prevProfiles) => {
       const updatedProfile = prevProfiles.map((profile) => {
         if (profile._id === user.profile) {
@@ -82,7 +77,6 @@ function App() {
       })
       return updatedProfile
     })
-
     navigate(`/profiles/${user.profile}`)
   }
 
@@ -145,7 +139,6 @@ function App() {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        {/* DOGS DOGS DOGS DOGS */}
         <Route path="/" element={
           <Landing user={user} />
         } />
@@ -161,7 +154,6 @@ function App() {
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
             <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
-            {/* <NewReportCard user={user} handleAddReport={handleAddReport} /> */}
           </ProtectedRoute>
         } />
         <Route path="/dogs/:dogId/edit" element={

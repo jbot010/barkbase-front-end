@@ -19,17 +19,17 @@ const NewComment = (props) => {
 
   return (
     <form className={styles.CommentContainer} onSubmit={handleSubmit}>
-    <textarea
-      required
-      type="text"
-      name="text"
-      id="text-input"
-      value={formData.text}
-      placeholder="Add a Comment"
-      onChange={handleChange}
-    />
-    <button type="submit">Submit</button>
-  </form>
+      <textarea
+        required
+        type="text"
+        name="text"
+        id="text-input"
+        value={formData.text}
+        placeholder="Add a Comment"
+        onChange={handleChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
   )
 }
 

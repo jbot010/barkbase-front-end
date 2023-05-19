@@ -20,14 +20,12 @@ async function create(dogId, reportFormData) {
 
 const updateReport = async ( reportId, reportFormData) => {
   try {
-    const res = await fetch(`${BASE_URL}/${reportId}`,
-    
-    { 
+    const res = await fetch(`${BASE_URL}/${reportId}`, { 
       method: 'PUT',
       headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json'
-    },
+      },
     body: JSON.stringify(reportFormData)
     })
     return res.json()

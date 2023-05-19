@@ -1,18 +1,12 @@
 // NPM
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 //MUI
-import Box from '@mui/material/Box'
-import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import { Switch } from "@mui/material";
-
-
-// CSS
-import styles from './NewReportCard.module.css'
+import { Switch } from "@mui/material"
 
 const NewReportCard = (props) => {
 
@@ -33,7 +27,7 @@ const NewReportCard = (props) => {
   })
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target;
+    const { name, value } = evt.target
   
     if (
       name === 'boarding' ||
@@ -43,29 +37,29 @@ const NewReportCard = (props) => {
       name === 'treat' ||
       name === 'feedingTimes'
     ) {
-      setFormData({ ...formData, [name]: evt.target.checked });
+      setFormData({ ...formData, [name]: evt.target.checked })
     } else if (name === 'mealCount') {
-      const count = parseInt(value, 10);
-      const feedingTimes = Array.from({ length: count }, () => '12:00');
-      setFormData({ ...formData, mealCount: count, feedingTimes });
+      const count = parseInt(value, 10)
+      const feedingTimes = Array.from({ length: count }, () => '12:00')
+      setFormData({ ...formData, mealCount: count, feedingTimes })
     } else if (name.startsWith('feedingTime')) {
-      const index = parseInt(name.slice(-1), 10);
-      const updatedTimes = [...formData.feedingTimes];
+      const index = parseInt(name.slice(-1), 10)
+      const updatedTimes = [...formData.feedingTimes]
       updatedTimes[index] = value;
-      setFormData({ ...formData, feedingTimes: updatedTimes });
+      setFormData({ ...formData, feedingTimes: updatedTimes })
     } else if (name === 'specialInstructions') {
-      setFormData({ ...formData, specialInstructions: value });
+      setFormData({ ...formData, specialInstructions: value })
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData({ ...formData, [name]: value })
     }
-  };
+  }
   
   const renderFeedingTimeInputs = () => {
     const { mealCount, feedingTimes } = formData;
-    const inputs = [];
+    const inputs = []
 
     for (let i = 0; i < mealCount; i++) {
-      const inputName = `feedingTime${i}`;
+      const inputName = `feedingTime${i}`
       inputs.push(
         <TextField
           key={inputName}
@@ -83,9 +77,9 @@ const NewReportCard = (props) => {
   }
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    await props.handleAddReport(dogId, formData);
-    navigate(`/dogs/${dogId}`);
+    evt.preventDefault()
+    await props.handleAddReport(dogId, formData)
+    navigate(`/dogs/${dogId}`)
   }
 
   return (
@@ -137,23 +131,23 @@ const NewReportCard = (props) => {
         />
         <label htmlFor="meal-input">Meals</label>
           <select
-              required
-              type="number"
-              name="mealCount"
-              id="meal-input"
-              value={formData.mealCount}
-              onChange={handleChange}
-            >
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            {renderFeedingTimeInputs()}
-          <br />
+            required
+            type="number"
+            name="mealCount"
+            id="meal-input"
+            value={formData.mealCount}
+            onChange={handleChange}
+          >
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          {renderFeedingTimeInputs()}
+        <br />
         <TextField
           type="text"
           name="specialInstructions"

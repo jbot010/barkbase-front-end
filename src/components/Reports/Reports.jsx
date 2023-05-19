@@ -1,5 +1,6 @@
 // NPM MODULES
 import { Link } from "react-router-dom"
+
 // COMPONENTS
 import ReportCard from "../ReportCard/ReportCard"
 
