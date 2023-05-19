@@ -1,4 +1,4 @@
-.dogCardImg > img {
+.dogCardImg {
   object-fit: cover;
   width: 64px;
   height: 64px;
