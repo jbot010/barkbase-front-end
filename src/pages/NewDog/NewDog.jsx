@@ -7,10 +7,10 @@ import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import LogoutIcon from '@mui/icons-material/Logout'
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 
 //css
 import styles from './NewDog.module.css'
@@ -92,33 +92,6 @@ const NewDog = (props) => {
             value={formData.food}
             onChange={handleChange}
           />
-          {/* <div className={styles.dropDowns}>
-            <label htmlFor="size-input">Size</label>
-            <select
-              required
-              name="size"
-              id="size-input"
-              value={formData.size}
-              onChange={handleChange}
-            >
-              <option value="X-Small">X-Small</option>
-              <option value="Small">Small</option>
-              <option value="Medium">Medium</option>
-              <option value="Large">Large</option>
-              <option value="X-Large">X-Large</option>
-            </select>
-            <label htmlFor="sex-input">Sex</label>
-            <select
-              required
-              name="sex"
-              id="sex-input"
-              value={formData.sex}
-              onChange={handleChange}
-            >
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-          </div> */}
           <div className={styles.dropDowns}>
             <Box>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -157,7 +130,7 @@ const NewDog = (props) => {
             </Box>
           </div>
           <Button type="submit" variant="contained" sx={{ width: .25 }}>SUBMIT</Button>
-          </form>
+        </form>
       </section>
     </main>
   );

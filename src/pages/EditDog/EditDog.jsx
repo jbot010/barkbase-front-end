@@ -3,6 +3,17 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
 
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
+import LogoutIcon from '@mui/icons-material/Logout'
+
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+
 //css
 import styles from './EditDog.module.css'
 
@@ -24,68 +35,98 @@ const EditDog = (props) => {
 
 return (
 
-  <main className={styles.container}>
-    <form onSubmit={handleSubmit}>
+  <main className={styles.editDogContainer}>
+    <form onSubmit={handleSubmit} className={styles.editDogForm}>
       <h1>Edit Dog Details</h1>
-        <label htmlFor="name-input">Name</label>
-        <input
-          required
-          type="text"
-          name="name"
-          id="name-input"
-          value={formData.name}
-          placeholder="Name"
-          onChange={handleChange}
-        />
-        <label htmlFor="breed-input">Breed</label>
-				<input
-          required
-          type="text"
-          name="breed"
-          id="breed-input"
-          value={formData.breed}
-          placeholder="Breed"
-          onChange={handleChange}
-        />
-        <label htmlFor="age-input">Age</label>
-        <input
-          required
-          name="age"
-          id="age-input"
-          value={formData.age}
-          onChange={handleChange}
-        />
-        <label htmlFor="size-input">Size</label>
-        <select
-          required
-          name="size"
-          id="size-input"
-          value={formData.size}
-          onChange={handleChange}
-        >
-          <option value="X-Small">X-Small</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-          <option value="X-Large">X-Large</option>
-        </select>
-        <label htmlFor="color-input">Color</label>
-        <input
-          required
-          name="color"
-          id="color-input"
-          value={formData.color}
-          onChange={handleChange}
-        />
-        <label htmlFor="food-input">Food</label>
-        <input
-          required
-          name="food"
-          id="food-input"
-          value={formData.food}
-          onChange={handleChange}
-        />
-        <button type="submit">SUBMIT</button>
+      <TextField
+            sx={{width: .7}}
+            required
+            type="text"
+            name="name"
+            label="Dog Name"
+            id="name-input"
+            value={formData.name}
+            placeholder="Name"
+            onChange={handleChange}
+          />
+          {/* <label htmlFor="breed-input">Breed</label> */}
+          <TextField
+            sx={{width: .7}}
+            required
+            type="text"
+            name="breed"
+            id="breed-input"
+            label="Breed"
+            value={formData.breed}
+            placeholder="Breed"
+            onChange={handleChange}
+          />
+          {/* <label htmlFor="age-input">Age</label> */}
+          <TextField
+            sx={{width: .7}}
+            required
+            name="age"
+            id="age-input"
+            label="Age"
+            value={formData.age}
+            onChange={handleChange}
+          />
+          <TextField
+            sx={{width: .7}}
+            required
+            name="color"
+            label="Color"
+            id="color-input"
+            value={formData.color}
+            onChange={handleChange}
+          />
+          <TextField
+            sx={{width: .7}}
+            required
+            name="food"
+            label="Food"
+            id="food-input"
+            value={formData.food}
+            onChange={handleChange}
+          />
+          <div className={styles.dropDowns}>
+            <Box>
+              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="size-input-label">Size</InputLabel>
+                <Select
+                  required
+                  name="size"
+                  id="size-input"
+                  value={formData.size}
+                  label="Size"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="X-Small">X-Small</MenuItem>
+                  <MenuItem value="Small">Small</MenuItem>
+                  <MenuItem value="Medium">Medium</MenuItem>
+                  <MenuItem value="Large">Large</MenuItem>
+                  <MenuItem value="X-Large">X-Large</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+            <Box>
+              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="sex-input-label">Sex</InputLabel>
+                <Select
+                  required
+                  name="sex"
+                  id="sex-input"
+                  value={formData.sex}
+                  label="Sex"
+                  onChange={handleChange}
+                >
+                  <MenuItem value="Male">Male</MenuItem>
+                  <MenuItem value="Female">Female</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </div>
+          <Button type="submit" variant="contained" sx={{ width: .25 }}>SUBMIT</Button>
       </form>
     </main>
   );
