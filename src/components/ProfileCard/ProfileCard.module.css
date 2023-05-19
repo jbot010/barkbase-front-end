@@ -13,3 +13,7 @@
   border: 1px solid rgb(185, 185, 185) ;
   box-shadow: 2px 2px 2px gray;
 }
+
+.profDltBtn{
+  margin-left: 1vw;
+}
