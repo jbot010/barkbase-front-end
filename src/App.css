@@ -46,10 +46,10 @@ button {
   font-weight: 800;
   box-shadow: 2px 2px 2px gray;
 }
-#size-input {
+/* #size-input {
   width: 100px;
   margin-left: 30px;
-}
+} */
 
 form label {
   color: black;
