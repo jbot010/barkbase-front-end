@@ -14,7 +14,6 @@ const DogList = ( props ) => {
   return (
     <div 
     className={styles.dogList}>
-      <h1>Dog List</h1>
       {console.log(props.dogs, "DOG LIST")}
       {/* {!props.dogs.length && <h2>Dog List Empty</h2>} */}
       <section>
