@@ -69,7 +69,10 @@ const Signup = ({ handleAuthEvt }) => {
       setIsSubmitted(true)
       await authService.signup(formData, photoData.photo)
       handleAuthEvt()
-      navigate('/')
+      const newUserToken = tokenService.getToken()
+      const newUser = tokenService.getUserFromToken(newUserToken)
+      console.log(newUser)
+      navigate(`/profiles/${newUser.profile}`)
     } catch (err) {
       console.log(err)
       setMessage(err.message)
