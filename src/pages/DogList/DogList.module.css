@@ -1,3 +1,7 @@
 .dogList {
   border-radius: 12px;
 }
+
+.dogListContainer{
+  padding: 0;
+}

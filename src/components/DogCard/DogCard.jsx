@@ -21,13 +21,12 @@ const DogCard = ({ dog }) => {
         borderRadius="12px"
         padding="6px"
         marginTop="6px"
-        >
-          <Box className={styles.dogCardImg}><img src={dog.photo? dog.photo:'/BWdog_icon.png'} alt="" />
-          </Box>
-          <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
-        <Button variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
+      >
+        <Box ><img src={dog.photo? dog.photo:'/BWdog_icon.png'} alt="" className={styles.dogCardImg}/>
+        </Box>
+        <Box className={styles.dogCardContent} flexGrow="3">{dog.name} - {dog.breed}</Box>
+        <Button sx={{margin: 1}} variant="outlined" size="small" href={`/dogs/${dog._id}`}>DETAILS</Button>
         <Button variant="outlined" size="small" href={`/dogs/${dog._id}/reports/newreport`}><AddCommentIcon /></Button>
-        <Switch />
       </Box>
   )
 }

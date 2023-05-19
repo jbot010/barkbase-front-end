@@ -8,7 +8,7 @@ const DogList = (props) => {
     <div className={styles.dogList}>
       <section>
         {props.dogs ? (
-          <ul className='dog-list-container'>
+          <ul className={styles.dogListContainer}>
             {props.dogs.map((dog) => (
               <DogCard dog={dog} key={dog.id} />
             ))}

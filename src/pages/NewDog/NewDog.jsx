@@ -35,11 +35,11 @@ const NewDog = (props) => {
   
   return ( 
       <section className={styles.newDogContainer}>
-        <h1>Add Dog</h1>
+        <h1 className={styles.addDog}>Add Dog</h1>
         <form onSubmit={handleSubmit} className={styles.newDogForm}>
           {/* <label htmlFor="name-input">Name</label> */}
           <TextField
-            sx={{width: .7}}
+            sx={{width: .95}}
             required
             type="text"
             name="name"
@@ -51,7 +51,7 @@ const NewDog = (props) => {
           />
           {/* <label htmlFor="breed-input">Breed</label> */}
           <TextField
-            sx={{width: .7}}
+            sx={{width: .95}}
             required
             type="text"
             name="breed"
@@ -63,7 +63,7 @@ const NewDog = (props) => {
           />
           {/* <label htmlFor="age-input">Age</label> */}
           <TextField
-            sx={{width: .7}}
+            sx={{width: .95}}
             required
             name="age"
             id="age-input"
@@ -72,7 +72,7 @@ const NewDog = (props) => {
             onChange={handleChange}
           />
           <TextField
-            sx={{width: .7}}
+            sx={{width: .95}}
             required
             name="color"
             label="Color"
@@ -81,7 +81,7 @@ const NewDog = (props) => {
             onChange={handleChange}
           />
           <TextField
-            sx={{width: .7}}
+            sx={{width: .95}}
             required
             name="food"
             label="Food"

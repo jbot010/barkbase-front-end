@@ -7,9 +7,9 @@ import { useParams, Link } from 'react-router-dom'
 // import NewComment from '../../components/NewComment/NewComment'
 // import Comments from '../../components/Comments/Comments'
 // import NewReportCard from '../../components/NewReportCard/NewReportCard'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+//import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import Reports from '../../components/Reports/Reports'
+//import Reports from '../../components/Reports/Reports'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
 import DogList from '../DogList/DogList';
@@ -20,7 +20,7 @@ import * as profileService from '../../services/profileService'
 import * as dogService from '../../services/dogService'
 import styles from './ProfileDetail.module.css'
 import NewDog from '../NewDog/NewDog';
-import DogCard from '../../components/DogCard/DogCard';
+//import DogCard from '../../components/DogCard/DogCard';
 
 
 
@@ -59,9 +59,9 @@ const ProfileDetails = ( ) => {
         <div className={styles.profileDetailImg}>
           <img src={profile.photo? profile.photo:'/BWdog_icon.png'} alt="Default profile Photo" />
           <div className={styles.profilePhotoButtonContainer}>
-          <button><AddAPhotoIcon /></button>
-          <button><NoPhotographyIcon /></button>
-        </div>
+            <button><AddAPhotoIcon /></button>
+            <button><NoPhotographyIcon /></button>
+          </div>
         </div>
         <div className={styles.profileDetailContent}>
           <h1> {profile.name} </h1>
@@ -69,12 +69,12 @@ const ProfileDetails = ( ) => {
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
           <div className={styles.buttonContainer}>
-          <button><Link to={`/profiles/${profileId}/`} state={profile}><EditIcon /></Link></button>
-          <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
+            <button><Link to={`/profiles/${profileId}/`} state={profile}><EditIcon /></Link></button>
+            <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
           </div>
         </div>
       </header>
-      <h2>My Dogs</h2>
+      <h2 className={styles.myDogs}>My Dogs</h2>
       <div className={styles.profileBody}>
         {dogs.length > 0 ? (
           <DogList className={styles.dogList} dogs={dogs} />
