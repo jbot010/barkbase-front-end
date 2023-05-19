@@ -1,13 +1,10 @@
 // MUI
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
 // CSS
 import styles from './ProfileCard.module.css'
-
-// import { login } from "../../services/authService";
 
 const ProfileCard = ({ profile }) => {
   return (
