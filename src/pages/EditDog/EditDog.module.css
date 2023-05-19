@@ -1,19 +1,24 @@
-.container {
-  height: 100%;
+.editDogContainer {
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 28px 21px;
   align-items: center;
   flex-direction: column;
 }
-.container h1 {
-  color: gray;
-  padding: 0;
-  margin: 0;
+
+.editDogForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  gap: 12px;
 }
 
-form > label{
-  padding-top: 2px;
-
+.dropDowns{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
 }
