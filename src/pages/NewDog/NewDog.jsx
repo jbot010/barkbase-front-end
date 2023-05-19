@@ -35,10 +35,10 @@ const NewDog = (props) => {
   
   return ( 
     <section className={styles.newDogContainer}>
-      <h1>Add Dog</h1>
+      <h1 className={styles.addDog}>Add Dog</h1>
       <form onSubmit={handleSubmit} className={styles.newDogForm}>
         <TextField
-          sx={{width: .7}}
+          sx={{width: .95}}
           required
           type="text"
           name="name"
@@ -49,7 +49,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <TextField
-          sx={{width: .7}}
+          sx={{width: .95}}
           required
           type="text"
           name="breed"
@@ -60,7 +60,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <TextField
-          sx={{width: .7}}
+          sx={{width: .95}}
           required
           name="age"
           id="age-input"
@@ -69,7 +69,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <TextField
-          sx={{width: .7}}
+          sx={{width: .95}}
           required
           name="color"
           label="Color"
@@ -78,7 +78,7 @@ const NewDog = (props) => {
           onChange={handleChange}
         />
         <TextField
-          sx={{width: .7}}
+          sx={{width: .95}}
           required
           name="food"
           label="Food"
@@ -129,4 +129,4 @@ const NewDog = (props) => {
   )
 }
 
-export default NewDog;
+export default NewDog

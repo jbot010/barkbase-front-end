@@ -1,8 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
-
-//css
-import styles from './EditReport.module.css'
 
 // MUI
 import Button from '@mui/material/Button'

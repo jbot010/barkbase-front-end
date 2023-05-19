@@ -48,9 +48,9 @@ const ProfileDetails = ( ) => {
         <div className={styles.profileDetailImg}>
           <img src={profile.photo? profile.photo:'/BWdog_icon.png'} alt="Default profile Photo" />
           <div className={styles.profilePhotoButtonContainer}>
-          <button><AddAPhotoIcon /></button>
-          <button><NoPhotographyIcon /></button>
-        </div>
+            <button><AddAPhotoIcon /></button>
+            <button><NoPhotographyIcon /></button>
+          </div>
         </div>
         <div className={styles.profileDetailContent}>
           <h1> {profile.name} </h1>
@@ -58,12 +58,12 @@ const ProfileDetails = ( ) => {
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
           <div className={styles.buttonContainer}>
-          <button><Link to={`/profiles/${profileId}/`} state={profile}><EditIcon /></Link></button>
-          <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
+            <button><Link to={`/profiles/${profileId}/`} state={profile}><EditIcon /></Link></button>
+            <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
           </div>
         </div>
       </header>
-      <h2>My Dogs</h2>
+      <h2 className={styles.myDogs}>My Dogs</h2>
       <div className={styles.profileBody}>
         {dogs.length > 0 ? (
           <DogList className={styles.dogList} dogs={dogs} />
