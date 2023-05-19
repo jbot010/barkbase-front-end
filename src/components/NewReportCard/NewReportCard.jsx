@@ -97,10 +97,12 @@ const NewReportCard = (props) => {
   
 
   return (
-    <main>
-      <h1>New Report</h1>
-      <form onSubmit={handleSubmit}>
+    <main className={styles.reportMain}>
+      <h1 className={styles.newReport}>New Report</h1>
+      <form className={styles.container} onSubmit={handleSubmit}>
         <TextField
+          sx={{width: .5}}
+          className={styles.duration}
           type="number"
           name="duration"
           label="Duration"
@@ -113,56 +115,69 @@ const NewReportCard = (props) => {
             step: 0.5,
           }}
         />
-        <label htmlFor="boarding-input">Boarding</label>
-        <Switch 
-          checked={formData.boarding}
-          onChange={handleChange}
-          name="boarding"
-        />
-        <label htmlFor="walk-input">Walk</label>
-        <Switch 
-          checked={formData.walk}
-          onChange={handleChange}
-          name="walk"
-        />
-        <label htmlFor="swimming-input">Swimming</label>
-        <Switch 
-          checked={formData.swimming}
-          onChange={handleChange}
-          name="swimming"
-        />
-        <label htmlFor="agility-input">Agility</label>
-        <Switch 
-          checked={formData.agility}
-          onChange={handleChange}
-          name="agility"
-        />
-        <label htmlFor="treat-input">Treat</label>
-        <Switch 
-          checked={formData.treat}
-          onChange={handleChange}
-          name="treat"
-        />
-        <label htmlFor="meal-input">Meals</label>
+        <div className={styles.boarding}>
+          <label htmlFor="boarding-input">Boarding</label>
+          <Switch 
+            checked={formData.boarding}
+            onChange={handleChange}
+            name="boarding"
+          />
+        </div>
+        <div className={styles.walk}>
+          <label htmlFor="walk-input">Walk</label>
+          <Switch 
+            checked={formData.walk}
+            onChange={handleChange}
+            name="walk"
+          />
+        </div>
+        <div className={styles.swim}>
+          <label htmlFor="swimming-input">Swimming</label>
+          <Switch 
+            checked={formData.swimming}
+            onChange={handleChange}
+            name="swimming"
+          />
+        </div>
+        <div className={styles.agility}>
+          <label htmlFor="agility-input">Agility</label>
+          <Switch 
+            checked={formData.agility}
+            onChange={handleChange}
+            name="agility"
+          />
+        </div>
+        <div className={styles.treat}>
+          <label htmlFor="treat-input">Treat</label>
+          <Switch 
+            checked={formData.treat}
+            onChange={handleChange}
+            name="treat"
+          />
+        </div>
+        <div className={styles.meals}>
+          <label htmlFor="meal-input">Meals</label>
           <select
-              required
-              type="number"
-              name="mealCount"
-              id="meal-input"
-              value={formData.mealCount}
-              onChange={handleChange}
-            >
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            {renderFeedingTimeInputs()}
-          <br />
+            required
+            type="number"
+            name="mealCount"
+            id="meal-input"
+            value={formData.mealCount}
+            onChange={handleChange}
+          >
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          {renderFeedingTimeInputs()}
+        </div>
+        <br />
         <TextField
+          className={styles.spec}
           type="text"
           name="specialInstructions"
           label="Special Instructions"
@@ -171,7 +186,7 @@ const NewReportCard = (props) => {
           onChange={handleChange}
         />
         <br />
-        <Button type="submit"> Submit </Button>
+        <Button className={styles.sub} variant="outlined" type="submit" size="small"> Submit </Button>
       </form>
     </main>
   )
