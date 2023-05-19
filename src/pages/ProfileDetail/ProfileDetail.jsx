@@ -13,6 +13,7 @@ import Reports from '../../components/Reports/Reports'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
 import DogList from '../DogList/DogList';
+import KeyIcon from '@mui/icons-material/Key';
 
 //services
 import * as dogService from '../../services/dogService'
@@ -53,13 +54,15 @@ const ProfileDetails = ( props ) => {
           <h3> Email: {profile.email} </h3>
           <h3> Phone: {profile.phoneNumber} </h3>
           <div className={styles.buttonContainer}>
-          <button>
-            <Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
-            <button onClick={() => props.handleDeleteprofile(profileId)}><DeleteForeverIcon/></button>
+          <button><Link to={`/profiles/${profileId}/edit`} state={profile}><EditIcon /></Link></button>
+          <button onClick={() => props.handleDeleteprofile(profileId)}><DeleteForeverIcon/></button>
+          <button><Link to="/auth/change-password" className={styles.navItem}>< KeyIcon /></Link></button>
           </div>
         </div>
       </header>
+      <h2>My Dogs</h2>
       <div className={styles.profileBody}>
+
         {profile.dogs && <DogList className={styles.dogList} dogs={profile.dogs}/>}
         <NewDog className={styles.profileNewDog}/>
       </div>

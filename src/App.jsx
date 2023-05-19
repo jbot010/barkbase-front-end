@@ -28,6 +28,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as dogService from './services/dogService'
 import * as reportService from './services/reportService'
+import * as tokenService from './services/tokenService'
 
 // styles
 import './App.css'
