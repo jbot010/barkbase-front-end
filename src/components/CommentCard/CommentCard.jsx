@@ -1,8 +1,10 @@
-// COMPONENTS
+// NPM MODULES
 import { Link } from 'react-router-dom'
+
+// COMPONENTS
 import AuthorInfo from '../AuthorInfo/AuthorInfo'
 
-// ICONS
+// MUI
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 

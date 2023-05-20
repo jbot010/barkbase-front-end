@@ -2,14 +2,16 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-// PAGES
-import NewComment from '../../components/NewComment/NewComment'
-import Comments from '../../components/Comments/Comments'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+// MUI
 import EditIcon from '@mui/icons-material/Edit'
-import Reports from '../../components/Reports/Reports'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+
+// COMPONENTS
+import NewComment from '../../components/NewComment/NewComment'
+import Comments from '../../components/Comments/Comments'
+import Reports from '../../components/Reports/Reports'
 
 // SERVICES
 import * as dogService from '../../services/dogService'

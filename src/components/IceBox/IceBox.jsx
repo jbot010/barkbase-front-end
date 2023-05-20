@@ -1,12 +1,11 @@
+// MUI
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import EditIcon from '@mui/icons-material/Edit'
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
+import NoPhotographyIcon from '@mui/icons-material/NoPhotography'
+
 // CSS
 import styles from './IceBox.module.css'
-
-// ICONS
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import NoPhotographyIcon from '@mui/icons-material/NoPhotography';
-
 
 const IceBox = () => {
   return ( 
