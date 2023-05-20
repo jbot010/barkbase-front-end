@@ -44,6 +44,8 @@ Daycare employees are site admins and are able to manage the dogs in their datab
 * Express
 * Mongoose
 * MongoDB
+* bcrypt
+* JWT
 * JavaScript
 * HTML
 * CSS
