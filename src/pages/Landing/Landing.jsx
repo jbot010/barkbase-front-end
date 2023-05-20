@@ -1,4 +1,4 @@
-// css
+// CSS
 import styles from './Landing.module.css'
 
 const Landing = () => {

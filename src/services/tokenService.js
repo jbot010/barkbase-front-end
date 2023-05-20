@@ -1,4 +1,4 @@
-// npm modules
+// NPM MODULES
 import jwt_decode from 'jwt-decode'
 
 function setToken(token) {

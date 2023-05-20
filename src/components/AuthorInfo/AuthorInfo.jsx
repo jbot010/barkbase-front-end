@@ -1,7 +1,7 @@
-// components
+// COMPONENTS
 import DateCard from '../DateCard/DateCard.jsx'
 
-// css
+// CSS
 import styles from './AuthorInfo.module.css'
 
 const AuthorInfo = (props) => {

@@ -1,11 +1,11 @@
-// npm modules
+// NPM
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-// services
+// SERVICES
 import * as authService from '../../services/authService'
 
-// css
+// CSS
 import styles from './ChangePassword.module.css'
 
 const ChangePassword = ({ handleAuthEvt }) => {

@@ -1,9 +1,8 @@
-// npm modules
+// NPM
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-// pages
-
+// PAGES
 import NewComment from '../../components/NewComment/NewComment'
 import Comments from '../../components/Comments/Comments'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -15,6 +14,8 @@ import NoPhotographyIcon from '@mui/icons-material/NoPhotography'
 // SERVICES
 import * as dogService from '../../services/dogService'
 import * as reportService from '../../services/reportService'
+
+// CSS
 import styles from './DogDetail.module.css'
 
 const DogDetails = (props) => {

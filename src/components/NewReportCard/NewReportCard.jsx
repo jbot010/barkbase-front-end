@@ -3,9 +3,10 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
+// CSS
 import styles from './NewReportCard.module.css'
 
-//MUI
+// MUI
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import { Switch } from "@mui/material"
