@@ -13,13 +13,13 @@ import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
 import DogDetails from './pages/DogDetail/DogDetail'
 import EditComment from './pages/EditComment/EditComment'
-import NewReportCard from './components/NewReportCard/NewReportCard'
 import EditReport from './pages/EditReport/EditReport'
 import AdminHome from './pages/AdminHome/AdminHome'
 import ProfileDetails from './pages/ProfileDetail/ProfileDetail'
 
 // COMPONENTS
 import NavBar from './components/NavBar/NavBar'
+import NewReportCard from './components/NewReportCard/NewReportCard'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // SERVICES

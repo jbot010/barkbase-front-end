@@ -2,8 +2,8 @@
 import { NavLink } from 'react-router-dom'
 
 // MUI
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 // CSS
 import styles from './NavBar.module.css'

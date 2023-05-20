@@ -1,6 +1,8 @@
 // COMPONENTS
-import DogList from '../DogList/DogList'
 import IceBox from '../../components/IceBox/IceBox'
+
+// PAGES
+import DogList from '../DogList/DogList'
 
 // CSS
 import styles from './AdminHome.module.css'
