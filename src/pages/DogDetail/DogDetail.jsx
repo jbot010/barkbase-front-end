@@ -39,7 +39,7 @@ const DogDetails = (props) => {
   }
 
   const handleDeleteReport = async (dogId, reportId) => {
-    const deletedReport = await reportService.deleteReport(dogId, reportId)
+    await reportService.deleteReport(dogId, reportId)
     setDog({ ...dog, reports: dog.reports.filter((r) => r._id !== reportId) })
   }
   
@@ -47,7 +47,7 @@ const DogDetails = (props) => {
     <main className={styles.container}>
       <header className={styles.dogDetailContainer}>
         <div className={styles.dogDetailImg}>
-          <img src={dog.photo? dog.photo:'/dog_icon.png'} alt="Default Dog Photo" />
+          <img src={dog.photo ? dog.photo:'/dog_icon.png'} alt="Default Dog Photo" />
           <div className={styles.DogPhotoButtonContainer}>
             <button><AddAPhotoIcon /></button>
             <button><NoPhotographyIcon /></button>

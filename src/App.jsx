@@ -9,7 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AllDogs from './pages/AllDogs/AllDogs'
-import DogList from './pages/DogList/DogList'
+// import DogList from './pages/DogList/DogList'
 import NewDog from './pages/NewDog/NewDog'
 import EditDog from './pages/EditDog/EditDog'
 import DogDetails from './pages/DogDetail/DogDetail'
@@ -38,7 +38,9 @@ function App() {
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
   const [profile, setProfile] = useState([])
-  
+
+  console.log(profile, '<< PROFILE')
+  console.log(user, '<<< USER')
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
@@ -134,16 +136,15 @@ function App() {
       console.log(error)
     }
   }
-  
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} profile={profile} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={
           <Landing user={user} />
         } />
         <Route path="/dogs" element={
-          <ProtectedRoute user={user}>
+          <ProtectedRoute profile={profile}>
             <AllDogs dogs={dogs} />
           </ProtectedRoute>
         } />
