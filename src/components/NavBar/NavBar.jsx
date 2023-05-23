@@ -9,7 +9,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle"
 import styles from "./NavBar.module.css"
 
 const NavBar = ({ user, isAdmin, handleLogout }) => {
-  console.log(isAdmin)
   return (
     <nav className={styles.nav}>
       <NavLink to={isAdmin ? "/dogs" : "/"}>
