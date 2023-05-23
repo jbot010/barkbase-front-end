@@ -1,19 +1,25 @@
-// npm modules
+// NPM MODULES
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-// pages
+// MUI
 import EditIcon from '@mui/icons-material/Edit'
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto'
 import NoPhotographyIcon from '@mui/icons-material/NoPhotography'
-import DogList from '../DogList/DogList'
 import KeyIcon from '@mui/icons-material/Key'
 
-//services
+// COMPONENTS
+import NewDog from '../NewDog/NewDog'
+
+// PAGES
+import DogList from '../DogList/DogList'
+
+// SERVICES
 import * as profileService from '../../services/profileService'
 import * as dogService from '../../services/dogService'
+
+// CSS
 import styles from './ProfileDetail.module.css'
-import NewDog from '../NewDog/NewDog'
 
 const ProfileDetails = ( ) => {
   const { profileId } = useParams()

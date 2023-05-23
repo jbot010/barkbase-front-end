@@ -1,13 +1,13 @@
-// npm modules
+// NPM MODULES
 import { useState, useEffect } from 'react'
 
-// services
+// SERVICES
 import * as profileService from '../../services/profileService'
 
-// components
+// COMPONENTS
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 
-// css
+// CSS
 import styles from './Profiles.module.css'
 
 const Profiles = () => {

@@ -1,4 +1,4 @@
-// npm modules
+// NPM MODULES
 import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ user, children }) => {

@@ -1,7 +1,12 @@
-import styles from './ReportCard.module.css'
+// NPM MODULES
+import { Link } from 'react-router-dom'
+
+// MUI
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
-import { Link } from 'react-router-dom'
+
+// CSS
+import styles from './ReportCard.module.css'
 
 const ReportCard = (props) => {
   const report =  props.report

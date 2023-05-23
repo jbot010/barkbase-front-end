@@ -14,7 +14,6 @@ import Select from '@mui/material/Select'
 // CSS
 import styles from './EditDog.module.css'
 
-
 const EditDog = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)

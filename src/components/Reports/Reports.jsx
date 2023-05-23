@@ -7,7 +7,6 @@ import ReportCard from "../ReportCard/ReportCard"
 // CSS
 import styles from './Reports.module.css'
 
-
 const Reports = ( props ) => {
   if(!props.dog.reports) return <h4>No Reports</h4>
   return ( 
