@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom'
 const ReportCard = (props) => {
   const report =  props.report
   const dog = props.dog
-
+  
+  console.log(props.myProfile);
   return (
     <div className={styles.reportCard}>
       <div className={styles.reportCardHeader}>
       <h2>{dog.name}'s Report Card</h2>
-      <Link to={`/dogs/${report.dog}/reports/${report._id}`} state={report}>
-        <button><EditIcon /></button>
-      </Link>
+      {props.myProfile.isAdmin ? 
+        <Link to={`/dogs/${report.dog}/reports/${report._id}`} state={report}>
+          <button><EditIcon /></button>
+        </Link>
+      : ''}
       </div>
       <div className={styles.reportCardContent}>
         <p>{dog.owner.name}</p>
@@ -27,7 +30,9 @@ const ReportCard = (props) => {
         <p>Feeding Times: {report.feedingTimes.join(', ')}</p>
         <p>Special Instructions: {report.specialInstructions}</p>
       </div>
-      <button onClick={()=> props.handleDeleteReport(props.dogId, report._id)}><DeleteForeverIcon /></button>
+      {props.myProfile.isAdmin ? 
+        <button onClick={()=> props.handleDeleteReport(props.dogId, report._id)}><DeleteForeverIcon /></button>
+      : ''}
     </div>
   )
 }

@@ -38,6 +38,7 @@ function App() {
   const [dogs, setDogs] = useState([])
   const { dogId, reportId } = useParams()
   const [profile, setProfile] = useState([])
+  const [myProfile, setMyProfile] = useState({})
 
   console.log(profile, '<< PROFILE')
   console.log(user, '<<< USER')
@@ -47,6 +48,14 @@ function App() {
       setProfile(profileData)
     }
     fetchProfiles()
+  }, [])
+
+  useEffect(() => {
+    const fetchMyProfile = async () => {
+      const myProfileData = await profileService.show(user.profile)
+      setMyProfile(myProfileData)
+    }
+    fetchMyProfile()
   }, [])
 
   useEffect(() => {
@@ -138,13 +147,13 @@ function App() {
   }
   return (
     <>
-      <NavBar user={user} profile={profile} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={
           <Landing user={user} />
         } />
         <Route path="/dogs" element={
-          <ProtectedRoute profile={profile}>
+          <ProtectedRoute user={user}>
             <AllDogs dogs={dogs} />
           </ProtectedRoute>
         } />
@@ -154,7 +163,7 @@ function App() {
         } />
         <Route path="/dogs/:dogId" element={
           <ProtectedRoute user={user}>
-            <DogDetails user={user} handleDeleteDog={handleDeleteDog} />
+            <DogDetails user={user} myProfile={myProfile} handleDeleteDog={handleDeleteDog} />
           </ProtectedRoute>
         } />
         <Route path="/dogs/:dogId/edit" element={
@@ -170,7 +179,7 @@ function App() {
           }
         />
         <Route path="/dogs/:dogId/reports/:reportId" element={
-          <ProtectedRoute user={user}>
+          <ProtectedRoute user={user} >
             <EditReport user={user} handleUpdateReport={handleUpdateReport} dogId={dogId} reportId={reportId} />
             </ProtectedRoute>
           }

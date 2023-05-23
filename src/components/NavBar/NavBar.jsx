@@ -9,15 +9,15 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
-console.log(user.profile)
+console.log(user)
 
   return (
     <nav className={styles.nav}>
-      {user ? 
-        <NavLink to="/dogs"><img src="/dog_icon.png" alt="DogIcon" /></NavLink>
-      :
-        <NavLink to={`/profiles/${user.profile}`}/>
-      }
+      {/* {user ? */}
+      <NavLink to="/dogs"><img src="/dog_icon.png" alt="DogIcon" /></NavLink>
+      {/* :
+      <NavLink to="/auth/signup"><img src="/dog_icon.png" alt="DogIcon" /></NavLink>
+      } */}
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
@@ -35,3 +35,4 @@ console.log(user.profile)
 }
 
 export default NavBar
+
