@@ -20,7 +20,7 @@ import styles from "./DogDetail.module.css"
 const DogDetails = (props) => {
   const { dogId } = useParams()
   const [dog, setDog] = useState({})
-  
+
   useEffect(() => {
     const fetchDog = async () => {
       const dogData = await dogService.show(dogId)
@@ -28,8 +28,7 @@ const DogDetails = (props) => {
     }
     fetchDog()
   }, [dogId])
-  console.log(props.myProfile.isAdmin)
-  
+
   const handleAddComment = async (commentFormData) => {
     const newComment = await dogService.createComment(dogId, commentFormData)
     setDog({ ...dog, comments: [newComment, ...dog.comments] })
@@ -45,6 +44,29 @@ const DogDetails = (props) => {
   const handleDeleteReport = async (dogId, reportId) => {
     await reportService.deleteReport(dogId, reportId)
     setDog({ ...dog, reports: dog.reports.filter((r) => r._id !== reportId) })
+  }
+
+  const getAdminView = () => {
+    const dogOwnerId = dog.owner && dog.owner._id
+    const isOwner = dogOwnerId === props.myProfile._id
+    const isAdmin = props.myProfile.isAdmin
+
+    if (isOwner || isAdmin) {
+      return (
+        <div className={styles.buttonContainer}>
+          <button>
+            <Link to={`/dogs/${dogId}/edit`} state={dog}>
+              <EditIcon />
+            </Link>
+          </button>
+          <button onClick={() => props.handleDeleteDog(dogId)}>
+            <DeleteForeverIcon />
+          </button>
+        </div>
+      )
+    } else {
+      return ""
+    }
   }
 
   return (
@@ -71,23 +93,16 @@ const DogDetails = (props) => {
           <h3> Sex: {dog.sex} </h3>
           <h3> Color: {dog.color} </h3>
           <h3> Food: {dog.food} </h3>
-          {props.myProfile.isAdmin || props.myProfile === dog.owner ? 
-            <div className={styles.buttonContainer}>
-              <button>
-                <Link to={`/dogs/${dogId}/edit`} state={dog}>
-                  <EditIcon />
-                </Link>
-              </button>
-              <button onClick={() => props.handleDeleteDog(dogId)}>
-                <DeleteForeverIcon />
-              </button>
-            </div>
-          : ''}
+          {getAdminView()}
         </div>
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports dog={dog} handleDeleteReport={handleDeleteReport} myProfile={props.myProfile} />
+          <Reports
+            dog={dog}
+            handleDeleteReport={handleDeleteReport}
+            myProfile={props.myProfile}
+          />
         </div>
         <div className={styles.commentsContainer}>
           <NewComment

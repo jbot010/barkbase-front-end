@@ -40,8 +40,6 @@ function App() {
   const [profile, setProfile] = useState([])
   const [myProfile, setMyProfile] = useState({})
 
-  console.log(profile, '<< PROFILE')
-  console.log(user, '<<< USER')
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
@@ -145,16 +143,17 @@ function App() {
       console.log(error)
     }
   }
+  console.log(myProfile.isAdmin)
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleLogout={handleLogout} isAdmin={myProfile && myProfile.isAdmin} />
       <Routes>
         <Route path="/" element={
           <Landing user={user} />
         } />
         <Route path="/dogs" element={
           <ProtectedRoute user={user}>
-            <AllDogs dogs={dogs} />
+            <AllDogs dogs={dogs} myProfile={myProfile} />
           </ProtectedRoute>
         } />
         <Route path="/new" 
