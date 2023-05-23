@@ -26,7 +26,7 @@ const DogDetails = (props) => {
 
   useEffect(() => {
     const fetchDog = async () => {
-      const dogData = await dogService.show( dogId )
+      const dogData = await dogService.show(dogId)
       setDog(dogData)
     }
     fetchDog()
@@ -34,26 +34,59 @@ const DogDetails = (props) => {
 
   const handleAddComment = async (commentFormData) => {
     const newComment = await dogService.createComment(dogId, commentFormData)
-    setDog({...dog, comments:[newComment, ...dog.comments]})
+    setDog({ ...dog, comments: [newComment, ...dog.comments] })
   }
   const handleDeleteComment = async (dogId, commentId) => {
     await dogService.deleteComment(dogId, commentId)
-    setDog({ ...dog, comments: dog.comments.filter((c) => c._id !== commentId) })
+    setDog({
+      ...dog,
+      comments: dog.comments.filter((c) => c._id !== commentId),
+    })
   }
 
   const handleDeleteReport = async (dogId, reportId) => {
-    const deletedReport = await reportService.deleteReport(dogId, reportId)
+    await reportService.deleteReport(dogId, reportId)
     setDog({ ...dog, reports: dog.reports.filter((r) => r._id !== reportId) })
   }
-  
-  return ( 
+
+  const getAdminView = () => {
+    const dogOwnerId = dog.owner && dog.owner._id
+    const isOwner = dogOwnerId === props.myProfile._id
+    const isAdmin = props.myProfile.isAdmin
+
+    if (isOwner || isAdmin) {
+      return (
+        <div className={styles.buttonContainer}>
+          <button>
+            <Link to={`/dogs/${dogId}/edit`} state={dog}>
+              <EditIcon />
+            </Link>
+          </button>
+          <button onClick={() => props.handleDeleteDog(dogId)}>
+            <DeleteForeverIcon />
+          </button>
+        </div>
+      )
+    } else {
+      return ""
+    }
+  }
+
+  return (
     <main className={styles.container}>
       <header className={styles.dogDetailContainer}>
         <div className={styles.dogDetailImg}>
-          <img src={dog.photo? dog.photo:'/dog_icon.png'} alt="Default Dog Photo" />
+          <img
+            src={dog.photo ? dog.photo : "/dog_icon.png"}
+            alt="Default Dog Photo"
+          />
           <div className={styles.DogPhotoButtonContainer}>
-            <button><AddAPhotoIcon /></button>
-            <button><NoPhotographyIcon /></button>
+            <button>
+              <AddAPhotoIcon />
+            </button>
+            <button>
+              <NoPhotographyIcon />
+            </button>
           </div>
         </div>
         <div className={styles.dogDetailContent}>
@@ -63,23 +96,27 @@ const DogDetails = (props) => {
           <h3> Sex: {dog.sex} </h3>
           <h3> Color: {dog.color} </h3>
           <h3> Food: {dog.food} </h3>
-          <div className={styles.buttonContainer}>
-            <button><Link to={`/dogs/${dogId}/edit`} state={dog}><EditIcon /></Link></button>
-            <button onClick={() => props.handleDeleteDog(dogId)}><DeleteForeverIcon/></button>
-          </div>
+          {getAdminView()}
         </div>
       </header>
       <div className={styles.reportsAndComments}>
         <div className={styles.reportsContainer}>
-          <Reports dog={dog} handleDeleteReport={handleDeleteReport} />
+          <Reports
+            dog={dog}
+            handleDeleteReport={handleDeleteReport}
+            myProfile={props.myProfile}
+          />
         </div>
         <div className={styles.commentsContainer}>
-          <NewComment className={styles.newComment} handleAddComment={handleAddComment} />
-          <Comments 
-            comments={dog.comments} 
-            user={props.user} 
-            dogId={dogId} 
-            handleDeleteComment={handleDeleteComment} 
+          <NewComment
+            className={styles.newComment}
+            handleAddComment={handleAddComment}
+          />
+          <Comments
+            comments={dog.comments}
+            user={props.user}
+            dogId={dogId}
+            handleDeleteComment={handleDeleteComment}
           />
         </div>
       </div>

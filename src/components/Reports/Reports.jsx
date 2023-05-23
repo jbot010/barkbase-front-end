@@ -11,9 +11,11 @@ const Reports = ( props ) => {
   if(!props.dog.reports) return <h4>No Reports</h4>
   return ( 
     <div className={styles.reportList}>
+      {props.myProfile.isAdmin ? 
       <Link to ={`/dogs/${props.dog._id}/reports/newreport`}>
       <button>NEW REPORT</button>
       </Link>
+      : ''}
       {props.dog.reports.map((report) => (
         <ReportCard
           key={report._id}
@@ -21,6 +23,7 @@ const Reports = ( props ) => {
           author={props.dog.author}
           dog={props.dog}
           handleDeleteReport={props.handleDeleteReport}
+          myProfile={props.myProfile}
         />
       ))}
     </div>
